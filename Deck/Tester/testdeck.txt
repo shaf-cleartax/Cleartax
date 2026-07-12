@@ -1,0 +1,150 @@
+Create a modern, enterprise-grade presentation with 5 slides about e-invoicing. The presentation should feel like a McKinsey/Bain/BCG consulting deck with clean layouts, strong visual hierarchy, generous whitespace, minimal color usage (blue and dark gray), rounded cards, subtle dividers, and professional business illustrations. Each slide should automatically choose the most appropriate layout instead of repeating the same structure.
+
+Slide 1 — Cover
+
+Title:
+The Business Case for E-Invoicing
+
+Subtitle:
+How digital invoicing reduces cost, improves compliance, and accelerates finance operations.
+
+Supporting text:
+Governments around the world are moving toward mandatory digital invoicing. Businesses that adopt early improve efficiency, reduce compliance risks, and accelerate financial operations.
+
+Visual:
+Create a clean hero illustration showing invoices flowing between ERP systems, businesses, tax authorities, and customers connected through a digital network.
+
+---
+
+Slide 2 — Why Businesses Are Adopting E-Invoicing
+
+Title:
+Why Organizations Are Transitioning
+
+Content:
+Governments are replacing traditional paper invoicing with structured digital invoices that enable real-time reporting and better tax compliance.
+
+Benefits:
+• Lower invoice processing costs
+• Faster approvals
+• Reduced manual errors
+• Improved audit readiness
+• Better compliance
+• Increased visibility into cash flow
+
+Supporting statistics:
+• Up to 80% reduction in manual processing effort
+• Around 60% fewer invoice errors
+• Hundreds of administrative hours saved annually
+
+Visual:
+Use a three-column card layout with icons representing Compliance, Automation, and Faster Payments. Include small supporting statistic callouts.
+
+---
+
+Slide 3 — Business Impact (Visual Data)
+
+Title:
+Measuring the Impact of E-Invoicing
+
+Create visual charts from the following data.
+
+Chart 1:
+Invoice Processing Cost
+
+Paper Process: $15
+PDF Email: $8
+E-Invoicing: $2
+
+Display as a vertical bar chart.
+
+Chart 2:
+Average Processing Time
+
+Manual Process: 10 Days
+Digital PDF: 5 Days
+E-Invoicing: 1 Day
+
+Display as a line chart or column chart.
+
+Add three KPI cards below the charts:
+
+95%
+Compliance Accuracy
+
+70%
+Faster Processing
+
+60%
+Reduction in Manual Work
+
+This slide should be highly visual and dashboard-like.
+
+---
+
+Slide 4 — Implementation Roadmap
+
+Title:
+A Typical E-Invoicing Rollout
+
+Create a horizontal roadmap with four phases.
+
+Phase 1
+Assessment
+Review ERP systems, invoice formats, compliance requirements, and stakeholders.
+
+Phase 2
+Integration
+Connect ERP with the e-invoicing platform and tax authority.
+
+Phase 3
+Testing
+Validate invoice formats, approval workflows, reporting, and integrations.
+
+Phase 4
+Go Live
+Deploy, monitor, optimize, and train finance teams.
+
+Supporting callout:
+Typical implementation takes approximately 6–12 weeks depending on ERP complexity.
+
+Visual:
+Timeline with milestone icons connected by a continuous path.
+
+---
+
+Slide 5 — Key Takeaways
+
+Title:
+Why Businesses Should Act Now
+
+Content:
+Governments continue expanding e-invoicing mandates worldwide.
+
+Organizations that modernize now benefit from:
+• Lower operational costs
+• Improved tax compliance
+• Faster payment cycles
+• Better supplier relationships
+• Future-ready finance operations
+
+Call to Action:
+Prepare your organization before regulatory deadlines arrive.
+
+Footer:
+Questions & Discussion
+
+Visual:
+Create a clean illustration showing ERP systems, suppliers, customers, and tax authorities connected through a centralized e-invoicing platform.
+
+---
+
+Presentation Requirements
+
+• Use a premium consulting-style presentation aesthetic.
+• Every slide should have a unique layout.
+• Prioritize visual storytelling over large blocks of text.
+• Convert suitable content into cards, timelines, diagrams, charts, and KPI components automatically.
+• Maintain consistent spacing, typography, icon style, and color palette across all slides.
+• Use subtle animations where appropriate if supported.
+• Ensure the presentation is suitable for executive stakeholders and enterprise clients.

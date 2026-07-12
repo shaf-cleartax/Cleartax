@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClearTax — Get Ready for 2026 UAE e-Invoicing</title>
+<meta name="description" content="ClearTax is an FTA-approved, Peppol-ready e-invoicing platform built for the UAE's 2026 mandate. One global API, 50+ country mandates, any ERP.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="progress-rail"><div class="progress-fill" id="scrollProgress"></div></div>
+
+<!-- ============ ANNOUNCEMENT BAR ============ -->
+<div class="announcement" id="announcement">
+  <p>UAE e-invoicing becomes mandatory from July 2026. <a href="#mandate">Learn more &rarr;</a></p>
+  <button class="announcement-close" id="announcementClose" aria-label="Dismiss">&times;</button>
+</div>
+
+<!-- ============ GLOBAL NAV (3-zone) ============ -->
+<header class="nav" id="siteNav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo"><img src="assets/img/Cleartax-logo-black.png" alt="ClearTax"></a>
+    <nav class="nav-links">
+      <a href="#mandate">Mandate</a>
+      <a href="#delivers">Platform</a>
+      <a href="#resources">Resources</a>
+      <a href="#partners">Partners</a>
+      <a href="#faq">Support</a>
+    </nav>
+    <div class="nav-right">
+      <a href="#cta-form" class="btn btn--primary btn--sm">Book a demo</a>
+      <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <p class="mono-label hero-badge"><span class="reveal-line">FTA-APPROVED · PEPPOL NETWORK</span></p>
+    <h1 class="hero-title">
+      <span class="line"><span class="reveal-line">Get ready for</span></span>
+      <span class="line"><span class="reveal-line">2026 UAE</span></span>
+      <span class="line"><span class="reveal-line">e-invoicing.</span></span>
+    </h1>
+    <p class="body-large hero-sub reveal-up">Structured e-invoicing arrives faster than most businesses realize. ClearTax is FTA-approved, AI-powered, and built for any ERP you run today.</p>
+    <div class="hero-actions reveal-up">
+      <a href="#cta-form" class="btn btn--primary">Book a demo</a>
+      <a href="#mandate" class="btn btn--secondary">Explore the mandate</a>
+    </div>
+
+    <div class="hero-media reveal-up">
+      <div class="agent-console-card">
+        <div class="console-head"><span class="console-dot"></span>ClearTax Compliance Agent</div>
+        <div class="console-chip-row">
+          <span class="console-chip console-chip--ok">Peppol network — connected</span>
+          <span class="console-chip console-chip--ok">FTA portal — synced</span>
+          <span class="console-chip">Invoice queue — live</span>
+        </div>
+        <p class="console-line">Monitoring 5,000+ enterprise accounts across the UAE Continuous Transaction Controls rollout.</p>
+      </div>
+      <div class="hero-photo-card">
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="100" cy="100" r="70" stroke="#17171c" stroke-width="1"/>
+          <circle cx="100" cy="100" r="46" stroke="#17171c" stroke-width="1"/>
+          <path d="M100 30v140M30 100h140" stroke="#17171c" stroke-width="1"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRUST STRIP ============ -->
+  <section class="trust-strip">
+    <p class="caption trust-label">Trusted by 5,000+ global enterprises</p>
+    <div class="marquee">
+      <div class="marquee-track" id="proofTrack"></div>
+    </div>
+  </section>
+
+  <!-- ============ STAT STRIP ============ -->
+  <section class="stat-strip">
+    <div class="stat-strip-inner">
+      <div class="stat">
+        <span class="stat-num" data-count="50">0</span><span class="stat-suffix">+</span>
+        <p class="caption">country mandates on one API</p>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-count="15">0</span><span class="stat-suffix">K/min</span>
+        <p class="caption">e-invoices processed at peak</p>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-count="98.2" data-decimals="1">0</span><span class="stat-suffix">%</span>
+        <p class="caption">first-time submission accuracy</p>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-count="24">0</span><span class="stat-suffix">/7</span>
+        <p class="caption">dedicated local support</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MANDATE AT A GLANCE ============ -->
+  <section class="section" id="mandate">
+    <div class="section-head">
+      <p class="mono-label">UAE E-INVOICING MANDATE</p>
+      <h2 class="reveal-up">How things are done, reimagined.</h2>
+      <p class="body-large section-copy reveal-up">The UAE's shift to structured e-invoicing marks a fundamental change in how businesses generate, validate, and report invoices — building a finance function that's faster, more accurate, and ready for what comes next.</p>
+    </div>
+
+    <div class="capability-grid reveal-up">
+      <div class="capability-card">
+        <span class="model-tag">Model</span>
+        <p>Peppol-based 5-corner, decentralised continuous transaction control &amp; exchange (DCTCE).</p>
+      </div>
+      <div class="capability-card">
+        <span class="model-tag">Scope &amp; flow</span>
+        <p>B2B &amp; B2G only. Supplier → supplier's ASP → buyer's ASP → buyer, with data routed to the FTA.</p>
+      </div>
+      <div class="capability-card">
+        <span class="model-tag">Format</span>
+        <p>Structured XML/UBL using the UAE PINT&nbsp;AE data dictionary — no more PDF invoices.</p>
+      </div>
+    </div>
+
+    <!-- Compliance roadmap — rule-separated research-table list, not a card carousel -->
+    <div class="research-table" id="roadmapTable">
+      <div class="section-head section-head--left">
+        <p class="mono-label">COMPLIANCE ROADMAP</p>
+        <h3>From pilot to full enforcement</h3>
+      </div>
+      <div class="rt-row rt-row--head">
+        <span>Milestone</span><span>Status</span><span>Date</span>
+      </div>
+      <div class="rt-row reveal-up">
+        <span class="rt-title">Pilot program start</span>
+        <span class="pill-outline">Pilot</span>
+        <span class="rt-date">Jul 1, 2026</span>
+      </div>
+      <div class="rt-row reveal-up">
+        <span class="rt-title">Appoint ASP — large business</span>
+        <span class="pill-outline">Deadline</span>
+        <span class="rt-date">Jul 31, 2026</span>
+      </div>
+      <div class="rt-row reveal-up">
+        <span class="rt-title">Mandatory for large business</span>
+        <span class="pill-outline pill-outline--active">Mandatory</span>
+        <span class="rt-date">Jan 1, 2027</span>
+      </div>
+      <div class="rt-row reveal-up">
+        <span class="rt-title">Appoint ASP — smaller &amp; govt</span>
+        <span class="pill-outline">Deadline</span>
+        <span class="rt-date">Mar 31, 2027</span>
+      </div>
+      <div class="rt-row reveal-up">
+        <span class="rt-title">Mandatory — smaller business</span>
+        <span class="pill-outline pill-outline--active">Mandatory</span>
+        <span class="rt-date">Jul 1, 2027</span>
+      </div>
+      <div class="rt-row reveal-up">
+        <span class="rt-title">Mandatory — government</span>
+        <span class="pill-outline pill-outline--active">Mandatory</span>
+        <span class="rt-date">Oct 1, 2027</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW CLEARTAX HELPS — deep green band ============ -->
+  <section class="dark-feature-band">
+    <div class="section-head section-head--dark">
+      <p class="mono-label">HOW CLEARTAX HELPS</p>
+    </div>
+    <div class="helps-grid reveal-up">
+      <div class="helps-item">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M8 17l5 5 11-11" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="16" r="14" stroke="#fff" stroke-width="1"/></svg>
+        <h3>FTA and MoF-compliant ASP</h3>
+        <p>A pre-approved Accredited Service Provider that helps your business comply with the UAE's e-invoicing requirements — end to end.</p>
+      </div>
+      <div class="helps-item">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" stroke="#fff" stroke-width="1"/><ellipse cx="16" cy="16" rx="12" ry="5" stroke="#fff" stroke-width="1"/><path d="M4 16h24" stroke="#fff" stroke-width="1"/></svg>
+        <h3>Peppol-ready solutions</h3>
+        <p>Seamlessly integrates your business systems and the FTA portal, ensuring secure, compliant transmission of invoice data.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT CLEARTAX DELIVERS ============ -->
+  <section class="section" id="delivers">
+    <div class="section-head">
+      <p class="mono-label">WHAT CLEARTAX DELIVERS</p>
+      <h2 class="reveal-up">Five capabilities built for ease of compliance.</h2>
+    </div>
+    <div class="capability-grid capability-grid--5 reveal-up">
+      <article class="capability-card">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 21v-7M9 21V7M15 21v-5M21 21V3" stroke="#17171c" stroke-width="1.4" stroke-linecap="round"/></svg>
+        <h3>Advanced dashboards &amp; reports</h3>
+        <p>AI-driven insight via comprehensive MIS dashboards and customized reports.</p>
+        <a href="#" class="text-link">Learn more</a>
+      </article>
+      <article class="capability-card">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" stroke="#17171c" stroke-width="1.2" stroke-linejoin="round"/></svg>
+        <h3>Automated error management</h3>
+        <p>Real-time alerts, bulk resubmission, and guided correction tools.</p>
+        <a href="#" class="text-link">Learn more</a>
+      </article>
+      <article class="capability-card">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="8" cy="8" r="4" stroke="#17171c" stroke-width="1.2"/><circle cx="16" cy="16" r="4" stroke="#17171c" stroke-width="1.2"/><path d="M11 11l2 2" stroke="#17171c" stroke-width="1.2"/></svg>
+        <h3>End-to-end e-invoicing</h3>
+        <p>Issue, submit, and receive e-invoices from one place, fully tracked.</p>
+        <a href="#" class="text-link">Learn more</a>
+      </article>
+      <article class="capability-card">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#17171c" stroke-width="1.2"/><ellipse cx="12" cy="12" rx="9" ry="3.6" stroke="#17171c" stroke-width="1.2"/><path d="M3 12h18" stroke="#17171c" stroke-width="1.2"/></svg>
+        <h3>Peppol-ready by design</h3>
+        <p>Built to the UAE's Continuous Transaction Controls model.</p>
+        <a href="#" class="text-link">Learn more</a>
+      </article>
+      <article class="capability-card">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2l8 3.5v6c0 6-3.6 8.9-8 9.5-4.4-.6-8-3.5-8-9.5v-6L12 2z" stroke="#17171c" stroke-width="1.2" stroke-linejoin="round"/></svg>
+        <h3>Compliance assurance &amp; audit-ready</h3>
+        <p>Reconciliation that prevents VAT gaps and reduces audit risk.</p>
+        <a href="#" class="text-link">Learn more</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ SECURITY & TRUST ============ -->
+  <section class="section section--stone security">
+    <p class="mono-label">SECURITY AND TRUST, BUILT IN</p>
+    <div class="marquee marquee--pill">
+      <div class="marquee-track" id="complianceTrack"></div>
+    </div>
+  </section>
+
+  <!-- ============ RESOURCES — editorial: filter chips + research table ============ -->
+  <section class="section" id="resources">
+    <div class="section-head">
+      <p class="mono-label">RESOURCES</p>
+      <h2 class="reveal-up">The UAE e-invoicing resource centre.</h2>
+    </div>
+    <div class="filter-row reveal-up">
+      <span class="blog-chip blog-chip--active">All</span>
+      <span class="blog-chip">Whitepaper</span>
+      <span class="blog-chip">Case study</span>
+      <span class="blog-chip">Webinar</span>
+    </div>
+    <div class="research-table">
+      <div class="rt-row rt-row--head"><span>Title</span><span>Type</span><span>&nbsp;</span></div>
+      <div class="rt-row reveal-up">
+        <span class="rt-title">UAE e-Invoicing Readiness Checklist</span>
+        <span class="blog-chip">Whitepaper</span>
+        <a href="#" class="text-link">Read more</a>
+      </div>
+      <div class="rt-row reveal-up">
+        <span class="rt-title">Transforming e-invoicing for UAE businesses</span>
+        <span class="blog-chip">Case study</span>
+        <a href="#" class="text-link">Read more</a>
+      </div>
+      <div class="rt-row reveal-up">
+        <span class="rt-title">Global e-invoicing mandates, explained</span>
+        <span class="blog-chip">Webinar</span>
+        <a href="#" class="text-link">Read more</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PARTNERS ============ -->
+  <section class="section section--pale-green" id="partners">
+    <div class="partners-grid">
+      <div class="hero-photo-card reveal-up">
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="40" y="40" width="120" height="120" stroke="#17171c" stroke-width="1"/>
+          <path d="M40 100h120M100 40v120" stroke="#17171c" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="partners-panel reveal-up">
+        <p class="mono-label">PARTNERS</p>
+        <h2>Join the esteemed Partner Network</h2>
+        <p class="body-large">Turn referrals into revenue. Earn with every customer you bring to ClearTax — from advisory roundtables to reseller margins on go-live.</p>
+        <div class="pill-outline-row">
+          <span class="pill-outline">Preferred Advisory</span>
+          <span class="pill-outline">Reseller Margins</span>
+          <span class="pill-outline">Executive Roundtables</span>
+        </div>
+        <a href="#cta-form" class="btn btn--primary">Join our program</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS — unframed rows ============ -->
+  <section class="section testimonials">
+    <div class="section-head">
+      <p class="mono-label">CUSTOMER STORIES</p>
+      <h2 class="reveal-up">5,000+ enterprises spend less, reconcile faster.</h2>
+    </div>
+    <div class="t-list">
+      <article class="t-row reveal-up">
+        <span class="t-name">Retail Group</span>
+        <p class="body-large">"ClearTax's Peppol-ready platform cut our invoice reconciliation time dramatically while keeping every market compliant."</p>
+        <span class="caption t-attr">Head of Finance Ops, Retail</span>
+      </article>
+      <article class="t-row reveal-up">
+        <span class="t-name">Tire Manufacturing Co.</span>
+        <p class="body-large">"The ERP integration was seamless — we didn't touch a single existing workflow to go live across three geographies."</p>
+        <span class="caption t-attr">VP Tax &amp; Compliance, Manufacturing</span>
+      </article>
+      <article class="t-row reveal-up">
+        <span class="t-name">Logistics Partners</span>
+        <p class="body-large">"Error management alone paid for the platform — bulk resubmission turned a two-day fire drill into an afternoon."</p>
+        <span class="caption t-attr">Controller, Logistics</span>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ CTA FORM — dark navy band + form card ============ -->
+  <section class="section section--navy cta-band" id="cta-form">
+    <div class="cta-band-inner">
+      <div class="section-head section-head--dark section-head--left">
+        <p class="mono-label">TALK TO AN EXPERT</p>
+        <h2>Want a readiness walkthrough for your enterprise?</h2>
+        <p class="body-large">Book a live demo and see how ClearTax maps to your ERP, your timeline, and your mandate.</p>
+      </div>
+      <form class="contact-form-card" onsubmit="return false;">
+        <input type="text" placeholder="Full name" required>
+        <input type="tel" placeholder="Phone number" required>
+        <input type="text" placeholder="Company" required>
+        <input type="email" placeholder="Official email ID" required>
+        <button type="submit" class="btn btn--primary btn--block">Book a demo</button>
+        <p class="micro cta-disclaimer">By submitting, you agree to allow ClearTax representatives to contact you for a product demonstration.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ FAQ — unframed, rule-separated ============ -->
+  <section class="section" id="faq">
+    <div class="section-head">
+      <p class="mono-label">FAQ</p>
+      <h2 class="reveal-up">Questions, answered.</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">What is e-invoicing in the UAE?<span class="faq-plus"></span></button>
+        <div class="faq-a"><p>E-invoicing refers to the electronic generation, submission, and storage of invoices in a standardized digital format, supporting the UAE's move to a fully digitized tax system.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Why choose ClearTax for UAE e-invoicing?<span class="faq-plus"></span></button>
+        <div class="faq-a"><p>Easy ERP/POS integration, Peppol-compliant invoicing, automated error handling with real-time compliance checks, advanced dashboards, and 24/7 dedicated support.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">When does e-invoicing become mandatory?<span class="faq-plus"></span></button>
+        <div class="faq-a"><p>Mandatory from July 2026 for large businesses, phasing through smaller businesses and government entities by October 2027 — see the full roadmap above.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What happens if we don't comply?<span class="faq-plus"></span></button>
+        <div class="faq-a"><p>Non-compliance can result in FTA fines, rejected invoices that affect cash flow, and legal liability for repeated violations.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can ClearTax integrate with our custom ERP?<span class="faq-plus"></span></button>
+        <div class="faq-a"><p>Yes — flexible APIs integrate with any ERP, including custom systems, without disrupting existing operations.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can ClearTax handle bulk invoice volume?<span class="faq-plus"></span></button>
+        <div class="faq-a"><p>Yes — the platform is built to process up to 15,000 e-invoices per minute during peak load.</p></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER — newsletter, near-black ============ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-newsletter">
+      <p class="mono-label footer-newsletter-tag">STAY AHEAD OF THE MANDATE</p>
+      <h2 class="footer-newsletter-head">Compliance updates, straight to your inbox.</h2>
+      <form class="newsletter-form" onsubmit="return false;">
+        <input type="email" placeholder="Work email" required>
+        <button type="submit" aria-label="Subscribe">&rarr;</button>
+      </form>
+    </div>
+    <div class="footer-cols">
+      <div>
+        <h4 class="caption">Company</h4>
+        <a href="#">About us</a><a href="#">Contact us</a><a href="#">Partners</a><a href="#">Media &amp; press</a><a href="#">Customers</a>
+      </div>
+      <div>
+        <h4 class="caption">Products</h4>
+        <a href="#">E-invoicing — UAE</a><a href="#">E-invoicing — Saudi Arabia</a><a href="#">E-invoicing — Malaysia</a><a href="#">E-invoicing — Oman</a><a href="#">E-invoicing — India</a>
+      </div>
+      <div>
+        <h4 class="caption">Resources</h4>
+        <a href="#">E-invoicing integration</a><a href="#">Blog</a><a href="#">VAT calculator</a><a href="#">Case studies</a><a href="#">Whitepapers</a>
+      </div>
+      <div>
+        <h4 class="caption">Legal</h4>
+        <a href="#">Privacy policy</a><a href="#">Terms of use</a>
+      </div>
+    </div>
+    <div class="footer-bottom micro">
+      <p>Plot No: JLT-PH2-RET-R6, Jumeirah Lakes Towers, Dubai, United Arab Emirates</p>
+      <p>© 2026 ClearTax. All rights reserved. · ISO 27001 · AICPA SOC · SSL Secured</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
