@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ClearTax Global — Beyond e-Invoicing</title>
+<style>
+@font-face{font-family:'Nohemi';font-weight:400;src:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Fonts/Nohemi/Web-TT/Nohemi-Regular.woff2') format('woff2');}
+@font-face{font-family:'Nohemi';font-weight:500;src:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Fonts/Nohemi/Web-TT/Nohemi-Medium.woff2') format('woff2');}
+@font-face{font-family:'Nohemi';font-weight:600;src:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Fonts/Nohemi/Web-TT/Nohemi-SemiBold.woff2') format('woff2');}
+@font-face{font-family:'Nohemi';font-weight:700;src:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Fonts/Nohemi/Web-TT/Nohemi-Bold.woff2') format('woff2');}
+@font-face{font-family:'Nohemi';font-weight:800;src:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Fonts/Nohemi/Web-TT/Nohemi-ExtraBold.woff2') format('woff2');}
+@font-face{font-family:'Gilroy';font-weight:400;src:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Fonts/Gilroy - font/Gilroy-Regular.otf') format('opentype');}
+@font-face{font-family:'Gilroy';font-weight:500;src:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Fonts/Gilroy - font/Gilroy-Medium.otf') format('opentype');}
+@font-face{font-family:'Gilroy';font-weight:600;src:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Fonts/Gilroy - font/Gilroy-Semibold.otf') format('opentype');}
+@font-face{font-family:'Gilroy';font-weight:700;src:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Fonts/Gilroy - font/Gilroy-Bold.otf') format('opentype');}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+@page{size:794px 1123px;margin:0;}
+body{background:#ccc;}
+
+:root{
+  --ink:#111111;
+  --body:#2E2C29;
+  --muted:#9A968E;
+  --muted2:#B7B3AB;
+  --divider:#E7E3DC;
+  --card:#EFECE7;
+  --card-text:#5C584F;
+  --dark-bg:#17140F;
+  --dark-muted:#8A8680;
+}
+
+.page{
+  width:794px;height:1123px;position:relative;overflow:hidden;
+  background:#fff;
+  font-family:'Gilroy';
+}
+
+/* running header + footer, interior white pages */
+.eh{position:absolute;top:42px;left:56px;right:56px;display:flex;justify-content:flex-end;align-items:center;gap:10px;}
+.eh span{font-family:'Gilroy';font-weight:400;font-size:11px;color:var(--muted);}
+.eh .ham{font-size:13px;color:var(--muted);line-height:1;letter-spacing:1px;}
+.pnum{position:absolute;bottom:34px;right:56px;font-family:'Gilroy';font-weight:400;font-size:11px;color:var(--muted2);}
+.pnum.dark{color:var(--dark-muted);}
+
+.content{position:absolute;top:112px;left:56px;right:56px;bottom:70px;}
+
+.eyebrow{font-family:'Gilroy';font-weight:600;font-size:12px;color:var(--muted);margin-bottom:12px;}
+.h-big{font-family:'Nohemi';font-weight:800;font-size:38px;line-height:1.18;color:var(--ink);max-width:620px;}
+.h-sub{font-family:'Nohemi';font-weight:700;font-size:21px;line-height:1.32;color:var(--ink);margin-bottom:16px;max-width:600px;}
+.h-tag{font-family:'Gilroy';font-weight:500;font-size:13px;color:var(--muted);margin-top:10px;max-width:560px;line-height:1.5;}
+
+.p{font-family:'Gilroy';font-weight:400;font-size:14px;line-height:1.66;color:var(--body);margin-bottom:13px;}
+.p b{font-weight:600;color:var(--ink);}
+
+/* card list rows (used for every Dimension|Meaning style table) */
+.row-card{background:var(--card);border-radius:14px;padding:20px 24px;margin-bottom:12px;}
+.row-card .rt{font-family:'Nohemi';font-weight:700;font-size:16px;color:var(--ink);margin-bottom:6px;}
+.row-card .rd{font-family:'Gilroy';font-weight:400;font-size:13px;line-height:1.62;color:var(--card-text);}
+
+/* three-up teaser strip (intro page roadmap) */
+.teaser-row{display:flex;gap:12px;}
+.teaser-card{flex:1;background:var(--card);border-radius:14px;padding:18px 18px;}
+.teaser-card .tt{font-family:'Nohemi';font-weight:700;font-size:13.5px;color:var(--ink);margin-bottom:6px;}
+.teaser-card .td{font-family:'Gilroy';font-weight:400;font-size:11.5px;line-height:1.5;color:var(--card-text);}
+
+/* stat bar */
+.stat-row{display:flex;gap:12px;}
+.stat-card{flex:1;background:var(--card);border-radius:14px;padding:20px 16px;}
+.stat-num{font-family:'Nohemi';font-weight:800;font-size:25px;color:var(--ink);line-height:1.1;}
+.stat-lbl{font-family:'Gilroy';font-weight:400;font-size:11px;color:var(--card-text);margin-top:7px;line-height:1.4;}
+
+/* pill button */
+.pill{display:inline-block;background:#111;color:#fff;border-radius:999px;padding:13px 26px;font-family:'Gilroy';font-weight:600;font-size:13.5px;}
+
+/* quote card */
+.quote-card{background:var(--card);border-radius:14px;padding:22px 24px;margin-bottom:16px;}
+.quote-card .qt{font-family:'Nohemi';font-weight:700;font-size:16px;line-height:1.42;color:var(--ink);}
+
+/* bullet list */
+.blist{margin:0 0 14px 0;padding:0;}
+.blist li{list-style:none;position:relative;padding-left:16px;font-family:'Gilroy';font-size:13px;line-height:1.6;color:var(--body);margin-bottom:10px;}
+.blist li::before{content:'';position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--ink);}
+
+/* data table */
+.dtable{width:100%;border-collapse:collapse;}
+.dtable th{font-family:'Gilroy';font-weight:600;font-size:10px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);text-align:left;padding:0 8px 9px 0;border-bottom:1px solid var(--divider);}
+.dtable td{font-family:'Gilroy';font-weight:400;font-size:11.5px;line-height:1.55;color:var(--body);padding:15px 8px 15px 0;border-bottom:1px solid var(--divider);vertical-align:top;}
+.dtable td.country{font-family:'Nohemi';font-weight:700;font-size:12.5px;color:var(--ink);white-space:nowrap;}
+
+/* cert grid */
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;}
+.cert-card{background:var(--card);border-radius:14px;padding:16px 15px;}
+.cert-card .cn{font-family:'Nohemi';font-weight:700;font-size:13.5px;color:var(--ink);margin-bottom:6px;}
+.cert-card .cd{font-family:'Gilroy';font-weight:400;font-size:10.5px;line-height:1.48;color:var(--card-text);}
+
+/* numbered principles */
+.num-row{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid var(--divider);}
+.num-row:last-child{border-bottom:none;}
+.num-row .nn{font-family:'Nohemi';font-weight:800;font-size:19px;color:#CDC9C0;min-width:34px;}
+.num-row .nb{flex:1;}
+.num-row .nt{font-family:'Nohemi';font-weight:700;font-size:15px;color:var(--ink);margin-bottom:5px;}
+.num-row .nd{font-family:'Gilroy';font-weight:400;font-size:12.5px;line-height:1.6;color:var(--body);}
+
+/* section label chip on divider-lite pages */
+.section-tag{font-family:'Gilroy';font-weight:600;font-size:11px;color:var(--muted);letter-spacing:.02em;margin-bottom:8px;}
+
+/* dark contents page */
+.page.dark{background:var(--dark-bg);color:#fff;}
+.dark .eh span, .dark .eh .ham{color:var(--dark-muted);}
+.toc-title{font-family:'Nohemi';font-weight:800;font-size:52px;color:#F5F2ED;line-height:1.1;}
+.toc-list{margin-top:56px;}
+.toc-row{display:flex;gap:22px;align-items:baseline;padding:15px 0;border-bottom:1px solid rgba(255,255,255,0.09);}
+.toc-num{font-family:'Gilroy';font-weight:400;font-size:12.5px;color:var(--dark-muted);min-width:26px;}
+.toc-name{font-family:'Nohemi';font-weight:600;font-size:16.5px;color:#F0EDE7;}
+
+/* cover */
+.cover{background:linear-gradient(160deg,#132257 0%,#5C2C81 30%,#C13656 60%,#E97A3E 100%);position:relative;color:#fff;}
+.cover::after{
+  content:'';position:absolute;inset:0;opacity:.22;mix-blend-mode:overlay;pointer-events:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size:300px 300px;
+}
+.cover .brandmark{position:absolute;top:44px;left:56px;height:20px;z-index:2;}
+.cover .cov-eyebrow{position:absolute;top:400px;left:56px;right:56px;font-family:'Gilroy';font-weight:500;font-size:14px;color:rgba(255,255,255,0.85);z-index:2;}
+.cover .cov-title{position:absolute;top:430px;left:56px;right:56px;font-family:'Nohemi';font-weight:700;font-size:37px;line-height:1.22;color:#fff;z-index:2;}
+.cover .cov-sub{position:absolute;top:620px;left:56px;right:100px;font-family:'Gilroy';font-weight:400;font-size:13.5px;line-height:1.6;color:rgba(255,255,255,0.78);z-index:2;}
+.cover .orb{position:absolute;bottom:-90px;left:50%;transform:translateX(-50%);z-index:1;opacity:.9;}
+
+/* closing gradient panel */
+.closepanel{position:absolute;left:56px;right:56px;bottom:70px;top:auto;background:linear-gradient(160deg,#132257 0%,#5C2C81 35%,#C13656 65%,#E97A3E 100%);border-radius:18px;padding:36px 34px;color:#fff;overflow:hidden;}
+.closepanel::after{
+  content:'';position:absolute;inset:0;opacity:.18;mix-blend-mode:overlay;pointer-events:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n2'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n2)'/></svg>");
+  background-size:300px 300px;
+}
+.closepanel .ct{font-family:'Nohemi';font-weight:700;font-size:24px;line-height:1.3;margin-bottom:16px;position:relative;z-index:2;max-width:520px;}
+.closepanel .cp{font-family:'Gilroy';font-weight:400;font-size:14px;line-height:1.65;color:rgba(255,255,255,0.85);margin-bottom:26px;position:relative;z-index:2;max-width:560px;}
+.closepanel .pill{background:#fff;color:#111;position:relative;z-index:2;}
+.closepanel .cstat-row{display:flex;gap:12px;margin-bottom:26px;position:relative;z-index:2;}
+.closepanel .cstat-card{flex:1;background:rgba(255,255,255,0.14);border-radius:12px;padding:16px 14px;}
+.closepanel .cstat-num{font-family:'Nohemi';font-weight:800;font-size:22px;color:#fff;}
+.closepanel .cstat-lbl{font-family:'Gilroy';font-weight:400;font-size:10.5px;color:rgba(255,255,255,0.8);margin-top:6px;line-height:1.4;}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — COVER -->
+<section class="page cover">
+  <img class="brandmark" src="file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Logo/Logo.svg">
+  <div class="cov-eyebrow">ClearTax Global</div>
+  <div class="cov-title">Beyond e-Invoicing: Scale, Security, and Enterprise-Grade Support</div>
+  <div class="cov-sub">The infrastructure that earns CFO, Tax, and IT sign-off — before a mandate goes live, not after.</div>
+  <svg class="orb" width="560" height="380" viewBox="0 0 560 380" fill="none">
+    <g transform="translate(280,190)" stroke="rgba(255,255,255,0.55)" stroke-width="1.1" fill="none">
+      <ellipse rx="150" ry="60"/>
+      <ellipse rx="150" ry="60" transform="rotate(22.5)"/>
+      <ellipse rx="150" ry="60" transform="rotate(45)"/>
+      <ellipse rx="150" ry="60" transform="rotate(67.5)"/>
+      <ellipse rx="150" ry="60" transform="rotate(90)"/>
+      <ellipse rx="150" ry="60" transform="rotate(112.5)"/>
+      <ellipse rx="150" ry="60" transform="rotate(135)"/>
+      <ellipse rx="150" ry="60" transform="rotate(157.5)"/>
+      <circle r="150" stroke="rgba(255,255,255,0.35)"/>
+    </g>
+  </svg>
+</section>
+
+<!-- PAGE 2 — CONTENTS -->
+<section class="page dark">
+  <div class="eh"><span>ClearTax Global — Beyond e-Invoicing</span><span class="ham">&#9776;</span></div>
+  <div class="content" style="top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;">
+    <div class="toc-title">Contents</div>
+    <div class="toc-list">
+      <div class="toc-row"><span class="toc-num">03</span><span class="toc-name">Introduction — Why Three Functions Must Sign Off</span></div>
+      <div class="toc-row"><span class="toc-num">04</span><span class="toc-name">For the CFO — Control Architecture &amp; Vendor Risk</span></div>
+      <div class="toc-row"><span class="toc-num">08</span><span class="toc-name">For the Tax Head — Reconciliation &amp; Audit Defence</span></div>
+      <div class="toc-row"><span class="toc-num">10</span><span class="toc-name">The IT and CIO Angle — Uptime, Security &amp; Ecosystem</span></div>
+      <div class="toc-row"><span class="toc-num">13</span><span class="toc-name">Global Compliance Coverage by Jurisdiction</span></div>
+      <div class="toc-row"><span class="toc-num">14</span><span class="toc-name">The Architecture Decision</span></div>
+    </div>
+  </div>
+  <div class="pnum dark">02</div>
+</section>
+
+<!-- PAGE 3 — INTRODUCTION -->
+<section class="page">
+  <div class="eh"><span>ClearTax Global — Beyond e-Invoicing</span><span class="ham">&#9776;</span></div>
+  <div class="content">
+    <div class="eyebrow">Introduction</div>
+    <div class="h-big" style="margin-bottom:26px;">Why three functions now have to sign off on one decision</div>
+    <p class="p">e-Invoicing compliance is no longer a finance-only decision. By the time a mandate goes live, three functions need to have signed off: the CFO who owns the control architecture, the tax head who will defend the numbers in an audit, and the CIO who must guarantee the platform stays online during a real-time clearance cycle.</p>
+    <p class="p">What follows is a direct answer to each of those three perspectives: what ClearTax has built, what the independent certifications actually mean, and why the infrastructure layer matters as much as the compliance layer when mandates arrive at scale.</p>
+    <div class="stat-row" style="margin-top:36px;">
+      <div class="stat-card"><div class="stat-num">1Bn+</div><div class="stat-lbl">e-invoicing transactions annually</div></div>
+      <div class="stat-card"><div class="stat-num">5,000+</div><div class="stat-lbl">Enterprise clients globally</div></div>
+      <div class="stat-card"><div class="stat-num">50+</div><div class="stat-lbl">Countries covered</div></div>
+      <div class="stat-card"><div class="stat-num">99.9%</div><div class="stat-lbl">Platform uptime SLA</div></div>
+    </div>
+    <div class="eyebrow" style="margin-top:32px;">What follows</div>
+    <div class="teaser-row">
+      <div class="teaser-card"><div class="tt">For the CFO</div><div class="td">Control architecture, governance obligations, and the vendor risk questions that matter.</div></div>
+      <div class="teaser-card"><div class="tt">For the Tax Head</div><div class="td">Reconciliation you can rely on, audit trails you can defend, and data that works for you.</div></div>
+      <div class="teaser-card"><div class="tt">For the IT &amp; CIO</div><div class="td">Uptime, latency, data residency, encryption, and the partner ecosystem.</div></div>
+    </div>
+  </div>
+  <div class="pnum">03</div>
+</section>
+
+<!-- PAGE 4 — FOR THE CFO opener + Board-grade controls -->
+<section class="page">
+  <div class="eh"><span>ClearTax Global — Beyond e-Invoicing</span><span class="ham">&#9776;</span></div>
+  <div class="content">
+    <div class="eyebrow">Section 01 — For the CFO</div>
+    <div class="h-big" style="font-size:30px;">Your control architecture, your governance obligations, and the vendor risk questions that matter.</div>
+    <p class="p" style="margin-top:18px;">The moment an invoice is submitted to a government clearance platform, the tax authority has real-time visibility into your cash flows, your supplier relationships, and your financial controls. That is not an IT event — it is a change to the governance structure of your finance function. CFOs who treat this as an IT procurement will build the plumbing; CFOs who treat it as a control architecture decision will build something that holds up under audit, under board scrutiny, and under the pressure of a mandate going live simultaneously in six countries.</p>
+    <div class="h-sub" style="margin-top:14px;">What board-grade controls look like in an e-Invoicing platform</div>
+    <div class="row-card"><div class="rt">Data isolation</div><div class="rd">Your compliance data, GL records, and audit history never share infrastructure with another organisation. Tenant isolation is architectural, not policy-based.</div></div>
+    <div class="row-card"><div class="rt">Human approval checkpoints</div><div class="rd">No submission reaches a tax authority without a human approval step. The platform drafts and validates; your team authorises. The AI assists — it does not act unilaterally.</div></div>
+    <div class="row-card"><div class="rt">Immutable audit trails</div><div class="rd">Every transaction carries a tamper-evident log from creation through government acknowledgement. The record cannot be altered retroactively.</div></div>
+    <div class="row-card"><div class="rt">Books-to-authority reconciliation</div><div class="rd">Your general ledger and the government's copy of every invoice are continuously reconciled. Discrepancies surface before an auditor finds them.</div></div>
+    <div class="row-card"><div class="rt">Role-based access</div><div class="rd">Approval, submission, and audit-view functions are separated. Who can see, who can act, and who can approve are distinct and logged.</div></div>
+  </div>
+  <div class="pnum">04</div>
+</section>
+
+<!-- PAGE 5 — Vendor risk + consolidation -->
+<section class="page">
+  <div class="eh"><span>ClearTax Global — Beyond e-Invoicing</span><span class="ham">&#9776;</span></div>
+  <div class="content">
+    <div class="h-sub">The vendor risk question CFOs actually need to ask</div>
+    <p class="p">Most vendor evaluations focus on format coverage and ERP integration. Those matter. But the question that distinguishes a good implementation from a dangerous one is simpler:</p>
+    <div class="quote-card"><div class="qt">"When the mandate changes at 48 hours' notice — and it will — who updates your platform? How fast does it happen, and what is their contractual obligation if they are late?"</div></div>
+    <ul class="blist">
+      <li>A vendor without government accreditation means you are using an unrecognised platform. In the UAE, using a non-accredited Peppol Access Point creates penalties that fall on you, not the vendor.</li>
+      <li>A vendor whose certifications lapsed creates compliance exposure that is invisible until an auditor asks for documentation. ISO 27001 and SOC 2 Type II require annual renewal and an independent re-audit.</li>
+      <li>A vendor whose support is offshore and pooled means that when a real-time clearance rejection cascades into a payment hold at midnight, no one with authority to fix it is reachable.</li>
+    </ul>
+    <div class="h-sub" style="margin-top:8px;">Why consolidation is the CFO's strongest risk move</div>
+    <p class="p">Managing e-invoicing compliance through five fragmented country-specific vendors does not reduce risk. It multiplies it. Each vendor relationship is a separate SLA, a separate audit trail, a separate escalation path, and a separate failure point.</p>
+    <p class="p">A consolidated global compliance platform — one contract, one dashboard, one SLA to hold — gives the CFO a single point of accountability. When France, Poland, the UAE, and Malaysia are all live simultaneously, that accountability structure is not a nice-to-have. It is the only model that survives board scrutiny.</p>
+  </div>
+  <div class="pnum">05</div>
+</section>
+
+<!-- PAGE 6 — Penalty table part 1 -->
+<section class="page">
+  <div class="eh"><span>ClearTax Global — Beyond e-Invoicing</span><span class="ham">&#9776;</span></div>
+  <div class="content">
+    <div class="h-sub">Country-wise penalty and financial exposure</div>
+    <p class="p" style="margin-bottom:20px;">Non-compliance with e-invoicing mandates can result in financial penalties, VAT recovery challenges, and operational disruption. The table below highlights potential exposure across key jurisdictions.</p>
+    <table class="dtable">
+      <tr><th style="width:14%;">Country</th><th style="width:40%;">Per-invoice fine / penalty</th><th style="width:26%;">VAT credit denial risk</th><th style="width:20%;">Business closure / blocking threshold</th></tr>
+      <tr><td class="country">UAE</td><td>AED 100 per non-compliant invoice, capped at AED 5,000/month. Failure to implement: AED 5,000/month.</td><td>High — VAT substantiation risk where invoices bypass the mandated framework.</td><td>High — inability to use an accredited provider can prevent compliant invoice exchange.</td></tr>
+      <tr><td class="country">France</td><td>€50 per non-compliant invoice, capped at €15,000/year.</td><td>High — input VAT recovery may be challenged for non-compliant invoicing.</td><td>High — invoices must flow through accredited PDP infrastructure once mandated.</td></tr>
+      <tr><td class="country">Germany</td><td>Up to €5,000 per offence for failure to issue compliant e-invoices.</td><td>High — loss or delay of input VAT deduction is an explicit consequence.</td><td>Medium — invoice rejection by customers/authorities rather than direct shutdown.</td></tr>
+      <tr><td class="country">Saudi Arabia</td><td>SAR 5,000–50,000 per violation for non-issuance, non-archiving, modification, and related offences.</td><td>High — VAT audit exposure and invoice validity issues.</td><td>Very High — clearance failure means invoices are not legally validated via ZATCA.</td></tr>
+      <tr><td class="country">Poland</td><td>Up to 100% of VAT shown on the invoice; where VAT is not shown, up to 18.7% of invoice value.</td><td>Very High — directly linked to VAT settlement and deduction rights.</td><td>Very High — mandatory KSeF submission required for compliant issuance.</td></tr>
+      <tr><td class="country">Spain</td><td>Administrative fines under tax compliance rules; no widely published per-invoice penalty yet for the upcoming mandate.</td><td>Medium–High</td><td>Medium</td></tr>
+      <tr><td class="country">UK</td><td>No mandatory B2B e-invoicing regime currently. Standard VAT invoice penalties apply.</td><td>Low–Medium</td><td>Low</td></tr>
+    </table>
+  </div>
+  <div class="pnum">06</div>
+</section>
+
+<!-- PAGE 7 — Penalty table part 2 + disclaimer -->
+<section class="page">
+  <div class="eh"><span>ClearTax Global — Beyond e-Invoicing</span><span class="ham">&#9776;</span></div>
+  <div class="content">
+    <div class="eyebrow">Country-wise penalty and financial exposure, continued</div>
+    <table class="dtable">
+      <tr><th style="width:14%;">Country</th><th style="width:40%;">Per-invoice fine / penalty</th><th style="width:26%;">VAT credit denial risk</th><th style="width:20%;">Business closure / blocking threshold</th></tr>
+      <tr><td class="country">Netherlands</td><td>No broad mandatory domestic B2B e-invoicing penalties currently.</td><td>Low–Medium</td><td>Low</td></tr>
+      <tr><td class="country">Ireland</td><td>No confirmed domestic B2B e-invoicing penalty framework currently.</td><td>Low–Medium</td><td>Low</td></tr>
+      <tr><td class="country">Singapore</td><td>No mandatory nationwide e-invoicing penalty regime.</td><td>Low</td><td>Low</td></tr>
+      <tr><td class="country">Australia</td><td>No mandatory nationwide B2B e-invoicing penalty regime.</td><td>Low</td><td>Low</td></tr>
+      <tr><td class="country">Philippines</td><td>Tax Code penalties apply for non-compliance; enforcement is generally tax-administration based rather than fixed per invoice.</td><td>Medium</td><td>Low–Medium</td></tr>
+      <tr><td class="country">Oman</td><td>OMR 1,000–10,000 for failure to issue a compliant e-invoice, wrong format, missing UUID, QR code, or digital signature.</td><td>Pending regulatory confirmation</td><td>Pending regulatory confirmation</td></tr>
+      <tr><td class="country">Qatar</td><td>Uncleared B2B/B2G invoices are not legally valid.</td><td>Pending regulatory confirmation</td><td>Pending regulatory confirmation</td></tr>
+    </table>
+    <div class="row-card" style="margin-top:22px;"><div class="rd">Disclaimer: Penalty frameworks, enforcement practices, and VAT treatment continue to evolve across many jurisdictions. The information above is for general informational purposes only and does not constitute legal or tax advice. Organisations should consult local regulations and qualified advisors to validate current requirements.</div></div>
+  </div>
+  <div class="pnum">07</div>
+</section>
+
+<!-- PAGE 8 — FOR THE TAX HEAD opener + Tax-grade controls -->
+<section class="page">
+  <div class="eh"><span>ClearTax Global — Beyond e-Invoicing</span><span class="ham">&#9776;</span></div>
+  <div class="content">
+    <div class="eyebrow">Section 02 — For the Tax Head</div>
+    <div class="h-big" style="font-size:30px;">Reconciliation you can rely on, audit trails you can defend, and data that works for you.</div>
+    <div class="h-sub" style="margin-top:22px;">Your filing calendar is gone. Real-time enforcement is your new operating environment.</div>
+    <p class="p">In the legacy model, tax compliance happened in cycles — invoice in January, VAT return in February, audit query years later. In a clearance model, that window is gone. The government has your invoice data the moment it is issued. India is sending compliance notices algorithmically, 20 times more frequently than three years ago. Saudi Arabia's ZATCA escalates fines automatically. The reconciliation that used to happen quarterly now needs to be continuous.</p>
+    <div class="h-sub" style="margin-top:14px;">What tax-grade controls require of the platform</div>
+    <div class="row-card"><div class="rt">End-to-end transaction logs</div><div class="rd">Every invoice from ERP to government acknowledgement is logged with timestamps and status codes.</div></div>
+    <div class="row-card"><div class="rt">Books-to-authority reconciliation</div><div class="rd">Your declared output VAT matches the government's copy of every invoice. Mismatches surface in the platform, not in a notice.</div></div>
+    <div class="row-card"><div class="rt">GL match and transactional intelligence</div><div class="rd">Invoice data is matched against GL entries automatically. Unmatched items are flagged before filing.</div></div>
+    <div class="row-card"><div class="rt">Input VAT credit recovery</div><div class="rd">Structured invoice data enables automated identification of missed or under-claimed input VAT credits.</div></div>
+    <div class="row-card"><div class="rt">Role-based access and approval</div><div class="rd">Reviewer, approver, and submitter roles are separated. Every approval is logged with a timestamp and user identity.</div></div>
+  </div>
+  <div class="pnum">08</div>
+</section>
+
+<!-- PAGE 9 — Transactional Intelligence Playbook -->
+<section class="page">
+  <div class="eh"><span>ClearTax Global — Beyond e-Invoicing</span><span class="ham">&#9776;</span></div>
+  <div class="content">
+    <div class="h-sub">The transactional intelligence playbook</div>
+    <p class="p">Once e-invoicing infrastructure is live and government-validated invoice data is flowing in real time, that data becomes a financial asset — not just a compliance record.</p>
+    <div class="row-card"><div class="rt">Pre-filled VAT returns</div><div class="rd">Government-validated invoice data populates your VAT return automatically. Italy's SDI model and India's trajectory both point here — filing becomes verification, not reconstruction.</div></div>
+    <div class="row-card"><div class="rt">Working capital optimisation</div><div class="rd">Validated invoice data supports dynamic discounting and supply chain financing. In Mexico, SMEs used e-invoice data to access early payment programmes.</div></div>
+    <div class="row-card"><div class="rt">Predictive audit defence</div><div class="rd">Transaction patterns are analysed before submission. Likely rejection triggers and cross-match anomalies are flagged and resolved before they reach the authority.</div></div>
+    <div class="row-card"><div class="rt">Missed credit recovery</div><div class="rd">Structured data enables automated scanning for input VAT credits that were missed or incorrectly claimed — recoverable revenue, not historical trivia.</div></div>
+  </div>
+  <div class="pnum">09</div>
+</section>
+
+<!-- PAGE 10 — IT/CIO opener + Infra specs -->
+<section class="page">
+  <div class="eh"><span>ClearTax Global — Beyond e-Invoicing</span><span class="ham">&#9776;</span></div>
+  <div class="content">
+    <div class="eyebrow">Section 03 — The IT and CIO Angle</div>
+    <div class="h-big" style="font-size:28px;">The platform has to work. Every transaction. In real time. Across every jurisdiction.</div>
+    <p class="p" style="margin-top:16px;">In a clearance model, the platform is in the critical path of every invoice. If it is down, invoices are not issued, suppliers are not paid, customers do not receive goods. The compliance platform is now operational infrastructure — not a periodic filing tool.</p>
+    <div class="h-sub" style="margin-top:10px;">Infrastructure specifications</div>
+    <div class="row-card"><div class="rt">Uptime SLA</div><div class="rd">99.9% platform uptime SLA — contractually committed, not aspirational.</div></div>
+    <div class="row-card"><div class="rt">Cloud infrastructure &amp; data residency</div><div class="rd">Hosted across AWS, OCI, or GCP with local region deployment per jurisdiction. Each region runs on dedicated, sovereign infrastructure — your UAE data stays in the UAE, your India data stays in India — with no cross-border transfer under normal operations.</div></div>
+    <div class="row-card"><div class="rt">Encryption</div><div class="rd">Data encrypted at rest and in transit. All API connections use token-based authentication. SFTP transfers are encrypted.</div></div>
+    <div class="row-card"><div class="rt">Latency</div><div class="rd">Real-time validation and government submission built for clearance-model speed — approval-to-acknowledgement within seconds, not minutes.</div></div>
+    <div class="row-card"><div class="rt">Disaster recovery &amp; penetration testing</div><div class="rd">ISO 22301:2019 certified business continuity with tested recovery plans (defined RTO/RPO). Independent third-party VAPT conducted — not self-assessed — with results documented and available under NDA.</div></div>
+  </div>
+  <div class="pnum">10</div>
+</section>
+
+<!-- PAGE 11 — Security certifications -->
+<section class="page">
+  <div class="eh"><span>ClearTax Global — Beyond e-Invoicing</span><span class="ham">&#9776;</span></div>
+  <div class="content">
+    <div class="h-sub">Security certifications: what each one actually means</div>
+    <p class="p" style="margin-bottom:18px;">Every certification listed here was issued by an independent auditing or accreditation body. Each requires evidence — not documentation.</p>
+    <div class="cert-grid" style="margin-bottom:11px;">
+      <div class="cert-card"><div class="cn">ISO 27001:2022</div><div class="cd">Information security management, 2022 edition — independently audited.</div></div>
+      <div class="cert-card"><div class="cn">SOC 2 Type II</div><div class="cd">Controls tested in operation over time — not just designed.</div></div>
+      <div class="cert-card"><div class="cn">ISO 22301:2019</div><div class="cd">Business continuity — tested recovery plans for disruptions.</div></div>
+    </div>
+    <div class="cert-grid" style="margin-bottom:11px;">
+      <div class="cert-card"><div class="cn">SAMA</div><div class="cd">Saudi Arabian Monetary Authority cybersecurity framework — KSA operations.</div></div>
+      <div class="cert-card"><div class="cn">RMiT</div><div class="cd">Bank Negara Malaysia risk management framework — Malaysia operations.</div></div>
+      <div class="cert-card"><div class="cn">GDPR</div><div class="cd">EU data protection law — privacy by design, SCCs available.</div></div>
+    </div>
+    <div class="cert-grid" style="margin-bottom:22px;">
+      <div class="cert-card"><div class="cn">FTA Compliant</div><div class="cd">UAE Federal Tax Authority — VAT data handling standards.</div></div>
+      <div class="cert-card"><div class="cn">IRP Designation</div><div class="cd">Indian government Invoice Registration Portal — government infrastructure trust.</div></div>
+      <div class="cert-card"><div class="cn">VAPT Certified</div><div class="cd">Independent penetration testing — not self-assessed.</div></div>
+    </div>
+    <div class="row-card"><div class="rt">What ISO 27001 and SOC 2 Type II actually prove</div><div class="rd">ISO 27001 requires independent auditors to verify that controls across people, processes, and technology are working — not just documented. SOC 2 Type II tests whether security, availability, and confidentiality controls actually operate consistently over a sustained period of time. These are the same standards your bank and your Big 4 auditor hold themselves to. Ask any vendor for their current certificate, not just a claim.</div></div>
+  </div>
+  <div class="pnum">11</div>
+</section>
+
+<!-- PAGE 12 — ERP integration + on-the-ground support -->
+<section class="page">
+  <div class="eh"><span>ClearTax Global — Beyond e-Invoicing</span><span class="ham">&#9776;</span></div>
+  <div class="content">
+    <div class="h-sub">ERP integration and partner ecosystem</div>
+    <div class="row-card"><div class="rt">SAP integration</div><div class="rd">SAP-certified native connector covering S/4HANA and legacy ECC — pre-built, not custom-built per implementation.</div></div>
+    <div class="row-card"><div class="rt">Oracle &amp; Microsoft Dynamics 365</div><div class="rd">Oracle-validated connector for Fusion Cloud and E-Business Suite; native Dynamics 365 Finance connector for cloud and on-premises deployments.</div></div>
+    <div class="row-card"><div class="rt">Non-ERP sources</div><div class="rd">POS systems, subscription billing, SaaS invoicing, and custom systems connected via REST API — no transaction is invisible.</div></div>
+    <div class="h-sub" style="margin-top:20px;">On-the-ground support</div>
+    <div class="row-card"><div class="rt">In-region teams</div><div class="rd">Local teams in key jurisdictions — not offshore-only coverage. When ZATCA releases a schema update, the people who understand it are in the region.</div></div>
+    <div class="row-card"><div class="rt">Regulatory update SLA</div><div class="rd">Schema and format updates are deployed within 48 hours of a government mandate change. The vendor absorbs the update cycle — not your IT team.</div></div>
+    <div class="row-card"><div class="rt">100+ in-house tax experts, 7 global offices</div><div class="rd">Tax specialists who understand regulatory interpretation and local enforcement patterns, with physical presence in the markets you operate in.</div></div>
+  </div>
+  <div class="pnum">12</div>
+</section>
+
+<!-- PAGE 13 — Global compliance coverage -->
+<section class="page">
+  <div class="eh"><span>ClearTax Global — Beyond e-Invoicing</span><span class="ham">&#9776;</span></div>
+  <div class="content">
+    <div class="eyebrow">Section 04 — Global Compliance Coverage</div>
+    <div class="h-sub">Where ClearTax is certified, accredited, or designated by government bodies</div>
+    <table class="dtable">
+      <tr><th style="width:22%;">Country / Region</th><th>Active certifications and designations</th></tr>
+      <tr><td class="country">India</td><td>ISO 27001:2022 · SOC 2 Type II · IRP Designation (GSTN/NIC) · GSP / ASP / IRP · DPDP Act 2023 aligned</td></tr>
+      <tr><td class="country">UAE</td><td>ISO 27001:2022 · ISO 22301:2019 · FTA Compliant · UAE PDPL aligned · Peppol Access Point certified</td></tr>
+      <tr><td class="country">Saudi Arabia</td><td>ISO 27001:2022 · SOC 2 Type II · SAMA Compliant · KSA PDPL aligned · Local data hosting · ZATCA accredited</td></tr>
+      <tr><td class="country">Malaysia</td><td>ISO 27001:2022 · SOC 2 Type II · RMiT Compliant · Local data hosting</td></tr>
+      <tr><td class="country">Poland / Germany</td><td>ISO 27001:2022 · KSeF integration · XRechnung / Peppol BIS formats supported</td></tr>
+      <tr><td class="country">France</td><td>ISO 27001:2022 · SOC 2 Type II · GDPR aligned · DGFiP PA registration · Peppol Access Point certified</td></tr>
+      <tr><td class="country">Belgium</td><td>ISO 27001:2022 · SOC 2 Type II · GDPR aligned · Peppol mandate compliant · FPS Finance listed · Standard Contractual Clauses available</td></tr>
+      <tr><td class="country">Global (50+)</td><td>Unified compliance layer across all jurisdictions. New mandate activation is configuration, not a new IT project.</td></tr>
+    </table>
+  </div>
+  <div class="pnum">13</div>
+</section>
+
+<!-- PAGE 14 — Architecture Decision + Competitive Advantage -->
+<section class="page">
+  <div class="eh"><span>ClearTax Global — Beyond e-Invoicing</span><span class="ham">&#9776;</span></div>
+  <div class="content">
+    <div class="eyebrow">Section 05 — The Architecture Decision</div>
+    <div class="h-sub" style="max-width:none;">Three things that should be architecturally true of any platform you select</div>
+    <div class="num-row">
+      <div class="nn">01</div>
+      <div class="nb"><div class="nt">Your data is yours alone</div><div class="nd">The system should be architecturally designed so your compliance data, GL records, and notice history never mix with another company's data. Tenant isolation must be structural — not a configuration toggle or a contractual promise that is hard to verify.</div></div>
+    </div>
+    <div class="num-row">
+      <div class="nn">02</div>
+      <div class="nb"><div class="nt">It meets the standards your auditors already recognise</div><div class="nd">SOC 2 Type II certified and ISO 27001 compliant — the same bar your bank and your Big 4 auditor hold themselves to. Ask for the current certificate, the scope of the audit, and the date of the last independent test.</div></div>
+    </div>
+    <div class="num-row">
+      <div class="nn">03</div>
+      <div class="nb"><div class="nt">Nothing reaches the tax authority without a human approving it</div><div class="nd">Before any submission reaches a government platform, your team reviews and approves it. The AI drafts, validates, and flags — your people authorise. In several jurisdictions, this is a governance requirement, not just an operational preference.</div></div>
+    </div>
+    <div class="h-sub" style="margin-top:8px;">The competitive advantage goes to organisations that treat this as infrastructure</div>
+    <p class="p">The CFOs who will look back on 2026–2030 with confidence are not the ones who raced to compliance. They are the ones who built compliance infrastructure that became a control layer, an audit defence capability, and a data asset. That requires a platform that earns sign-off from all three functions — not just the one holding the budget.</p>
+  </div>
+  <div class="pnum">14</div>
+</section>
+
+<!-- PAGE 15 — Closing -->
+<section class="page">
+  <div class="eh"><span>ClearTax Global — Beyond e-Invoicing</span><span class="ham">&#9776;</span></div>
+  <div class="content" style="bottom:0;">
+    <div class="eyebrow">Closing</div>
+    <div class="h-sub">A CFO who signs off on governance. A Tax Head who can defend every transaction. A CIO who knows the platform will not go down.</div>
+    <p class="p">ClearTax is built for that standard — a platform that earns sign-off from all three functions at once, not just the one holding the budget.</p>
+    <div class="closepanel" style="position:relative;left:0;right:0;bottom:0;top:auto;margin-top:30px;">
+      <div class="ct">Over a billion transactions annually.</div>
+      <div class="cp">5,000+ enterprises across 50+ countries. Government-designated infrastructure in India. ZATCA-accredited in Saudi Arabia. SOC 2 Type II and ISO 27001 independently audited. In-region teams in every market we operate.</div>
+      <div class="cstat-row">
+        <div class="cstat-card"><div class="cstat-num">1Bn+</div><div class="cstat-lbl">Transactions annually</div></div>
+        <div class="cstat-card"><div class="cstat-num">5,000+</div><div class="cstat-lbl">Enterprise clients</div></div>
+        <div class="cstat-card"><div class="cstat-num">50+</div><div class="cstat-lbl">Countries covered</div></div>
+        <div class="cstat-card"><div class="cstat-num">99.9%</div><div class="cstat-lbl">Uptime SLA</div></div>
+      </div>
+      <div class="pill">Request a briefing for your CFO, Tax, or IT leadership team</div>
+    </div>
+  </div>
+  <div class="pnum">15</div>
+</section>
+
+</body>
+</html>
