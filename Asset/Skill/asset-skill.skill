@@ -112,12 +112,53 @@ Use pull-quotes, stat-strips, and icon-badge cards as the go-to tools for balanc
 
 Tools used throughout: Google Chrome headless (`--screenshot` and `--print-to-pdf`), `pdfinfo`/`pdftoppm` (poppler, for inspecting and rasterizing the output), Python3 + PIL (for splitting a stacked multi-page QA screenshot into per-page images).
 
-## Editable Figma Export (SVG)
+## Editable Figma Export
 
-If the user wants the asset as something they can drop into Figma and edit — not just view — the format choice matters:
+If the user wants the asset as something they can drop into Figma and edit — not just view — the format choice matters, and there are three tiers depending on how much editability is actually needed.
 
-- **If retypable text isn't required**, hand them the per-page PDF (split the final PDF with `pdfseparate`). Figma's native PDF import reads the PDF's real text objects directly and creates genuine editable text layers, as long as the source PDF has real embedded fonts (Chrome's `--print-to-pdf` output qualifies — verify with `pdftotext`). This is the cheap option and needs no extra tooling.
-- **Do not** route through `pdftocairo -svg` for this purpose — it outlines every glyph into vector paths (`<use>`/`<path>` in `<defs>`, zero `<text>` elements). The result imports into Figma fine visually but text is not retypable.
-- **For a hand-authored SVG with genuinely editable `<text>`**, use `Asset/Script/` (`build.py`, `components.py`, `fontembed.py`, `wrap.py`). This mirrors the technique in `Ad/Scripts/`: real `<text>` per line (not outlined), fonts subset to only the glyphs used and embedded as base64 woff2 (`fontembed.py`), photos embedded as base64 JPEG, and the logo inlined as raw vector paths copied from `Design system/Logo/*.svg`. Line-wrapping is computed with real font metrics (`wrap.py`, via PIL) so breaks match what the browser would have rendered. Run with `python3 build.py <page-number|all>`; content and per-page layout are currently hardcoded per asset in `build.py` — adapt the block calls for a new asset's copy.
-  - **Margin collapsing must be replicated by hand.** CSS collapses adjacent block margins to `max(prev-bottom, next-top)`; the Python layout cursor does not do this automatically — each component that adds its own top gap (e.g. a sub-heading after a paragraph) must top up only the *difference* over the previous block's trailing gap, not add its full margin on top of it. Getting this wrong silently pushes content into the footer with no error.
-  - **Strip EXIF orientation from any embedded photo.** Chrome's SVG `<image>` renderer honors an EXIF rotation tag even though its CSS `background-image` path does not — embedding a photo with an orientation tag intact renders sheared/misaligned in the SVG despite looking correct in every HTML/PDF build. Downscale and re-save with `exif=b""` (Pillow) before embedding, keeping the raw pixel orientation as-is (don't bake in the EXIF-implied rotation, since that would no longer match the crop already validated in the HTML build).
+### A. Direct build in Figma via `use_figma` (preferred — genuinely editable, no import step)
+
+Build the asset as real native Figma nodes from the start (`figma.createText()`, `figma.createRectangle()`, `figma.createAutoLayout()`, etc.) instead of exporting anything for import. Every paragraph becomes one genuine auto-wrapping `TEXT` node from the moment it's created — this sidesteps the SVG-import splitting problem entirely (see part C) because there's no import step at all.
+
+**The font problem and its solution.** `use_figma` executes in a remote/cloud sandbox that can never load Nohemi or Gilroy — confirmed exhaustively: `listAvailableFontsAsync()` returns 0 matches out of ~7,739 fonts every time, there's no font-upload API on the Plugin API surface, importing a *published library style* that references "Gilroy Bold" by name still fails to load the actual font, and this is true regardless of whether the fonts are installed locally on the machine running the session — the sandbox has no visibility into local OS font sync. The fix has two parts:
+1. **Build with close fallback fonts** that Figma's hosted catalog does have — **Poppins** stands in for Nohemi, **Inter** stands in for Gilroy (both carry the full Regular/Medium/SemiBold/Bold/ExtraBold range we need). Match every size/weight/line-height to the real token exactly, so the later font swap needs zero layout adjustment.
+2. **Swap to the real fonts with a local Figma plugin** — `Asset/Script/figma-font-swap-plugin/` (`manifest.json` + `code.js`). This plugin runs *inside* Figma's desktop app on a machine that has Nohemi/Gilroy actually installed, where the sandbox limitation above doesn't apply. It walks every text node on every page, matches placeholder (family, style) pairs against a mapping table, and swaps to the real font — self-discovering the exact installed font name via `listAvailableFontsAsync()` at runtime rather than hardcoding a guess. This matters because **Nohemi's font files use inconsistent internal family naming**: only the Regular and Bold weights use a clean `family="Nohemi"` — every other weight (Medium, SemiBold, ExtraBold, etc.) ships as its own separate legacy family name (`"Nohemi SemBd"`, `"Nohemi Med"`, `"Nohemi ExtBd"`, each internally styled just `"Regular"`). The plugin's `NOHEMI_LEGACY_FAMILY`/`NOHEMI_LEGACY_STYLE` maps encode these exact strings, extracted directly from each font file's name table via `fontTools` — don't re-guess them from memory.
+
+**One-time local setup** (already done on this machine as of 2026-07-13 — verify still true rather than blindly redoing; none of this carries over to a different machine or Figma account):
+- Nohemi + Gilroy installed system-wide at `/Library/Fonts/Nohemi/` and `/Library/Fonts/Gilroy - font/` (check with `system_profiler SPFontsDataType | grep -i "nohemi\|gilroy"`).
+- The plugin imported into Figma desktop: Plugins → Development → Import plugin from manifest… → `Asset/Script/figma-font-swap-plugin/manifest.json`. Persists in Figma's local dev-plugin list going forward.
+- macOS Accessibility permission granted to the *exact* `claude` CLI binary (not Terminal, not the Figma app) at its Caskroom path, e.g. `/opt/homebrew/Caskroom/claude-code/<version>/claude` — check `ps -o pid,ppid,comm -p $$` walked up to the top-level `claude` process to find the exact path if unsure. Without this, `osascript` UI-scripting calls fail with `"osascript is not allowed assistive access"`.
+- The correct Figma account/team connected — check with the `whoami` MCP tool.
+
+Run `Asset/Script/check-figma-setup.sh` before starting a build on any system (including this one, if picking this up after a while) — it checks the first three conditions automatically and tells you exactly which manual step is outstanding, rather than a build failing partway through. The fourth (account) needs the `whoami` MCP tool, which the script can't call itself. None of these four steps are automatable end-to-end — each is a one-time human action (OS permission dialog, Figma's GUI plugin importer, or an OAuth login), not something a script can do unattended.
+
+**Triggering the plugin from a Claude Code session** (no manual click needed once the above is in place):
+```bash
+# 1. ALWAYS verify the correct file is frontmost before clicking anything —
+#    this runs against whatever file is currently open in Figma desktop.
+osascript -e 'tell application "System Events" to tell process "Figma" to get name of every window'
+
+# 2. Click the plugin via the Plugins > Development submenu
+osascript -e 'tell application "System Events" to tell process "Figma" to click menu item "Cleartax Font Swap" of menu 1 of menu item "Development" of menu 1 of menu bar item "Plugins" of menu bar 1'
+```
+Then verify independently through `use_figma` — don't just trust the plugin's own toast — by reading back `node.getStyledTextSegments(['fontName'])` across all text nodes and confirming zero remaining Poppins/Inter entries.
+
+**Other direct-build notes:**
+- Upload photos (cover backgrounds) with `upload_assets` (`nodeId` + `scaleMode:'FILL'` against a pre-sized rectangle, then `curl -X POST` the JPEG bytes to the returned URL) rather than `createNodeFromSvg` with a base64 data URI — cleaner and avoids the EXIF-orientation SVG `<image>` bug entirely (see part C).
+- The logo is safe to inline via `figma.createNodeFromSvg()` even in this direct-build context — it's pure vector paths, no text, so none of the font or splitting issues apply.
+- Scrims and the CTA panel gradient use real Figma `GRADIENT_LINEAR` paints, not a simulated gradient — translate the CSS angle to a `gradientTransform` matrix rather than approximating with layered flat rects.
+- **Placeholder fonts render slightly taller than the real ones** (Poppins/Inter vs. Nohemi/Gilroy metrics differ) — a page that fit exactly in the original HTML/PDF build can overflow by 100–150px when reconstructed with fallback fonts. Don't fight this with small spacing tweaks; split the overflowing section onto its own page/frame, the same as any other genuine content-density overflow.
+
+### B. Per-page PDF (cheap, when retypable text is enough but native Figma editing isn't required)
+
+Split the final PDF with `pdfseparate`. Figma's native PDF import reads the PDF's real text objects directly and creates genuine editable text layers, as long as the source PDF has real embedded fonts (Chrome's `--print-to-pdf` output qualifies — verify with `pdftotext`). No extra tooling needed — just hand over the files for the user to drag in themselves.
+
+### C. Hand-authored SVG (fallback only — text lands as one layer per *line*, not per paragraph)
+
+`Asset/Script/` (`build.py`, `components.py`, `fontembed.py`, `wrap.py`) builds self-contained SVGs with real `<text>` (not outlined), fonts subset to used glyphs and embedded as base64 woff2, photos embedded as base64 JPEG, logo inlined as raw vector paths. Run with `python3 build.py <page-number|all>`; content/layout is hardcoded per asset in `build.py` — adapt for a new asset.
+
+**Known limitation, confirmed empirically via `figma.createNodeFromSvg()` (the same engine behind Figma's drag-and-drop import) — do not re-litigate this without a new test:** SVG has no native text auto-wrap, so multi-line paragraphs must be pre-wrapped into positioned `<tspan>`s. Figma's SVG importer explodes *any* positioned tspan into its own separate `TEXT` node, regardless of whether they share one parent `<text>` element — a 5-line paragraph always becomes 5 separate text layers. Wrapping the tspans in one `<text>` parent only changes whether Figma groups the resulting layers (`GROUP` wrapper) — it does not merge them into one editable string. There is no SVG markup fix for this; it's a Figma platform limitation. **Prefer option A (direct build) whenever the user actually wants to keep editing in Figma; only reach for this option when handing over a static one-shot file where per-line text objects are acceptable.**
+
+Two supporting gotchas if this route is used anyway:
+- **Margin collapsing must be replicated by hand.** CSS collapses adjacent block margins to `max(prev-bottom, next-top)`; the Python layout cursor does not do this automatically — each component that adds its own top gap (e.g. a sub-heading after a paragraph) must top up only the *difference* over the previous block's trailing gap, not add its full margin on top of it. Getting this wrong silently pushes content into the footer with no error.
+- **Strip EXIF orientation from any embedded photo.** Chrome's SVG `<image>` renderer honors an EXIF rotation tag even though its CSS `background-image` path does not — embedding a photo with an orientation tag intact renders sheared/misaligned in the SVG despite looking correct in every HTML/PDF build. Downscale and re-save with `exif=b""` (Pillow) before embedding, keeping the raw pixel orientation as-is (don't bake in the EXIF-implied rotation, since that would no longer match the crop already validated in the HTML build).
