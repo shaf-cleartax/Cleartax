@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ClearTax Global — Beyond e-Invoicing (3-Slide Summary)</title>
+<style>
+@font-face{font-family:'Nohemi';font-weight:400;src:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Fonts/Nohemi/Web-TT/Nohemi-Regular.woff2') format('woff2');}
+@font-face{font-family:'Nohemi';font-weight:500;src:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Fonts/Nohemi/Web-TT/Nohemi-Medium.woff2') format('woff2');}
+@font-face{font-family:'Nohemi';font-weight:600;src:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Fonts/Nohemi/Web-TT/Nohemi-SemiBold.woff2') format('woff2');}
+@font-face{font-family:'Nohemi';font-weight:700;src:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Fonts/Nohemi/Web-TT/Nohemi-Bold.woff2') format('woff2');}
+@font-face{font-family:'Nohemi';font-weight:800;src:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Fonts/Nohemi/Web-TT/Nohemi-ExtraBold.woff2') format('woff2');}
+@font-face{font-family:'Gilroy';font-weight:400;src:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Fonts/Gilroy - font/Gilroy-Regular.otf') format('opentype');}
+@font-face{font-family:'Gilroy';font-weight:500;src:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Fonts/Gilroy - font/Gilroy-Medium.otf') format('opentype');}
+@font-face{font-family:'Gilroy';font-weight:600;src:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Fonts/Gilroy - font/Gilroy-Semibold.otf') format('opentype');}
+@font-face{font-family:'Gilroy';font-weight:700;src:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Fonts/Gilroy - font/Gilroy-Bold.otf') format('opentype');}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+@page{size:794px 1123px;margin:0;}
+body{background:#ccc;}
+
+:root{
+  --brand:#3355FF; --brand-600:#2944CC; --brand-700:#1F3399;
+  --info-subtle:#D6DDFF; --ink:#0D0D0D; --body:#4D4D4D; --muted:#808080;
+  --divider:#E5E5E5; --card-bg:#F9FAFB; --notice:#FF8000; --positive:#66C285; --bg:#FFFFFF;
+}
+
+.page{width:794px;height:1123px;position:relative;overflow:hidden;background:var(--bg);font-family:'Gilroy';}
+.spectrum{position:absolute;left:0;right:0;bottom:0;height:8px;background:linear-gradient(90deg,var(--brand-700),var(--brand),var(--info-subtle),var(--notice),var(--positive));}
+
+/* COVER */
+.cover{background:linear-gradient(160deg,var(--brand-700) 0%,var(--brand) 55%,var(--brand-600) 100%);position:relative;color:#fff;}
+.cover .dotgrid{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.18) 1px, transparent 1px);background-size:20px 20px;}
+.cover .brandmark{position:absolute;top:44px;left:56px;height:20px;z-index:2;}
+.cover .eyebrow-chip{position:absolute;top:180px;left:56px;z-index:2;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:6px 16px;font-family:'Gilroy';font-weight:500;font-size:13px;}
+.cover .textblock{position:absolute;top:224px;left:56px;right:70px;z-index:2;}
+.cover .cov-title{font-family:'Nohemi';font-weight:800;font-size:68px;line-height:1.08;letter-spacing:-0.01em;color:#fff;margin-bottom:26px;}
+.cover .cov-sub{font-family:'Gilroy';font-weight:500;font-size:23px;line-height:1.45;color:rgba(255,255,255,0.9);max-width:600px;}
+.cover .netgraphic{position:absolute;bottom:20px;right:-60px;opacity:0.45;z-index:1;}
+
+/* INTERIOR CHROME */
+.eh{position:absolute;top:44px;left:56px;right:56px;display:flex;justify-content:space-between;align-items:center;}
+.eh .logo{height:18px;}
+.eh .runtitle{font-family:'Gilroy';font-weight:600;font-size:12px;letter-spacing:0.04em;text-transform:uppercase;color:var(--muted);}
+.divider-rule{position:absolute;top:84px;left:56px;right:56px;border-bottom:1px solid var(--divider);}
+.content{position:absolute;top:130px;left:56px;right:56px;bottom:76px;}
+.footer-rule{position:absolute;bottom:56px;left:56px;right:56px;border-bottom:1px solid var(--divider);}
+.footer{position:absolute;bottom:30px;left:56px;right:56px;display:flex;justify-content:space-between;font-family:'Gilroy';font-weight:500;font-size:10px;color:var(--muted);}
+
+/* pull-quote */
+.pullquote{border-left:4px solid var(--brand);padding:4px 0 4px 22px;margin-top:28px;}
+.pullquote .pq-text{font-family:'Nohemi';font-weight:700;font-size:24px;line-height:1.4;color:var(--brand-700);}
+.pullquote .pq-attr{font-family:'Gilroy';font-weight:500;font-size:12px;color:var(--muted);margin-top:10px;}
+
+.sec-head{font-family:'Nohemi';font-weight:700;font-size:24px;color:var(--brand);margin-bottom:8px;}
+.sec-rule{width:38px;height:4px;background:var(--brand);border-radius:2px;margin-bottom:20px;}
+.p{font-family:'Gilroy';font-weight:400;font-size:14px;line-height:1.65;color:var(--body);margin-bottom:14px;}
+
+/* stat strip */
+.stat-row{display:flex;gap:12px;margin-bottom:26px;}
+.stat-card{flex:1;background:var(--card-bg);border-radius:12px;padding:18px 14px;text-align:left;}
+.stat-num{font-family:'Nohemi';font-weight:800;font-size:26px;color:var(--brand);}
+.stat-lbl{font-family:'Gilroy';font-weight:400;font-size:11px;color:var(--body);margin-top:6px;line-height:1.4;}
+
+/* icon badge cards, 3-up */
+.pillar-row{display:flex;gap:14px;}
+.pillar-card{flex:1;background:var(--card-bg);border-radius:14px;padding:22px 18px;}
+.pillar-badge{width:40px;height:40px;border-radius:50%;background:var(--info-subtle);display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+.pillar-title{font-family:'Nohemi';font-weight:700;font-size:15px;color:var(--ink);margin-bottom:8px;}
+.pillar-body{font-family:'Gilroy';font-weight:400;font-size:12px;line-height:1.55;color:var(--body);}
+
+/* callout box */
+.callout{background:var(--info-subtle);border-left:4px solid var(--brand);border-radius:0 10px 10px 0;padding:16px 20px;margin-bottom:14px;}
+.callout .co-label{font-family:'Gilroy';font-weight:600;font-size:12px;color:var(--brand-700);text-transform:uppercase;letter-spacing:0.03em;margin-bottom:6px;}
+.callout .co-body{font-family:'Gilroy';font-weight:400;font-size:13px;line-height:1.55;color:var(--body);}
+
+/* numbered principle rows */
+.num-row{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--divider);}
+.num-row:last-child{border-bottom:none;}
+.num-row .nn{font-family:'Nohemi';font-weight:800;font-size:20px;color:var(--info-subtle);min-width:32px;}
+.num-row .nt{font-family:'Nohemi';font-weight:700;font-size:15px;color:var(--ink);margin-bottom:4px;}
+.num-row .nd{font-family:'Gilroy';font-weight:400;font-size:12.5px;line-height:1.55;color:var(--body);}
+
+/* closing gradient+dot panel */
+.closepanel{position:absolute;left:56px;right:56px;bottom:76px;background:linear-gradient(160deg,var(--brand-700) 0%,var(--brand) 55%,var(--brand-600) 100%);border-radius:16px;padding:32px 30px;color:#fff;overflow:hidden;}
+.closepanel .dotgrid{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.16) 1px, transparent 1px);background-size:18px 18px;}
+.closepanel .cp-title{font-family:'Nohemi';font-weight:700;font-size:22px;line-height:1.3;margin-bottom:12px;position:relative;z-index:2;}
+.closepanel .cp-body{font-family:'Gilroy';font-weight:400;font-size:13px;line-height:1.6;color:rgba(255,255,255,0.88);margin-bottom:20px;position:relative;z-index:2;max-width:560px;}
+.closepanel .pill{display:inline-block;background:#fff;color:var(--brand-700);border-radius:999px;padding:13px 26px;font-family:'Gilroy';font-weight:700;font-size:13.5px;position:relative;z-index:2;}
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1 — COVER -->
+<section class="page cover">
+  <div class="dotgrid"></div>
+  <img class="brandmark" src="file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Logo/Logo.svg">
+  <svg class="netgraphic" width="420" height="420" viewBox="0 0 420 420" fill="none">
+    <g stroke="rgba(255,255,255,0.5)" stroke-width="1.2">
+      <line x1="60" y1="340" x2="180" y2="220"/>
+      <line x1="180" y1="220" x2="320" y2="260"/>
+      <line x1="180" y1="220" x2="240" y2="90"/>
+      <line x1="240" y1="90" x2="360" y2="150"/>
+      <line x1="320" y1="260" x2="380" y2="360"/>
+      <line x1="60" y1="340" x2="150" y2="390"/>
+    </g>
+    <g fill="rgba(255,255,255,0.85)">
+      <circle cx="60" cy="340" r="6"/>
+      <circle cx="180" cy="220" r="8"/>
+      <circle cx="320" cy="260" r="6"/>
+      <circle cx="240" cy="90" r="6"/>
+      <circle cx="360" cy="150" r="6"/>
+      <circle cx="380" cy="360" r="5"/>
+      <circle cx="150" cy="390" r="5"/>
+    </g>
+  </svg>
+  <div class="eyebrow-chip">ClearTax Global</div>
+  <div class="textblock">
+    <div class="cov-title">Beyond e-Invoicing: Scale, Security, and Enterprise-Grade Support</div>
+    <div class="cov-sub">The infrastructure that earns CFO, Tax, and IT sign-off — before a mandate goes live, not after.</div>
+  </div>
+  <div class="spectrum"></div>
+</section>
+
+<!-- SLIDE 2 — OVERVIEW + THREE PILLARS -->
+<section class="page">
+  <div class="eh"><img class="logo" src="file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Logo/Logo-dark.svg"><span class="runtitle">Beyond e-Invoicing</span></div>
+  <div class="divider-rule"></div>
+  <div class="content">
+    <div class="sec-head">Why Three Functions Must Sign Off</div>
+    <div class="sec-rule"></div>
+    <p class="p">e-Invoicing compliance is no longer a finance-only decision. By the time a mandate goes live, three functions need to have signed off: the CFO who owns the control architecture, the tax head who will defend the numbers in an audit, and the CIO who must guarantee the platform stays online during a real-time clearance cycle. What follows is a direct answer to each of those three perspectives.</p>
+
+    <div class="stat-row">
+      <div class="stat-card"><div class="stat-num">1Bn+</div><div class="stat-lbl">e-invoicing transactions annually</div></div>
+      <div class="stat-card"><div class="stat-num">5,000+</div><div class="stat-lbl">Enterprise clients globally</div></div>
+      <div class="stat-card"><div class="stat-num">50+</div><div class="stat-lbl">Countries covered</div></div>
+      <div class="stat-card"><div class="stat-num">99.9%</div><div class="stat-lbl">Platform uptime SLA</div></div>
+    </div>
+
+    <div class="pillar-row">
+      <div class="pillar-card">
+        <div class="pillar-badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3355FF" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg></div>
+        <div class="pillar-title">For the CFO</div>
+        <div class="pillar-body">Architectural data isolation, human approval checkpoints, and immutable audit trails — a control layer that holds up under board scrutiny.</div>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3355FF" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <div class="pillar-title">For the Tax Head</div>
+        <div class="pillar-body">Continuous books-to-authority reconciliation and audit-ready evidence — built for real-time enforcement, not quarterly filing.</div>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3355FF" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <div class="pillar-title">For the IT &amp; CIO</div>
+        <div class="pillar-body">99.9% uptime SLA, sovereign data residency per jurisdiction, and independently audited security — ISO 27001, SOC 2 Type II.</div>
+      </div>
+    </div>
+
+    <div class="pullquote">
+      <div class="pq-text">"A consolidated global compliance platform — one contract, one dashboard, one SLA to hold — gives the CFO a single point of accountability."</div>
+      <div class="pq-attr">Why consolidation is the CFO's strongest risk move</div>
+    </div>
+  </div>
+  <div class="footer-rule"></div>
+  <div class="footer"><span>cleartax.com</span><span>02</span></div>
+</section>
+
+<!-- SLIDE 3 — THE ARCHITECTURE DECISION + CLOSING CTA -->
+<section class="page">
+  <div class="eh"><img class="logo" src="file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Logo/Logo-dark.svg"><span class="runtitle">Beyond e-Invoicing</span></div>
+  <div class="divider-rule"></div>
+  <div class="content">
+    <div class="sec-head">The Architecture Decision</div>
+    <div class="sec-rule"></div>
+    <p class="p">Three things that should be architecturally true of any platform you select — not contractual promises, but structural facts you can verify.</p>
+
+    <div class="num-row">
+      <div class="nn">01</div>
+      <div><div class="nt">Your data is yours alone</div><div class="nd">Tenant isolation must be structural, not a configuration toggle — your compliance data, GL records, and notice history never mix with another company's data.</div></div>
+    </div>
+    <div class="num-row">
+      <div class="nn">02</div>
+      <div><div class="nt">It meets the standards your auditors already recognise</div><div class="nd">SOC 2 Type II certified and ISO 27001 compliant — the same bar your bank and your Big 4 auditor hold themselves to.</div></div>
+    </div>
+    <div class="num-row">
+      <div class="nn">03</div>
+      <div><div class="nt">Nothing reaches the tax authority without a human approving it</div><div class="nd">The AI drafts, validates, and flags — your people authorise. In several jurisdictions, this is a governance requirement.</div></div>
+    </div>
+
+    <div class="callout" style="margin-top:22px;">
+      <div class="co-label">The competitive advantage</div>
+      <div class="co-body">The CFOs who look back on 2026–2030 with confidence are not the ones who raced to compliance — they're the ones who built compliance infrastructure that became a control layer, an audit defence capability, and a data asset.</div>
+    </div>
+
+    <div class="closepanel" style="position:relative;left:0;right:0;bottom:0;margin-top:20px;">
+      <div class="dotgrid"></div>
+      <div class="cp-title">ClearTax is built for that standard.</div>
+      <div class="cp-body">Over a billion transactions annually. 5,000+ enterprises across 50+ countries. SOC 2 Type II and ISO 27001 independently audited. In-region teams in every market we operate.</div>
+      <div class="pill">Request a briefing for your CFO, Tax, or IT leadership team</div>
+    </div>
+  </div>
+  <div class="footer-rule"></div>
+  <div class="footer"><span>cleartax.com</span><span>03</span></div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><style>
+*{margin:0;padding:0;box-sizing:border-box;}
+@font-face{font-family:'Nohemi';font-weight:800;src:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Fonts/Nohemi/Web-TT/Nohemi-ExtraBold.woff2') format('woff2');}
+@font-face{font-family:'Gilroy';font-weight:500;src:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Fonts/Gilroy - font/Gilroy-Medium.otf') format('opentype');}
+body{background:#ccc;}
+.cover{width:794px;height:1123px;position:relative;overflow:hidden;color:#fff;}
+.img{position:absolute;inset:0;background-size:cover;background-repeat:no-repeat;background-image:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Background/Stars/Stars-9.jpg');background-position:top;}
+.cover::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.42) 0%, rgba(0,0,0,0.18) 30%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.55) 100%);}
+.brandmark{position:absolute;top:44px;left:56px;height:32px;z-index:2;filter:drop-shadow(0 1px 3px rgba(0,0,0,0.5));}
+.textblock{position:absolute;top:224px;left:56px;right:70px;z-index:2;}
+.cov-title{font-family:'Nohemi';font-weight:800;font-size:68px;line-height:1.08;letter-spacing:-0.01em;margin-bottom:26px;
+  color:#ffffff;
+  text-shadow:0 2px 16px rgba(0,0,0,0.25);
+}
+.cov-sub{font-family:'Gilroy';font-weight:500;font-size:23px;line-height:1.45;max-width:600px;
+  color:#ffffff;
+  text-shadow:0 1px 8px rgba(0,0,0,0.25);
+}
+</style></head><body>
+<div class="cover">
+  <div class="img"></div>
+  <img class="brandmark" src="file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Logo/Logo.svg">
+  <div class="textblock">
+    <div class="cov-title">Beyond e-Invoicing: Scale, Security, and Enterprise-Grade Support</div>
+    <div class="cov-sub">The infrastructure that earns CFO, Tax, and IT sign-off — before a mandate goes live, not after.</div>
+  </div>
+</div>
+</body></html>

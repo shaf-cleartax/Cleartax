@@ -20,6 +20,7 @@ Read these instead of hardcoding values — they are the source of truth and can
 - `Design system/Variables/Spacing.json` and `Design system/Variables/Border.json` — spacing and radius scale
 - `Design system/Fonts/Nohemi/Web-TT/*.woff2` and `Design system/Fonts/Gilroy - font/*.otf` — the two brand typefaces
 - `Design system/Logo/Logo.svg` (white) and `Design system/Logo/Logo-dark.svg` (black) — vector logo marks. `Design system/Logo/Cleartax-logo-black.png` / `Cleartax-logo-white.png` are raster alternates. Never render the logo as typed text.
+- `Design system/Background/Stars/Stars-<n>.jpg` (10 images) — the default cover background source (see Layout System below). `Design system/Background/Gradient/{Dark,Light}/<n>.jpg` are the secondary/alternative photographic-gradient backgrounds.
 
 ## Color Tokens (Cleartax brand, from Semantics)
 
@@ -42,6 +43,8 @@ Nohemi is used for Display and H1–H6 only. Gilroy is used for Paragraph, Label
 
 | Token | Font / weight | Size / line-height |
 |---|---|---|
+| Cover/Hero/Bold | Nohemi Bold | 68 / 74 |
+| Cover/Subtitle/Medium | Gilroy Medium | 23 / 33 |
 | Display/Extrabold/Large | Nohemi ExtraBold | 52 / 56 |
 | H4/Extrabold/Desktop | Nohemi ExtraBold | 28 / 36 |
 | H5/Bold/Desktop | Nohemi Bold | 24 / 32 |
@@ -53,13 +56,16 @@ Nohemi is used for Display and H1–H6 only. Gilroy is used for Paragraph, Label
 | Overline/Small | Gilroy Semibold | 12 / 20 |
 | Overline/Large | Gilroy Semibold | 14 / 20 |
 
-Practical mapping used across built assets: page section headings → H5/Bold/Desktop; body copy/table cells/card text → Paragraph/XSmall; running header, table headers, "key insight"-style labels, chip text → Overline/Small or Label/XSmall; big stat numbers → H4/Extrabold/Desktop; cover headline → Display/Extrabold/Large; cover subtitle → H5/Semibold/Desktop.
+Practical mapping used across built assets: page section headings → H5/Bold/Desktop; body copy/table cells/card text → Paragraph/XSmall; running header, table headers, "key insight"-style labels, chip text → Overline/Small or Label/XSmall; big stat numbers → H4/Extrabold/Desktop; **cover headline → Cover/Hero/Bold (68/74), tight tracking (-0.01em); cover subtitle → Cover/Subtitle/Medium (23/33) directly beneath it.** This is the standard for every cover page going forward — deliberately larger than the general Display token (52/56) so the cover reads as a hero moment rather than just the biggest heading in the deck. Reserve Display/Extrabold/Large for non-cover uses (e.g. a large in-page stat or standalone statement). Both cover title and subtitle render as solid white (`#ffffff`) with a soft drop shadow for legibility — title `text-shadow: 0 2px 16px rgba(0,0,0,0.25)`, subtitle `text-shadow: 0 1px 8px rgba(0,0,0,0.25)` — not a gradient text-fill; a diagonal white-to-white-alpha gradient fill was tested and rejected in favor of plain white.
 
 ## Layout System
 
 - Canvas: A4 portrait, `794×1123px` at 96dpi (`@page { size: 794px 1123px; margin: 0; }`) — matches 595×842pt when printed
 - Margins: 56px on all sides
-- **Cover page**: brand gradient (`linear-gradient(160deg, #1F3399 0%, #3355FF 55%, #2944CC 100%)`) + a subtle dot-grid overlay (`radial-gradient` dots, ~20px grid) + one abstract geometric graphic relevant to the topic (skyline bars, radar rings, node/network diagram — never a stock photo) + an eyebrow chip (translucent pill) + logo (white) top-left + an 8px bottom "spectrum bar" gradient (`brand-700 → brand → info-subtle → notice → positive`) as a signature closing device
+- **Cover page — standard recipe**: background is a photo from `Design system/Background/Stars/Stars-<n>.jpg` (default choice going forward — night-sky/star-trail photography, chosen over the flat CSS brand gradient and the Gradient-folder photos, which are now secondary alternatives, see below) + a bottom-weighted black scrim (`linear-gradient(180deg, rgba(0,0,0,.42) 0%, rgba(0,0,0,.18) 30%, rgba(0,0,0,.2) 60%, rgba(0,0,0,.55) 100%)`) + logo (white) top-left, sized larger than interior-page logos at **32px tall** (not ~20px) + title/subtitle block, top-aligned. No eyebrow chip/pill — the standard recipe is logo → gap → title → subtitle only.
+  - **Title/subtitle placement**: top-aligned, not vertically centered. Exact gap: logo's top edge is at `top:44px`; with a 32px-tall logo (bottom edge ≈76px), the title's top edge sits **160px below the logo's bottom edge** (`top:224px` in the standard 56px-margin layout). Eyebrow removed, so nothing sits in that gap — it's clear space. Title and subtitle stack in normal flow directly beneath (title `margin-bottom:26px`), so the block reflows correctly if the title wraps to a different number of lines.
+  - **Stars source images are portrait**, unlike the Gradient-folder photos (which are landscape). On the portrait cover canvas, `background-size:cover` still crops one axis — check each image individually and pick `background-position` (top/center/bottom) so the calmest, darkest region of that specific photo sits behind the logo and title; don't assume one position works for all 10 Stars images (some have a bright star-trail swirl or Milky Way core that needs to be cropped away from the text area).
+  - **Legacy/alternative backgrounds** (use only if the brief calls for a different mood than night-sky photography): the flat Cleartax brand gradient (`linear-gradient(160deg, #1F3399 0%, #3355FF 55%, #2944CC 100%)` + dot-grid + one abstract geometric graphic + 8px bottom spectrum bar), or `Design system/Background/Gradient/{Dark,Light}/<n>.jpg` (landscape photographic gradients — orient so the darkest region lands at the top behind the logo/title, since `cover`-fit always shows the image's full vertical range on these). Same scrim principle applies either way. When testing multiple candidates for any of these, render one mockup per option plus a contact-sheet thumbnail grid so they can be compared at a glance before picking one.
 - **Interior page chrome**: logo-dark top-left (~20px tall) + uppercase running title top-right (Overline/Small, muted) + 1px divider rule beneath (y≈84) + content starting at y≈130 + a 1px footer rule + footer row (`cleartax.com` left, page number right, Label/XSmall)
 - **Section heading**: H5/Bold/Desktop in brand blue, followed by a short 38×4px brand-blue rounded rule
 - If the asset closes on a CTA/product-suite page, bookend it with a second gradient+dot panel matching the cover, rather than ending flat on white
