@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Landmark Group — ZATCA Phase 2 Case Study</title>
+<style>
+@font-face{font-family:'Nohemi';font-weight:500;src:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Fonts/Nohemi/Web-TT/Nohemi-Medium.woff2') format('woff2');}
+@font-face{font-family:'Nohemi';font-weight:600;src:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Fonts/Nohemi/Web-TT/Nohemi-SemiBold.woff2') format('woff2');}
+@font-face{font-family:'Nohemi';font-weight:700;src:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Fonts/Nohemi/Web-TT/Nohemi-Bold.woff2') format('woff2');}
+@font-face{font-family:'Nohemi';font-weight:800;src:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Fonts/Nohemi/Web-TT/Nohemi-ExtraBold.woff2') format('woff2');}
+@font-face{font-family:'Gilroy';font-weight:400;src:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Fonts/Gilroy - font/Gilroy-Regular.otf') format('opentype');}
+@font-face{font-family:'Gilroy';font-weight:500;src:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Fonts/Gilroy - font/Gilroy-Medium.otf') format('opentype');}
+@font-face{font-family:'Gilroy';font-weight:600;src:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Fonts/Gilroy - font/Gilroy-Semibold.otf') format('opentype');}
+@font-face{font-family:'Gilroy';font-weight:700;src:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Fonts/Gilroy - font/Gilroy-Bold.otf') format('opentype');}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+@page{size:794px 1123px;margin:0;}
+body{background:#ccc;}
+
+:root{
+  --brand:#3355FF; --brand-600:#2944CC; --brand-700:#1F3399;
+  --info-subtle:#D6DDFF; --ink:#0D0D0D; --body:#4D4D4D; --muted:#808080;
+  --divider:#E5E5E5; --card-bg:#F9FAFB; --notice:#FF8000; --positive:#66C285; --bg:#FFFFFF;
+}
+
+.page{width:794px;height:1123px;position:relative;overflow:hidden;background:var(--bg);font-family:'Gilroy';}
+
+/* cover — standard recipe */
+.cover{color:#fff;}
+.cover .img{position:absolute;inset:0;background-size:cover;background-repeat:no-repeat;background-image:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Background/Stars/Stars-5.jpg');background-position:top;}
+.cover::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.42) 0%, rgba(0,0,0,0.18) 30%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.55) 100%);}
+.cover .brandmark{position:absolute;top:44px;left:56px;height:32px;z-index:2;filter:drop-shadow(0 1px 3px rgba(0,0,0,0.5));}
+.cover .textblock{position:absolute;top:224px;left:56px;right:70px;z-index:2;}
+.cov-title{font-family:'Nohemi';font-weight:700;font-size:68px;line-height:1.088;letter-spacing:-0.01em;color:#fff;margin-bottom:26px;text-shadow:0 2px 16px rgba(0,0,0,0.25);}
+.cov-sub{font-family:'Gilroy';font-weight:500;font-size:23px;line-height:1.435;color:#fff;max-width:620px;text-shadow:0 1px 8px rgba(0,0,0,0.25);}
+
+/* interior chrome */
+.eh{position:absolute;top:44px;left:56px;right:56px;display:flex;justify-content:space-between;align-items:center;}
+.eh img{height:18px;}
+.eh .runtitle{font-family:'Gilroy';font-weight:600;font-size:11px;letter-spacing:0.04em;text-transform:uppercase;color:var(--muted);}
+.divider-rule{position:absolute;top:84px;left:56px;right:56px;border-bottom:1px solid var(--divider);}
+.content{position:absolute;top:130px;left:56px;right:56px;bottom:76px;}
+.footer-rule{position:absolute;bottom:56px;left:56px;right:56px;border-bottom:1px solid var(--divider);}
+.footer{position:absolute;bottom:30px;left:56px;right:56px;display:flex;justify-content:space-between;font-family:'Gilroy';font-weight:500;font-size:10px;color:var(--muted);}
+
+.sec-head{font-family:'Nohemi';font-weight:700;font-size:24px;color:var(--brand);margin-bottom:8px;}
+.sec-rule{width:38px;height:4px;background:var(--brand);border-radius:2px;margin-bottom:18px;}
+.sub-head{font-family:'Nohemi';font-weight:700;font-size:18px;color:var(--ink);margin-bottom:12px;margin-top:8px;}
+.p{font-family:'Gilroy';font-weight:400;font-size:13.5px;line-height:1.62;color:var(--body);margin-bottom:12px;}
+.p b{font-weight:600;color:var(--ink);}
+
+/* stat strip */
+.stat-row{display:flex;gap:12px;margin:16px 0;}
+.stat-card{flex:1;background:var(--card-bg);border-radius:12px;padding:16px 14px;}
+.stat-num{font-family:'Nohemi';font-weight:800;font-size:22px;color:var(--brand);}
+.stat-lbl{font-family:'Gilroy';font-weight:400;font-size:10.5px;color:var(--body);margin-top:6px;line-height:1.4;}
+
+/* row-card list */
+.row-card{background:var(--card-bg);border-radius:12px;padding:14px 18px;margin-bottom:9px;}
+.row-card .rt{font-family:'Nohemi';font-weight:700;font-size:13.5px;color:var(--ink);margin-bottom:4px;}
+.row-card .rd{font-family:'Gilroy';font-weight:400;font-size:12px;line-height:1.5;color:var(--body);}
+
+/* flow / timeline */
+.flow{margin:14px 0;}
+.flow-step{display:flex;align-items:center;gap:14px;padding:9px 0;}
+.flow-dot{width:10px;height:10px;border-radius:50%;background:var(--brand);flex-shrink:0;position:relative;}
+.flow-line{position:absolute;left:4px;top:100%;width:2px;height:22px;background:var(--divider);}
+.flow-label{font-family:'Nohemi';font-weight:700;font-size:14px;color:var(--ink);}
+
+/* comparison table */
+.cmp{width:100%;border-collapse:collapse;margin:12px 0;}
+.cmp th{background:var(--info-subtle);font-family:'Gilroy';font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:0.03em;color:var(--brand-700);text-align:left;padding:9px 12px;}
+.cmp th:first-child{border-radius:8px 0 0 8px;}
+.cmp th:last-child{border-radius:0 8px 8px 0;}
+.cmp td{font-family:'Gilroy';font-weight:400;font-size:12px;line-height:1.5;color:var(--body);padding:11px 12px;border-bottom:1px solid var(--divider);vertical-align:top;}
+
+/* pull-quote */
+.pullquote{border-left:4px solid var(--brand);padding:4px 0 4px 20px;margin:16px 0;}
+.pullquote .pq-text{font-family:'Nohemi';font-weight:700;font-size:16px;line-height:1.4;color:var(--brand-700);}
+
+/* closing panel */
+.closepanel{position:relative;background:linear-gradient(160deg,var(--brand-700) 0%,var(--brand) 55%,var(--brand-600) 100%);border-radius:16px;padding:26px 26px;color:#fff;overflow:hidden;margin-top:16px;}
+.closepanel .dotgrid{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.16) 1px, transparent 1px);background-size:18px 18px;}
+.closepanel .cp-title{font-family:'Nohemi';font-weight:700;font-size:19px;line-height:1.3;margin-bottom:10px;position:relative;z-index:2;}
+.closepanel .cp-body{font-family:'Gilroy';font-weight:400;font-size:12.5px;line-height:1.55;color:rgba(255,255,255,0.88);margin-bottom:16px;position:relative;z-index:2;max-width:560px;}
+.closepanel .pill{display:inline-block;background:#fff;color:var(--brand-700);border-radius:999px;padding:11px 22px;font-family:'Gilroy';font-weight:700;font-size:12.5px;position:relative;z-index:2;}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — COVER -->
+<section class="page cover">
+  <div class="img"></div>
+  <img class="brandmark" src="file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Logo/Logo.svg">
+  <div class="textblock">
+    <div class="cov-title">How Landmark Group Prepared Millions of Invoices for ZATCA Phase 2 with ClearTax</div>
+    <div class="cov-sub">3+ years of trusted partnership supporting 54M+ annual invoices — with zero invoice leakage and 100% business continuity, all while absorbing peak retail volumes.</div>
+  </div>
+</section>
+
+<!-- PAGE 2 — ABOUT LANDMARK GROUP + REQUIREMENT + CONSEQUENCES -->
+<section class="page">
+  <div class="eh"><img src="file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Logo/Logo-dark.svg"><span class="runtitle">Landmark Group Case Study</span></div>
+  <div class="divider-rule"></div>
+  <div class="content">
+    <div class="sec-head">About Landmark Group</div>
+    <div class="sec-rule"></div>
+    <p class="p">Landmark Group operates one of the largest retail businesses across Saudi Arabia. Its operations span physical stores and digital commerce, serving millions of customers every year. Behind these operations is a technology landscape made up of multiple business systems, all working together to keep the business running smoothly.</p>
+
+    <div class="stat-row">
+      <div class="stat-card"><div class="stat-num">54 Million+</div><div class="stat-lbl">Annual B2C invoices</div></div>
+      <div class="stat-card"><div class="stat-num">250,000+</div><div class="stat-lbl">Annual B2B invoices</div></div>
+      <div class="stat-card"><div class="stat-num">POS · ERP · E-com</div><div class="stat-lbl">Multiple integrated business systems</div></div>
+    </div>
+
+    <p class="p">The business relies on Oracle Retail Point-of-Sale systems for both B2C and B2B transactions, along with e-commerce platforms and ERP systems such as OFIN and RMS. These systems support different parts of the business, while operating under a single group VAT registration with multiple Commercial Registration Numbers (CRNs).</p>
+
+    <div class="sub-head">What Was the Requirement?</div>
+    <p class="p">On paper, the requirement looked simple — prepare for ZATCA Phase 2. In reality, it was far more complex. Invoices originated from multiple independent systems: retail stores through Oracle Retail POS, online orders through a different journey, and ERP systems managing another part of the business. Every system handled data differently, but all had to comply with the same regulatory requirements.</p>
+    <p class="p">The scale made the challenge bigger still — up to 54 million B2C invoices and around 250,000 B2B invoices every year, all without slowing down operations or affecting customer experience. The engagement also involved a Wave 1 entity, with no previous implementation references to follow. Retail-specific scenarios — promotions, offers, and discount structures — added another layer of complexity requiring careful ZATCA assessment.</p>
+
+    <div class="sub-head">The Consequences It Had</div>
+    <div class="row-card"><div class="rt">No single compliance view</div><div class="rd">Different systems generated invoices independently, making it difficult to monitor compliance across the business.</div></div>
+    <div class="row-card"><div class="rt">High operational complexity</div><div class="rd">Millions of invoices needed to be processed accurately without affecting business performance.</div></div>
+    <div class="row-card"><div class="rt">Implementation uncertainty</div><div class="rd">As a Wave 1 entity, there was no previous benchmark to follow, making planning and regulatory interpretation even more critical.</div></div>
+    <div class="row-card"><div class="rt">Risk of inconsistent compliance</div><div class="rd">Different business units and systems could interpret regulatory requirements differently if not managed through a unified approach.</div></div>
+  </div>
+  <div class="footer-rule"></div>
+  <div class="footer"><span>cleartax.com</span><span>02</span></div>
+</section>
+
+<!-- PAGE 3 — HOW CLEARTAX HELPED + EVERYTHING THAT CAME WITH CLEARTAX -->
+<section class="page">
+  <div class="eh"><img src="file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Logo/Logo-dark.svg"><span class="runtitle">Landmark Group Case Study</span></div>
+  <div class="divider-rule"></div>
+  <div class="content">
+    <div class="sec-head">How ClearTax Helped</div>
+    <div class="sec-rule"></div>
+    <p class="p">Rather than beginning with implementation, ClearTax started by understanding the business. The team worked closely with business and technical stakeholders to study how invoices moved across the organisation — every source system analysed, every process reviewed, every data flow mapped — to identify compliance gaps before implementation began.</p>
+
+    <div class="flow">
+      <div class="flow-step"><div class="flow-dot"><div class="flow-line"></div></div><div class="flow-label">Business Assessment</div></div>
+      <div class="flow-step"><div class="flow-dot"><div class="flow-line"></div></div><div class="flow-label">System &amp; Data Analysis</div></div>
+      <div class="flow-step"><div class="flow-dot"><div class="flow-line"></div></div><div class="flow-label">Gap Identification</div></div>
+      <div class="flow-step"><div class="flow-dot"><div class="flow-line"></div></div><div class="flow-label">Compliance Blueprint</div></div>
+      <div class="flow-step"><div class="flow-dot"><div class="flow-line"></div></div><div class="flow-label">Implementation</div></div>
+      <div class="flow-step"><div class="flow-dot"></div><div class="flow-label">Continuous Support</div></div>
+    </div>
+
+    <p class="p">With a clear understanding of the business landscape, ClearTax designed a scalable compliance blueprint aligned with ZATCA Phase 2 — built to support high transaction volumes while maintaining operational efficiency across POS, ERP, and e-commerce systems, with retry mechanisms to prevent invoice leakage and notifications for timely corrective action.</p>
+
+    <div class="sub-head">Everything That Came With ClearTax</div>
+    <div class="row-card"><div class="rt">Dedicated implementation team</div><div class="rd">Worked closely with business and technical teams throughout the engagement.</div></div>
+    <div class="row-card"><div class="rt">Regulatory expertise</div><div class="rd">Guided the organisation through complex ZATCA Phase 2 requirements and implementation decisions.</div></div>
+    <div class="row-card"><div class="rt">Reliable delivery</div><div class="rd">Built a scalable compliance framework without disrupting day-to-day retail operations.</div></div>
+    <div class="row-card"><div class="rt">Continuous support</div><div class="rd">Assisted during live operations with monitoring, alerts, and support during ZATCA downtime scenarios.</div></div>
+    <div class="row-card"><div class="rt">Future assurance</div><div class="rd">Leveraged experience from multiple e-invoicing implementations to help the business stay prepared for evolving requirements.</div></div>
+  </div>
+  <div class="footer-rule"></div>
+  <div class="footer"><span>cleartax.com</span><span>03</span></div>
+</section>
+
+<!-- PAGE 4 — RESULT + PARTNERSHIP + CTA -->
+<section class="page">
+  <div class="eh"><img src="file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Logo/Logo-dark.svg"><span class="runtitle">Landmark Group Case Study</span></div>
+  <div class="divider-rule"></div>
+  <div class="content" style="bottom:56px;">
+    <div class="sec-head">The Result</div>
+    <div class="sec-rule"></div>
+    <table class="cmp">
+      <tr><th style="width:50%;">Before</th><th>After</th></tr>
+      <tr><td>Independent systems with limited compliance visibility</td><td>A structured compliance roadmap across business systems</td></tr>
+      <tr><td>Compliance gaps yet to be identified</td><td>Clear understanding of data, process, and architectural requirements</td></tr>
+      <tr><td>Infrastructure needed validation for high transaction volumes</td><td>Scalable design prepared for peak retail operations</td></tr>
+      <tr><td>Greater dependency on manual processes</td><td>Process-driven execution supported by alerts and retry mechanisms</td></tr>
+    </table>
+
+    <div class="pullquote"><div class="pq-text">"One of the strongest validations came during the first-ever ZATCA inspection of Landmark Group's stores — the authorities provided positive feedback on the organisation's compliance and overall process execution."</div></div>
+
+    <div class="sub-head">A Partnership Built on Expertise</div>
+    <p class="p">The engagement delivered far more than regulatory readiness. Landmark Group gained a scalable compliance foundation designed to support one of Saudi Arabia's largest retail operations — and the confidence of having an experienced partner that understood both the regulation and the realities of large-scale implementation. That is what sets ClearTax apart: not just technology, but the expertise, delivery assurance, and continuous support that help businesses stay compliant today while remaining prepared for tomorrow.</p>
+
+    <div class="closepanel">
+      <div class="dotgrid"></div>
+      <div class="cp-title">Planning your ZATCA compliance journey?</div>
+      <div class="cp-body">Partner with ClearTax to build a future-ready compliance framework and get the expert guidance, reliable delivery, and continuous support you need.</div>
+      <div class="pill">Book a demo now</div>
+    </div>
+  </div>
+  <div class="footer-rule"></div>
+  <div class="footer"><span>cleartax.com</span><span>04</span></div>
+</section>
+
+</body>
+</html>

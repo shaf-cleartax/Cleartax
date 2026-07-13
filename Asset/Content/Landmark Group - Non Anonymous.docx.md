@@ -1,0 +1,127 @@
+\<Page 1\>
+
+# How Landmark Group Prepared Millions of Invoices for ZATCA Phase 2 with ClearTax 
+
+* 3+ years of trusted partnership supporting 54M+ annual invoices  
+* Zero invoice leakage and 100% business continuity maintained  
+* Real-time support, all while absorbing peak retail volumes without operational slowdown
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+\<Page 2\>
+
+## About Landmark Group
+
+Landmark Group operates one of the largest retail businesses across Saudi Arabia. Its operations span physical stores and digital commerce, serving millions of customers every year. Behind these operations is a technology landscape made up of multiple business systems, all working together to keep the business running smoothly.
+
+![][image1]
+
+The business relies on Oracle Retail Point-of-Sale systems for both B2C and B2B transactions, along with e-commerce platforms and ERP systems such as OFIN and RMS. These systems support different parts of the business, while operating under a single group VAT registration with multiple Commercial Registration Numbers (CRNs). 
+
+When ZATCA introduced Phase 2 of e-invoicing, Landmark Group had more to prepare than just a compliance solution. Every invoice generated across every business system had to meet regulatory requirements. At the same time, retail operations had to continue without disruption. The engagement focused on helping the business understand its existing landscape, identify compliance gaps and build a roadmap for long-term regulatory readiness.   
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+\<Page 3\>
+
+## What was the requirement?
+
+On paper, the requirement looked simple. Prepare for ZATCA Phase 2\. In reality, it was far more complex.
+
+Invoices originated from multiple independent systems. Retail stores generated invoices through Oracle Retail POS. Online orders followed a different journey. ERP systems managed another part of the business. Every system handled data differently, but all of them had to comply with the same regulatory requirements.
+
+The scale of operations made the challenge even bigger. Landmark Group processed up to 54 million B2C invoices and around 250,000 B2B invoices every year. The compliance framework had to support these volumes without slowing down business operations or affecting customer experience.
+
+The engagement also involved a Wave 1 entity. There were no previous implementation references to follow. Business processes, invoice flows and data requirements had to be analysed from the ground up before implementation could begin.
+
+Retail-specific scenarios added another layer of complexity. Promotions, offers and discount structures all required careful assessment to ensure they complied with ZATCA requirements while continuing to support day-to-day business operations.
+
+## The consequences it had …
+
+**No single compliance view**  
+Different systems generated invoices independently, making it difficult to monitor compliance across the business.
+
+**High operational complexity**  
+Millions of invoices needed to be processed accurately without affecting business performance.
+
+**Implementation uncertainty**  
+As a Wave 1 entity, there was no previous benchmark to follow, making planning and regulatory interpretation even more critical.
+
+**Risk of inconsistent compliance**  
+Different business units and systems could interpret regulatory requirements differently if not managed through a unified approach.  
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
+\<Page 4\>
+
+## How ClearTax helped
+
+Rather than beginning with implementation, ClearTax started by understanding the business.
+
+The team worked closely with both business and technical stakeholders to study how invoices moved across the organisation. Every source system was analysed. Business processes were reviewed. Data flows were mapped. This helped identify where compliance gaps existed and what needed to change before implementation could begin.
+
+The result was a structured roadmap that balanced regulatory compliance with business continuity.
+
+The Implementation Journey  
+Business Assessment  
+        ↓  
+System & Data Analysis  
+        ↓  
+Gap Identification  
+        ↓  
+Compliance Blueprint  
+        ↓  
+Implementation  
+        ↓  
+Continuous Support
+
+With a clear understanding of the business landscape, ClearTax designed a scalable compliance blueprint aligned with ZATCA Phase 2 requirements. The solution was built to support high transaction volumes while maintaining operational efficiency across POS, ERP and e-commerce systems.
+
+Infrastructure was prepared to handle peak retail periods. End-to-end compliance was built into invoice generation across every channel. The team also implemented robust retry mechanisms to prevent invoice leakage and notification systems that enabled timely corrective action whenever issues occurred.
+
+Support did not end after implementation. ClearTax continued to assist Landmark Group during live operations, including ZATCA downtime scenarios. Processes were redesigned to reduce dependency on manual intervention, helping the organisation move towards a process-driven operating model.
+
+## Everything that came with ClearTax
+
+**Dedicated implementation team**  
+Worked closely with business and technical teams throughout the engagement.
+
+**Regulatory expertise**  
+Guided the organisation through complex ZATCA Phase 2 requirements and implementation decisions.
+
+**Reliable delivery**  
+Built a scalable compliance framework without disrupting day-to-day retail operations.
+
+**Continuous support**  
+Assisted during live operations with monitoring, alerts and support during downtime scenarios.
+
+**Future assurance**  
+Leveraged experience from multiple e-invoicing implementations to help the business stay prepared for evolving regulatory requirements.  
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
+\<Page 5\>
+
+## The result
+
+| Before | After |
+| ----- | ----- |
+| Independent systems with limited compliance visibility | A structured compliance roadmap across business systems |
+| Compliance gaps yet to be identified | Clear understanding of data, process and architectural requirements |
+| Infrastructure needed validation for high transaction volumes | Scalable design prepared for peak retail operations |
+| Greater dependency on manual processes | Process-driven execution supported by alerts and retry mechanisms |
+
+One of the strongest validations of the engagement came during the first-ever ZATCA inspection of Landmark Group's stores. The authorities provided positive feedback on the organisation's compliance and overall process execution. It reflected the strength of the planning, implementation and operational readiness established throughout the engagement.
+
+## A partnership built on expertise
+
+The engagement delivered far more than regulatory readiness.
+
+Landmark Group gained a scalable compliance foundation designed to support one of Saudi Arabia's largest retail operations. More importantly, it gained the confidence of having an experienced partner that understood both the regulation and the realities of large-scale implementation.
+
+From the first assessment to post-go-live support, ClearTax remained closely involved at every stage. The team provided guidance when challenges arose, supported business continuity during critical situations and helped build processes that would continue to support the organisation as regulations evolved.
+
+That is what sets ClearTax apart. Not just technology, but the expertise, delivery assurance and continuous support that help businesses stay compliant today while remaining prepared for tomorrow.
+
+## Planning your ZATCA compliance journey?
+
+Partner with ClearTax to build a future-ready compliance framework and get the expert guidance, reliable delivery and continuous support you need. 
+
+Book a demo now
+
+[image1]: <data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnAAAACgCAYAAACMslGlAAAq+UlEQVR4Xu2dia824/3Gf/8AagkhCGIJYgkl1BZtUMReaa0vkqL2raoLolJiKULVUipElaCIpZZGNfbYd7Xktca+bwlifvnczfXke77vPc/znO19z5xzfZLJOWfmnpl7Zq77/l73MnP+rzHGGGOMMZ3i//IKY4wxxhgztbGBM8YYY4zpGDZwxhhjjDEdwwbOGGOMMaZj2MAZY4wxxnQMGzhjjDHGmI5hA2eMMcYY0zFs4IwxxhhjOoYNnDHGGGNMx7CBM8YYY4zpGDZwxhhjjDEdwwbOGGOMMaZj2MAZY4wxxnQMGzhjjDHGmI5hA2eMMcYY0zFs4IwxxhhjOoYNnDHGGGNMx7CBM8YYY4zpGDZwxhhjjDEdwwbOGGOMMaZj2MAZY4wxxnQMGzhjjDHGmI5hA2eMMcYY0zFs4IwxxhhjOoYNnDHGGGNMx7CBM8YYY4zpGDZwxhhjjDEdwwbOGGOMMaZjTAsD9+KLLzaHHHJI85e//KX5+uuvm7feeqtZeeWVm/nmm68544wzeun4nfVsB9KyD/tyDGOMMcaYLtDXwO27777FBOUlmqIa9957b7PwwguXtLfcckvePIJ4jpVWWql55ZVXcpIeV199dS+tTBgceOCBZd3iiy/ePPnkk0MbONKyD+k4hplefPfdd81DDz3U/OQnP2kWWmih8px32mmn5rnnnstJm88//3wOnWvJGn7jjTeavffeu3fM888/v/nyyy9HpKlBfu66665mgw02KPv98Ic/bO65556yPoPWV1lllZJugQUWaM13zsuKK644VF7M9AKNZt0utthizf7779+88MILOXmB9Yceemiz3HLLDZUeXV144YXNeuutVzSp85x66qnNN998k5OPi7bYw6LySJndcsst59hOufnDH/7QfPrpp0Mdk/Q57USx6KKLznE+LeTfmPHQauC++OKLZptttilCG2TYInfeeeeIwp2DX0aFav755y8/t99++2oAevDBB4spJFCRNhq4zLAGzkxveN7rrrtu8+9//7v0tmKUVlhhhaILDNFXX33VS/vOO+8M1GsMGDvvvHPz4YcflmOiR5Y77rgj79LjscceK5U56c4555zm22+/bfbaa69yrLXXXrucX9xwww1F6zfddFM5/ttvv91suumm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yCO9wEZAQ+ik22abbZof/OAHfQVv5h7S+tprr91pvQ8b1LLe0boMXdR71PqFF144Qu9R6zJwq666ajkeOl922WVLusMOO6zcXzPviIYdnfd7Hq+88kopAxNp4J5//vlmu+22K0ZpohhW65MN13vMMcc0u++++5ju19zknnvuaTbeeOPmtttuy5vGxVQ1cNOVoQwcBZmHQo/EUUcdlTd3htEYuJxutdVWa9ZZZ53m/fff76276qqrijETBLL999+/WXjhhUcE/ocffrhZcsklyz286667SsvWTE2k9b/97W+d1vuwQa2m91dffXUOvWetg/QetS4DR0Uu6MXcYostmqWXXroEcDPv0POmN4I66ZlnnslJelxwwQXNggsuWNKNJdjWDNywuhwNk3HMsSDtd8GccK+4ZxPd02gDN3cZysBRkFdZZZXmpJNOKj0T77zzTk7SCcZj4IYRJtx+++2lYFx88cW9dQw7rbnmms1rr70WUpqpiLT+5ptvdlrvwwa1idB71HrNwAHH5zycz8w79LzpacWYofEamG4aMAxt/uhHPxpTsLWBm7rYwE0PBho45q1sv/32vZY2hf/qq6/OycoDYXn77beb4447rtdNz3Bh7HHSw1PamO6aa64ZkbYWWIBKKK//9NNPm2OPPbZZbrnlyvFo8b/44osj0ozHwFGZcR8GzeO57777Sqv1nHPO6a1j6OnKK68MqcxUJGodHbbpfTQaHrZctOmubX3Uek3vwwa12vEVvIfVe9R6zcDFYekumuHphJ73qaee2psWQ69zBs0zT/cf//jHiGBbe75t66OB03bplUWGXuUpBn4Z/kcffbSMWmjuJXmq1etZ65qzyXxOne+5554Le9WpGRv9ff/99/emDZAPTLDguuO1aRHD5od03Hud45BDDmmeffbZEfc23mvqlV133bWkpxxSXplvSiNU5+He3X333WXfOIQel2i4yNdOO+3Um6dNfvL8b6VTGu4L92c0Bu69995rzjrrrNKQ4Bj8pI5krrhoO15tPSMC+brVYKw1JqLGVl999bLPQgst1PzqV78akQdg7txBBx1Utiuv5D3CaMWRRx7ZLLbYYiXNXnvt1Xz88cfV7Rwnbx8LAw2cgtjNN9/cq9hrcyd4IGwjU1tttVWZI3PKKac0SyyxRHPnnXf20unhKW1Mhxhi2hxYRM3A8UC5Kcy7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t92af/3rX6UCOvPMM8v5tP20004rx6FiEGeffXZJs9VWW5X9KehuNc5M2gyc9B61vvPOO4/Qe9Y6SO8grbNv1HvWOtQMHAEu611aF+iahhPHR8tomvNTDhSQ0bu0fuGFF1rvMwx0eNhhhxUdUdfGehE9b7/99sX40PiIoJ+VVlqpeeWVV6rHYH/KC8e4/fbbS2xg+z777NPcdNNNzYcffliOg7k6+OCDi/Had999S7olllhijjKAJtH3RhttVLR61FFHNQsttFCzwgorlPPR8OHn1ltvXc6DiZPGc950feTPmOnGqA0cQSKaIArlnnvuWVpw8M4775TWEpWBgpx6KljPdrjzzjtLQWb/CD1itARJDzUDxz7se/3118dde3DsRRZZpATR2Jp89dVXSw/FV1991Xz00UclKG6++ebNZ599VrbTW/HBBx/00puZQ5uBi3qX1tFn1HvUOkS9g7RO8Ip6j1pXT102cDpnP72/++67xYztt99+vXywH70pSy+9dJmTJL1L62C9zyxmz57dLL/88sVYxXpRmqEhguZplEQwdOqZqx2D/aOuarEDLrroombxxRcvPdqCXmR66TBpgv0YLfnkk09666688spyTBaBdumNi6Yz5w1y/oyZLozawJ1wwgkh1f+gpXPDDTeU3yk4tJDiMCotN1pwrGe7AhzrMtpGQYSagaM7XMeqwf65x05wTno0FNA23HBDBzHTauCy3tVzFvWepwxEvUetsz4StU5ghGzg0DoBrp/eaagQGPMwEcaRXjjyKr1b6zMXma9ddtlljoYzSLd5GBV93XHHHeX3QceAWuzAjG266aZzHJvGNI3q2JBmP8pZROdFwxHKZxymHZQ3Y6YTozZwClyRHPzuu+++ZsEFF+wNLVEYY68F837WWWedUnBrnHPOOb3hp5qB43h01bfBsdVay4sKu4ZZWce8IHexz2yyhqX/rPdauYhah6j3qHWCVUZax2xBNnAyjP30Tu9F1nlcyKv0Lq07wM08NISJJpgO8MADD4yYI6kGRezR0jr1htWOkamVEXqB6Q3O2tSC5tE+sJ/muwmVC3rXIqSNBi7nLV6fMdONURu4mtHJwU+tLQ0t8eICf6sSUGFkHkQNnRtqBo5z5d6GCOnpgr/uuuvmWOKcDAo3rUtNlCUIO7DNTLKGpcGs91q5iFon4EW9D6t1nScbuByganBsegGZ9J31zkLwBPQurTP3yHqfeaDRs846q2hKxikOzdPTxnC95iqr5yuSj8H+sVetVkbUk4wBy/pkoYGiodxa/d5WjnL5yHnT9bX1XhvTZSbFwMFJJ53UG1qi5RV7KJg3tNpqq7X2wF188cWlVwNqBo5eC/VY1ODY22yzzYi3k/pBYGM+EtcXJ8SamUPWcDZWeX1MG7WungbpPWq91gMnrdNrDdnA5R66GgceeGAZQn3yySfzpjmQ1vU2qvU+M8HoXHHFFUVraiyDeow1L5MeYLRdQ8dgf+a3iVoZQZtoFK0OYjwGTuTri/kzZrowaQaOAkSvBG+9xUnagqEpAlPuAdDEbgIL1AwcPRtUKrXue6Cwktc8aRy0D+s//vjjEdvoOaHyyp92MNOfrOHRGLio9ZrepfWsx6h1mahs4NSb3U/vzz77bLPMMsvM8TYfPc2XXXZZ+T3rXT2F1vvMgQZtfNkGNDcyNi4Y+scUHX/88UVX6o2D2jHYPzZQ1NsW54+ib3RO2YlvRvOTXj8+gSPGY+By3nR9bZ0FxnSZSTNwQO8C+2gCbISAwivf8bMKs2bNKt339J7l4db8UgIVi74jxL7xMyLsy+cWODdv5/HJBLYzL0L557j0jLCObRwjf3bBzByyhkdj4EBapzct611aZ3vUe9Y6ZAMHjz766Bx6j58RQa98IoTjMzRKwD300ENLYFPAk96l9V133dV6n2FgctBRrDOZaoKuImqQ8F3O+OUAqB0jvyGtLxGgv9NPP715+umny3oaF9TH6JSGDvUyPcH5BZzxGLicN11f2xvcxnSZSTVwmj8RK4AIwzkq0Cx83JGPPMZWVJuB403Sgw46qHwfiH0ppHwkVfN9NBdiueWW6x2fc2lSK9tpIcbtfPjXk15nJlnDozVw0noOeEIflo56z1qHmoGDrPeodcCE3XXXXb2hUXTNd7Y+/fTTsl16j2XBep9ZvPfee6UXGGMW60w+MJ1RgyR+3gNqx2D/3Ai4++67S1lYddVVmxdffLG3Hj3SE8f+8fxx//EYuJy32vGNmS60GjhjjDEzE+Zwxi8HGGOmHjZwxhhjemjeZR71MMZMLWzgjDHG9LjmmmvK8CP//cAYM3WxgTPGmBkO8zb5HM7JJ59c5pTxcpd734yZ2tjAGWOMMcZ0DBs4Y4wxxpiOYQNnjDHGGNMxbOCMMcYYYzqGDZwxxhhjTMewgTPGGGOM6Rg2cMYYY4wxHcMGzhhjjDGmY9jAGWOMMcZ0DBs4Y4wxxpiOYQNnjDHGGNMxbOCMMcYYYzqGDZwxxhhjTMewgTPGGGOM6Rg2cMYYY4wxHcMGzhhjjDGmY9jAGWOMMcZ0DBs4Y4wxxpiOYQNnjDHGGNMxbOCMMcYYYzqGDZwxxhhjTMewgTPGGGOM6Rg2cMYYY4wxHcMGzhhjjDGmY9jAGWOMMcZ0DBs4Y4wxxpiOYQNnjDHGGNMxbOCMMcYYYzqGDZwxxhhjTMewgTPGGGOM6Rg2cMYYY4wxHeP/AUvozusgGdv8AAAAAElFTkSuQmCC>
