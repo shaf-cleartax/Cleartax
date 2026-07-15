@@ -3,21 +3,37 @@ Everything below is derived from three approved ClearTax LinkedIn ads. Follow it
 when building. Read this file in full before writing any ad markup.
 Canvas
 
-Size: 900 × 900 px (1:1). Always build the SVG at exactly this size (viewBox="0 0 900 900").
-Safe margin: keep all logo, text, and CTA content inside a ~60px margin from every edge.
-The gradient background fills the whole canvas; the hero photo occupies the reserved right /
-bottom-right zone (see Hero).
-Layout zones (900 canvas):
+Standard: every ad is built in all 3 of these dimensions by default (a matched set), not just
+one, unless the user explicitly asks for a single format:
+  - 1080 × 566 px (1.91:1 landscape)
+  - 1080 × 1080 px (1:1 square)
+  - 1080 × 1920 px (9:16 vertical/story)
+Use exact viewBox values, e.g. viewBox="0 0 1080 1080". Same content/design system across all
+three — logo, headline, subhead, CTA, hero/background — laid out per format, not just the
+square scaled or cropped into the other two.
+Safe margin: keep all logo, text, and CTA content inside a margin from every edge, scaled to
+canvas size (~60px at a 900-class canvas, ~65-70px at the 1080-wide formats above).
+The gradient/hero background fills the whole canvas; the hero photo or hero asset occupies the
+reserved right / bottom-right zone (see Hero).
+Layout zones (proportions — scale to whichever canvas you're building):
 
-Logo: top-left, left edge at 60px, top edge ~54px. Size fixed at 217×49 (see Logo rules).
-Headline block: left-aligned, starts ~200px from top.
-Subhead: directly under headline, ~20–34px gap.
-CTA pill (if used): below subhead, ~40px gap.
-Hero photo: right third to right half, or bottom-right quadrant, kept clear of text.
+Logo: top-left, left edge at the safe margin, top edge close to it. Fixed aspect ratio
+(source viewBox 218×50), scaled to the canvas.
+Headline block: left-aligned, starts a bit below the logo (roughly 20% down from the top on
+the 1:1 and landscape formats; a bit higher up, proportionally, on the tall 9:16 format).
+Subhead: directly under headline, small gap.
+CTA pill (if used): below subhead, another small gap.
+Hero photo/asset: right third to right half, or bottom-right quadrant (or bottom-center on
+9:16), kept clear of text.
 
+If a project's older reference assets give a single legacy size (e.g. a 900×900-only spec),
+treat the 3-dimension standard above as the default going forward and only build that legacy
+single size if asked to reproduce that specific existing asset.
 
-Headline sizes below are given for the 900 canvas. If you ever need another size, scale all
-values proportionally.
+Headline sizes below are given for a 900-class canvas as a baseline. Scale all values
+proportionally for the 1080-wide standard formats (roughly ×1.2), and re-check line-wrap widths
+per format since the landscape and vertical canvases have very different usable text-column
+widths.
 
 Logo rules
 

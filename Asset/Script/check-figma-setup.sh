@@ -20,7 +20,7 @@ else
 fi
 echo
 
-echo "== 2. macOS Accessibility permission for the claude CLI binary =="
+echo "== 2. macOS Accessibility permission (Terminal + claude CLI) =="
 ACCESS_CHECK=$(osascript -e 'tell application "System Events" to name of first process whose frontmost is true' 2>&1)
 if echo "$ACCESS_CHECK" | grep -qi "not allowed assistive access"; then
   echo "$FAIL Accessibility permission not granted."
@@ -33,9 +33,13 @@ if echo "$ACCESS_CHECK" | grep -qi "not allowed assistive access"; then
     case "$comm" in */claude) CLAUDE_BIN="$comm" ;; esac
     pid=$(echo "$info" | awk '{print $2}')
   done
-  echo "   Fix: System Settings -> Privacy & Security -> Accessibility -> add this exact binary:"
-  echo "        $CLAUDE_BIN"
-  echo "        (must be the claude CLI binary itself, not Terminal/iTerm/Figma)"
+  echo "   Fix: this first attempt should have opened System Settings -> Privacy & Security ->"
+  echo "        Accessibility on its own. If it did, toggle ON both of these in that list"
+  echo "        (opening the dialog is not the same as the permission being granted):"
+  echo "          - Terminal (or whichever terminal app is running this)"
+  echo "          - claude   (the CLI binary itself: $CLAUDE_BIN)"
+  echo "        If the dialog did NOT open, go there manually and click '+' to add the"
+  echo "        claude binary at the path above."
 else
   echo "$PASS Accessibility permission is granted (osascript can query System Events)."
 fi

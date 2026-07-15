@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ClearTax Security &amp; Trust Kit</title>
+<style>
+@font-face{font-family:'Nohemi';font-weight:500;src:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Fonts/Nohemi/Web-TT/Nohemi-Medium.woff2') format('woff2');}
+@font-face{font-family:'Nohemi';font-weight:600;src:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Fonts/Nohemi/Web-TT/Nohemi-SemiBold.woff2') format('woff2');}
+@font-face{font-family:'Nohemi';font-weight:700;src:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Fonts/Nohemi/Web-TT/Nohemi-Bold.woff2') format('woff2');}
+@font-face{font-family:'Nohemi';font-weight:800;src:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Fonts/Nohemi/Web-TT/Nohemi-ExtraBold.woff2') format('woff2');}
+@font-face{font-family:'Gilroy';font-weight:400;src:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Fonts/Gilroy - font/Gilroy-Regular.otf') format('opentype');}
+@font-face{font-family:'Gilroy';font-weight:500;src:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Fonts/Gilroy - font/Gilroy-Medium.otf') format('opentype');}
+@font-face{font-family:'Gilroy';font-weight:600;src:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Fonts/Gilroy - font/Gilroy-Semibold.otf') format('opentype');}
+@font-face{font-family:'Gilroy';font-weight:700;src:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Fonts/Gilroy - font/Gilroy-Bold.otf') format('opentype');}
+@font-face{font-family:'Gilroy';font-weight:400;font-style:italic;src:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Fonts/Gilroy - font/Gilroy-RegularItalic.otf') format('opentype');}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+@page{size:794px 1123px;margin:0;}
+body{background:#ccc;}
+
+:root{
+  --brand:#3355FF; --brand-600:#2944CC; --brand-700:#1F3399;
+  --info-subtle:#D6DDFF; --ink:#0D0D0D; --body:#4D4D4D; --muted:#808080;
+  --divider:#E5E5E5; --card-bg:#F9FAFB; --notice:#FF8000; --positive:#66C285; --bg:#FFFFFF;
+}
+
+.page{width:794px;height:1123px;position:relative;overflow:hidden;background:var(--bg);font-family:'Gilroy';}
+
+/* cover — standard recipe */
+.cover{color:#fff;}
+.cover .img{position:absolute;inset:0;background-size:cover;background-repeat:no-repeat;background-image:url('file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Background/Stars/Stars-6.jpg');background-position:top;}
+.cover::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.42) 0%, rgba(0,0,0,0.18) 30%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.55) 100%);}
+.cover .brandmark{position:absolute;top:44px;left:56px;height:32px;z-index:2;}
+.cover .textblock{position:absolute;top:224px;left:56px;right:70px;z-index:2;}
+.cov-eyebrow{font-family:'Gilroy';font-weight:600;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.75);margin-bottom:16px;}
+.cov-title{font-family:'Nohemi';font-weight:700;font-size:56px;line-height:1.1;letter-spacing:-0.01em;color:#fff;margin-bottom:22px;}
+.cov-sub{font-family:'Gilroy';font-weight:500;font-size:19px;line-height:1.5;color:#fff;max-width:620px;}
+.cov-foot{position:absolute;bottom:44px;left:56px;right:56px;z-index:2;font-family:'Gilroy';font-weight:500;font-size:11px;letter-spacing:0.03em;color:rgba(255,255,255,0.7);}
+
+/* interior chrome */
+.eh{position:absolute;top:44px;left:56px;right:56px;display:flex;justify-content:space-between;align-items:center;}
+.eh img{height:18px;}
+.eh .runtitle{font-family:'Gilroy';font-weight:600;font-size:11px;letter-spacing:0.04em;text-transform:uppercase;color:var(--muted);}
+.divider-rule{position:absolute;top:84px;left:56px;right:56px;border-bottom:1px solid var(--divider);}
+.content{position:absolute;top:130px;left:56px;right:56px;bottom:76px;}
+.footer-rule{position:absolute;bottom:56px;left:56px;right:56px;border-bottom:1px solid var(--divider);}
+.footer{position:absolute;bottom:30px;left:56px;right:56px;display:flex;justify-content:space-between;font-family:'Gilroy';font-weight:500;font-size:10px;color:var(--muted);}
+
+.sec-head{font-family:'Nohemi';font-weight:700;font-size:24px;color:var(--brand);margin-bottom:8px;}
+.sec-rule{width:38px;height:4px;background:var(--brand);border-radius:2px;margin-bottom:14px;}
+.sec-tagline{font-family:'Gilroy';font-weight:400;font-size:13.5px;color:var(--muted);line-height:1.5;margin-bottom:18px;}
+.doc-num{font-family:'Gilroy';font-weight:700;font-size:12px;letter-spacing:0.06em;color:var(--brand);margin-bottom:2px;}
+.sub-head{font-family:'Nohemi';font-weight:700;font-size:18px;color:var(--ink);margin-bottom:12px;margin-top:40px;}
+.p{font-family:'Gilroy';font-weight:400;font-size:13.5px;line-height:1.62;color:var(--body);margin-bottom:12px;}
+.p b{font-weight:600;color:var(--ink);}
+
+/* checklist bullets (question-style) */
+.qlist{list-style:none;margin:14px 0;}
+.qlist li{position:relative;padding-left:20px;margin-bottom:11px;font-family:'Gilroy';font-weight:400;font-size:13px;line-height:1.55;color:var(--body);}
+.qlist li::before{content:'';position:absolute;left:0;top:6px;width:7px;height:7px;border-radius:2px;background:var(--brand);}
+.qlist li b{font-weight:600;color:var(--ink);}
+
+/* answer panel — the ClearTax proof box */
+.answer{background:var(--info-subtle);border-left:4px solid var(--brand);border-radius:0 10px 10px 0;padding:16px 20px;margin:16px 0;}
+.answer .al{font-family:'Gilroy';font-weight:700;font-size:10.5px;letter-spacing:0.05em;text-transform:uppercase;color:var(--brand-700);margin-bottom:8px;}
+.answer .at{font-family:'Gilroy';font-weight:400;font-size:13px;line-height:1.58;color:var(--brand-700);}
+.answer .at b{font-weight:700;}
+
+/* secondary note box */
+.note{background:var(--card-bg);border-radius:10px;padding:14px 20px;margin:16px 0;}
+.note .nl{font-family:'Gilroy';font-weight:700;font-size:12.5px;color:var(--ink);margin-bottom:4px;}
+.note .nt{font-family:'Gilroy';font-weight:400;font-size:12.5px;line-height:1.55;color:var(--body);}
+
+/* certification 2-col grid */
+.cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0;}
+.cert-card{background:var(--card-bg);border-radius:12px;padding:16px 18px;}
+.cert-card .ct{font-family:'Nohemi';font-weight:700;font-size:13.5px;color:var(--ink);margin-bottom:6px;}
+.cert-card .cd{font-family:'Gilroy';font-weight:400;font-size:11.5px;line-height:1.5;color:var(--body);}
+
+/* infra 2-col row */
+.infra-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0;}
+.infra-card{background:var(--info-subtle);border-radius:12px;padding:16px 18px;}
+.infra-card .it{font-family:'Gilroy';font-weight:700;font-size:10.5px;letter-spacing:0.04em;text-transform:uppercase;color:var(--brand-700);margin-bottom:6px;}
+.infra-card .id{font-family:'Gilroy';font-weight:400;font-size:12px;line-height:1.5;color:var(--brand-700);}
+
+/* stat strip (3-col) */
+.stat-row{display:flex;gap:12px;margin:16px 0;}
+.stat-card{flex:1;background:var(--card-bg);border-radius:12px;padding:16px 14px;}
+.stat-num{font-family:'Nohemi';font-weight:700;font-size:20px;color:var(--brand);}
+.stat-lbl{font-family:'Gilroy';font-weight:400;font-size:10.5px;color:var(--body);margin-top:6px;line-height:1.4;}
+
+/* comparison table */
+.cmp{width:100%;border-collapse:collapse;margin:12px 0;}
+.cmp th{background:var(--info-subtle);font-family:'Gilroy';font-weight:600;font-size:10.5px;text-transform:uppercase;letter-spacing:0.03em;color:var(--brand-700);text-align:left;padding:9px 12px;}
+.cmp th:first-child{border-radius:8px 0 0 8px;}
+.cmp th:last-child{border-radius:0 8px 8px 0;}
+.cmp td{font-family:'Gilroy';font-weight:400;font-size:11.5px;line-height:1.5;color:var(--body);padding:10px 12px;border-bottom:1px solid var(--divider);vertical-align:top;}
+.cmp td b{font-weight:600;color:var(--ink);}
+
+/* closing CTA line */
+.cta-line{display:flex;align-items:center;gap:8px;font-family:'Nohemi';font-weight:700;font-size:14px;color:var(--brand);margin-top:20px;}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — COVER -->
+<section class="page cover">
+  <div class="img"></div>
+  <img class="brandmark" src="file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Logo/Logo.svg">
+  <div class="textblock">
+    <div class="cov-eyebrow">The Security &amp; Trust Kit</div>
+    <div class="cov-title">Vendor Discovery, Done Properly: The 4 Proofs to Demand Before You Sign</div>
+    <div class="cov-sub">The evidence you must demand from every e-invoicing vendor in the UAE — before your invoice data becomes the government's source of truth.</div>
+  </div>
+  <div class="cov-foot">Vendor discovery, done properly &nbsp;·&nbsp; UAE e-invoicing mandate &nbsp;·&nbsp; Jan 2027</div>
+</section>
+
+<!-- PAGE 2 — INTRO + WHAT VERIFIED LOOKS LIKE -->
+<section class="page">
+  <div class="eh"><img src="file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Logo/Logo-dark.svg"><span class="runtitle">ClearTax · Security &amp; Trust Kit</span></div>
+  <div class="divider-rule"></div>
+  <div class="content">
+    <div class="sec-head" style="margin-top:0;">In Vendor Discovery, Every Slide Says "Enterprise-Grade Security." Almost None Sign It.</div>
+    <div class="sec-rule"></div>
+    <p class="p">The market has moved past feature comparisons. Every approved ASP claims the same scale, the same security, the same connectors. What actually separates vendors is no longer <b>what they claim</b>, it is <b>what they can evidence, and what they will put in writing.</b></p>
+    <p class="p">And the stakes are unusual. From <b>1 January 2027</b>, your e-invoices flow through your ASP to the FTA in real time. That makes your ASP the custodian of your most sensitive commercial data: every customer, every price, every margin, every dispute. A vendor security failure is not an IT incident. It is a <b>business exposure event</b>, visible to the regulator.</p>
+
+    <div class="note">
+      <div class="nl">The rule of vendor discovery</div>
+      <div class="nt">If a security claim exists only in a demo or a slide, treat it as unverified. Every claim in this kit maps to a document you can hold, an audit you can read, or an SLA you can enforce. Ask every vendor for all four. Then ask for them signed.</div>
+    </div>
+
+    <div class="sub-head">What "Verified" Looks Like, in 4 Documents</div>
+    <ul class="qlist">
+      <li><b>The SER walkthrough</b> — an independent penetration test you can inspect, plus a data-handling sign-off that names who can touch your data, and when.</li>
+      <li><b>The certifications and audit record</b> — SOC 2 Type II, ISO 27001, encryption standards and audit cadence, with certificate numbers, not logos.</li>
+      <li><b>The data-residency note</b> — primary site, failover site, and a contractual commitment that data never crosses the UAE border.</li>
+      <li><b>The SLA sheet</b> — uptime, first-response and resolution times, backed by service credits, not goodwill.</li>
+    </ul>
+
+    <div class="note">
+      <div class="nl">Why this favours specialists</div>
+      <div class="nt">For a global software giant, your security questionnaire is a ticket in a queue. For ClearTax, compliance is the entire company, so security evidence is not assembled on request; it is the product. Everything in this kit is available today, in full, under NDA.</div>
+    </div>
+  </div>
+  <div class="footer-rule"></div>
+  <div class="footer"><span>cleartax.com</span><span>02</span></div>
+</section>
+
+<!-- PAGE 3 — DOCUMENT 01: THE SER WALKTHROUGH -->
+<section class="page">
+  <div class="eh"><img src="file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Logo/Logo-dark.svg"><span class="runtitle">ClearTax · Security &amp; Trust Kit</span></div>
+  <div class="divider-rule"></div>
+  <div class="content">
+    <div class="doc-num" style="margin-top:0;">DOCUMENT 01</div>
+    <div class="sec-head" style="margin-top:0;">The SER Walkthrough</div>
+    <div class="sec-rule"></div>
+    <p class="p">A Security Engagement Review is where claims meet evidence: an independent penetration test, plus a signed commitment on exactly how your data is handled.</p>
+
+    <ul class="qlist">
+      <li>Has an <b>independent third party</b> performed Vulnerability Assessment &amp; Penetration Testing (VAPT) on the platform, and can they walk you through the latest report, including what was found and fixed?</li>
+      <li>Is testing <b>recurring</b> (annual or better, plus after major releases), or was it a one-time exercise for accreditation?</li>
+      <li>Will they sign a <b>data-handling commitment</b>: who can access your data, under what roles, with what logging, and how access is revoked?</li>
+      <li>Is access governed by <b>role-based access control (RBAC)</b> and are all API calls authenticated with tokens, or does "admin access" mean everyone?</li>
+      <li>Will they complete <b>your</b> security questionnaire and sit for a review with your infosec team, or route you to a generic trust page?</li>
+    </ul>
+
+    <div class="answer">
+      <div class="al">The ClearTax Answer</div>
+      <div class="at">We run a structured SER with every enterprise prospect: a walkthrough of our latest independent VAPT report, our SOC 2 Type II audit findings, and our security architecture, with your infosec team in the room. Access to your data is governed by RBAC with granular permissions; every API call is token-authenticated; and we sign a data-handling commitment covering access, logging, retention and revocation, aligned with UAE PDPL privacy-by-design principles. Nothing is "available on request only." It is available in the first meeting, under NDA.</div>
+    </div>
+
+    <div class="note">
+      <div class="nl">Red flag to watch</div>
+      <div class="nt">A vendor who shares a certificate but refuses to walk through the underlying report. Certificates say testing happened. The walkthrough tells you whether they understood the findings.</div>
+    </div>
+  </div>
+  <div class="footer-rule"></div>
+  <div class="footer"><span>cleartax.com</span><span>03</span></div>
+</section>
+
+<!-- PAGE 4 — DOCUMENT 02: CERTIFICATIONS AND INDEPENDENT AUDITS -->
+<section class="page">
+  <div class="eh"><img src="file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Logo/Logo-dark.svg"><span class="runtitle">ClearTax · Security &amp; Trust Kit</span></div>
+  <div class="divider-rule"></div>
+  <div class="content">
+    <div class="doc-num" style="margin-top:0;">DOCUMENT 02</div>
+    <div class="sec-head" style="margin-top:0;">Certifications and Independent Audits</div>
+    <div class="sec-rule"></div>
+    <p class="p">Certifications are table stakes, but only if they are current, independently audited, and cover the actual production platform. Ask for certificate scope and dates, not logos.</p>
+
+    <div class="cert-grid">
+      <div class="cert-card"><div class="ct">SOC 2 Type II</div><div class="cd">Security controls audited by an independent firm over time, not a point-in-time snapshot. The gold standard for operational security discipline.</div></div>
+      <div class="cert-card"><div class="ct">ISO 27001:2022</div><div class="cd">Certified information security management system covering people, process and platform, on the current 2022 standard, not the retired 2013 one.</div></div>
+      <div class="cert-card"><div class="ct">ISO 22301:2019</div><div class="cd">Business continuity certification: proof that failover, recovery and continuity plans are documented, tested and audited.</div></div>
+      <div class="cert-card"><div class="ct">Independent VAPT</div><div class="cd">Regular third-party penetration testing and hardening, with reports you can review, not a self-assessment.</div></div>
+      <div class="cert-card"><div class="ct">AES 256-bit at rest · SSL/TLS in transit</div><div class="cd">Strong encryption for stored data, and encrypted transmission for every invoice in motion, across every hop.</div></div>
+      <div class="cert-card"><div class="ct">RBAC + Token-Authenticated APIs</div><div class="cd">Granular, role-based access to your data, and authenticated tokens on every API call. No shared credentials, no blanket admin.</div></div>
+    </div>
+
+    <div class="answer">
+      <div class="al">The ClearTax Answer</div>
+      <div class="at">ClearTax holds all of the above, current and independently audited: SOC 2 Type II, ISO 27001:2022, ISO 22301:2019, recurring independent VAPT, AES-256 encryption at rest, SSL-secured data in transit, RBAC and token-based API authentication, with privacy controls aligned to UAE PDPL. The same platform already carries <b>1B+ e-invoices annually for 5,000+ enterprises across 50+ countries</b>, so these controls are exercised at scale every day, not maintained for the audit.</div>
+    </div>
+
+    <div class="note">
+      <div class="nl">What to check on any certificate</div>
+      <div class="nt">The certificate's scope (does it cover the e-invoicing platform you'll actually use?), the issue and expiry dates, and the auditing body. A logo without a scope statement is marketing, not assurance.</div>
+    </div>
+  </div>
+  <div class="footer-rule"></div>
+  <div class="footer"><span>cleartax.com</span><span>04</span></div>
+</section>
+
+<!-- PAGE 5 — DOCUMENT 03: THE DATA-RESIDENCY NOTE -->
+<section class="page">
+  <div class="eh"><img src="file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Logo/Logo-dark.svg"><span class="runtitle">ClearTax · Security &amp; Trust Kit</span></div>
+  <div class="divider-rule"></div>
+  <div class="content">
+    <div class="doc-num" style="margin-top:0;">DOCUMENT 03</div>
+    <div class="sec-head" style="margin-top:0;">The Data-Residency Note</div>
+    <div class="sec-rule"></div>
+    <p class="p">"Hosted in the UAE" can mean many things. The questions that matter: where is primary, where is failover, and does anything, including backups, ever cross the border?</p>
+
+    <ul class="qlist">
+      <li>Is <b>production data</b> hosted inside the UAE, and, crucially, is the <b>disaster-recovery site also inside the UAE</b>? A local primary with a foreign failover is not data residency.</li>
+      <li>Is the architecture <b>multi-cloud</b>, or does a single provider outage take your invoicing down with it?</li>
+      <li>What are the committed <b>RTO and RPO</b>, and are they contractual?</li>
+      <li>Do <b>backups and replication traffic</b> stay in-country, or do they quietly transit foreign regions?</li>
+    </ul>
+
+    <div class="infra-row">
+      <div class="infra-card"><div class="it">Primary · OCI Abu Dhabi</div><div class="id">Oracle Cloud Infrastructure, production workloads, UAE soil.</div></div>
+      <div class="infra-card"><div class="it">Failover · AWS UAE (me-central-1) Dubai</div><div class="id">Independent cloud vendor, 3 availability zones, UAE soil, auto-sync with primary.</div></div>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-card"><div class="stat-num">&lt; 1 hr</div><div class="stat-lbl">Recovery Time Objective (same-region DR)</div></div>
+      <div class="stat-card"><div class="stat-num">&lt; 15 min</div><div class="stat-lbl">Recovery Point Objective</div></div>
+      <div class="stat-card"><div class="stat-num">Zero</div><div class="stat-lbl">Cross-border data movement, production or backup</div></div>
+    </div>
+
+    <div class="answer">
+      <div class="al">The ClearTax Answer</div>
+      <div class="at">100% UAE data sovereignty, enforced at the infrastructure layer. Our failover is local-to-local, Abu Dhabi to Dubai, across two independent cloud vendors, so a provider-level failure never becomes your compliance failure, and no production data or backup traffic ever leaves UAE jurisdiction. Delivered through a local UAE entity, aligned with UAE PDPL, and proven at scale: the same architecture processes <b>300M+ e-invoices annually on OCI in KSA</b>.</div>
+    </div>
+  </div>
+  <div class="footer-rule"></div>
+  <div class="footer"><span>cleartax.com</span><span>05</span></div>
+</section>
+
+<!-- PAGE 6 — DOCUMENT 04: THE SLA SHEET + BOTTOM LINE + CTA -->
+<section class="page">
+  <div class="eh"><img src="file:///Users/mohammed.shafin/Documents/Cleartax/Design system/Logo/Logo-dark.svg"><span class="runtitle">ClearTax · Security &amp; Trust Kit</span></div>
+  <div class="divider-rule"></div>
+  <div class="content">
+    <div class="doc-num" style="margin-top:0;">DOCUMENT 04</div>
+    <div class="sec-head" style="margin-top:0;">The SLA Sheet</div>
+    <div class="sec-rule"></div>
+    <p class="p">An SLA without service credits is a wish. Ask every vendor to put numbers, and consequences, on paper.</p>
+
+    <table class="cmp">
+      <tr><th style="width:20%;">Commitment</th><th style="width:34%;">The Number to Demand</th><th>Why It Matters</th></tr>
+      <tr><td><b>Platform uptime</b></td><td>99.9%, contractual, backed by service credits and independently verified</td><td>Downtime means invoices don't move, and penalties compound daily under Cabinet Decision No. 106.</td></tr>
+      <tr><td><b>First response</b></td><td>Within 60 minutes for critical issues, 24×7, in-house, not an outsourced call centre</td><td>Message Level Status (MLS) gives your ASP a 10-minute response window on the Peppol network. A 5-day ticket queue is disqualifying.</td></tr>
+      <tr><td><b>Critical fix / workaround</b></td><td>Within 4 hours, with a named owner and a live observation tracker</td><td>Every hour a failure sits unresolved is AED 100 per invoice accumulating in the background.</td></tr>
+      <tr><td><b>Failed invoices</b></td><td>Auto-healing retries, deep validations, ASP-owned MLS resolution</td><td>Failures should be retried and resolved by the platform, not discovered by your team in a penalty notice.</td></tr>
+      <tr><td><b>Peak throughput</b></td><td>10,000 e-invoices/sec, 200–300 ms generation, proven at 100M+/month</td><td>Month-end and promo peaks are exactly when a weak platform fails, and when failure costs most.</td></tr>
+      <tr><td><b>Escalation</b></td><td>3-tier matrix agreed at kick-off, named CSM, leadership line, all the way to the CEO</td><td>The escalation path must exist before things go wrong, not be negotiated during the outage.</td></tr>
+    </table>
+
+    <div class="answer">
+      <div class="al">The ClearTax Answer</div>
+      <div class="at">Every row above is our standard commitment: a contractual 99.9% uptime SLA backed by service credits, 24×7 in-house support with a dedicated local CSM, a 3-tier escalation matrix agreed at implementation start, auto-healing retry logic with ASP-owned MLS resolution inside Peppol's 10-minute window, and, because e-invoicing is our entire business, a direct line to our CEO if you are ever unhappy. Ask any global platform to match that, in writing.</div>
+    </div>
+
+    <div class="note">
+      <div class="nl">The bottom line for CFOs</div>
+      <div class="nt">Security and trust are not evaluated in a demo. They are evaluated in documents: a pen-test you can read, certifications with scope and dates, a residency note with no asterisks, and an SLA with credits attached. ClearTax will hand you all four, signed. Ask every other vendor to do the same.</div>
+    </div>
+
+    <div class="cta-line">Talk to our Expert &nbsp;→</div>
+  </div>
+  <div class="footer-rule"></div>
+  <div class="footer"><span>cleartax.com</span><span>06</span></div>
+</section>
+
+</body>
+</html>
