@@ -16,7 +16,7 @@ Typical asks this covers: "create a one-pager on X", "recreate this brochure wit
 Read these instead of hardcoding values — they are the source of truth and can change. The vault has been reorganized before without notice (top-level content folders were consolidated into a `{Category}/{Design system, Output, Reference, Skill}` shape) — verify each path below still exists before relying on it, and re-locate it (e.g. `find . -iname "<filename>"`) if not:
 
 - `Design system/Variables/Semantics.json` — color tokens (a single flat file; there is no separate file per market/geography)
-- `Design system/Fonts/Typograpghy Style Guide.pdf` — the exact type scale (sizes, line-heights, weights) for Display, H1–H6, Paragraph, Label, and Overline (the misspelling "Typograpghy" is in the actual filename — match it exactly)
+- `Design system/Fonts/Typography Style Guide.pdf` and `Design system/Variables/Typography.json` — the exact type scale (sizes, line-heights, weights, letter-spacing) for Display, H1–H6, Paragraph, Label, and Overline. This was reformalized on 2026-07-15 — both files now postdate and supersede any older memory of the scale (the filename was also corrected around the same time; it no longer contains the "Typograpghy" misspelling older notes referred to). Re-diff against these two files periodically — this skill doc can go stale the same way it just did once.
 - `Design system/Variables/Spacing.json` and `Design system/Variables/Border.json` — spacing and radius scale
 - `Design system/Fonts/Nohemi/Web-TT/*.woff2` and `Design system/Fonts/Gilroy - font/*.otf` — the two brand typefaces
 - `Design system/Logo/Logo.svg` (white) and `Design system/Logo/Logo-dark.svg` (black) — vector logo marks. `Design system/Logo/Cleartax-logo-black.png` / `Cleartax-logo-white.png` are raster alternates. Never render the logo as typed text.
@@ -40,24 +40,46 @@ Always pull from the token file rather than reusing these numbers blindly — ve
 
 ## Typography — map every text style to a named token
 
-Nohemi is used for Display and H1–H6 only. Gilroy is used for Paragraph, Label, and Overline. Never use an arbitrary in-between size (e.g. "21px" or "12.6px") — always round to the nearest defined token:
+**Reformalized 2026-07-15** — the table below reflects the current `Typography.json` + `Typography Style Guide.pdf`. If you're reading this after that date, re-diff against those two files before trusting the table blindly; it has already gone stale once (the previous version of this table included a `H4/Extrabold` and `Display/Extrabold` token that no longer exist — Nohemi ExtraBold is still installed as a font file but is **not** part of the sanctioned scale anymore).
 
-| Token | Font / weight | Size / line-height |
+Nohemi is used for Display and H1–H6 only, each available in **Medium / Semi Bold / Bold** — same size/line-height across all three weights, pick weight for emphasis, not size. Gilroy is used for Paragraph, Label, and Overline, each available in **Medium / Semi Bold** (Paragraph also has Special variants: underline, strikethrough, italic — all on the Medium weight). Never use an arbitrary in-between size (e.g. "21px" or "12.6px") — always round to the nearest defined token:
+
+| Token | Font / weight | Size / line-height (Desktop) |
 |---|---|---|
-| Cover/Hero/Bold | Nohemi Bold | 68 / 74 |
-| Cover/Subtitle/Medium | Gilroy Medium | 23 / 33 |
-| Display/Extrabold/Large | Nohemi ExtraBold | 52 / 56 |
-| H4/Extrabold/Desktop | Nohemi ExtraBold | 28 / 36 |
-| H5/Bold/Desktop | Nohemi Bold | 24 / 32 |
-| H5/Semibold/Desktop | Nohemi SemiBold | 24 / 32 |
-| H6/Bold/Desktop | Nohemi Bold | 20 / 28 |
-| Paragraph/Small/Regular | Gilroy Regular | 14 / 20 |
-| Paragraph/XSmall/Regular, Medium, Semibold | Gilroy | 12 / 20 |
-| Label/XSmall/Regular, Medium, Semibold | Gilroy | 10 / 14 |
-| Overline/Small | Gilroy Semibold | 12 / 20 |
+| Display/Large | Nohemi Medium / Semi Bold / Bold | 52 / 56 |
+| Display/Small | Nohemi Medium / Semi Bold / Bold | 44 / 48 |
+| H1 | Nohemi Medium / Semi Bold / Bold | 40 / 48 |
+| H2 | Nohemi Medium / Semi Bold / Bold | 36 / 44 |
+| H3 | Nohemi Medium / Semi Bold / Bold | 32 / 40 |
+| H4 | Nohemi Medium / Semi Bold / Bold | 28 / 36 |
+| H5 | Nohemi Medium / Semi Bold / Bold | 24 / 32 |
+| H6 | Nohemi Medium / Semi Bold / Bold | 20 / 28 |
+| Paragraph/Large | Gilroy Medium / Semibold | 18 / 28 |
+| Paragraph/Medium | Gilroy Medium / Semibold | 16 / 24 |
+| Paragraph/Small | Gilroy Medium / Semibold | 14 / 20 |
+| Paragraph/XSmall | Gilroy Medium / Semibold | 12 / 20 |
+| Label/Large | Gilroy Medium / Semibold | 16 / 18 |
+| Label/Medium | Gilroy Medium / Semibold | 14 / 16 |
+| Label/Small | Gilroy Medium / Semibold | 12 / 14 |
+| Label/XSmall | Gilroy Medium / Semibold | 10 / 14 |
 | Overline/Large | Gilroy Semibold | 14 / 20 |
+| Overline/Small | Gilroy Semibold | 12 / 20 |
 
-Practical mapping used across built assets: page section headings → H5/Bold/Desktop; body copy/table cells/card text → Paragraph/XSmall; running header, table headers, "key insight"-style labels, chip text → Overline/Small or Label/XSmall; big stat numbers → H4/Extrabold/Desktop; **cover headline → Cover/Hero/Bold (68/74), tight tracking (-0.01em); cover subtitle → Cover/Subtitle/Medium (23/33) directly beneath it.** This is the standard for every cover page going forward — deliberately larger than the general Display token (52/56) so the cover reads as a hero moment rather than just the biggest heading in the deck. Reserve Display/Extrabold/Large for non-cover uses (e.g. a large in-page stat or standalone statement). Both cover title and subtitle render as solid white (`#ffffff`), no text-shadow — not a gradient text-fill either; a diagonal white-to-white-alpha gradient fill was tested and rejected in favor of plain white. A blurred `text-shadow` (e.g. `0 2px 16px rgba(0,0,0,0.25)`) was also tested and rejected: some PDF renderers (e.g. macOS Preview/Quartz) rasterize Chrome print-to-pdf's text-shadow blur as a visible semi-opaque rectangle behind the glyphs instead of a soft blur — a real bug, not a one-off rendering quirk, so avoid blurred text-shadow on cover type entirely. The bottom-weighted black scrim already provides enough contrast for white text without it.
+Each Heading level (H1–H6) also has a Mobile size one step down from Desktop (e.g. H1/Mobile is 36/44, matching H2/Desktop) — irrelevant for a fixed-canvas A4 PDF, relevant if this scale is ever reused for a responsive web asset.
+
+**Letter-spacing tokens** (from the same `Typography.json`, absolute px, not em/percent — stop hand-picking values like `0.03em`/`0.05em`):
+
+| Token | Value |
+|---|---|
+| 2XS | -2px |
+| XS | -1px |
+| S | -0.5px |
+| None | 0px |
+| XS+ | +0.5px |
+| S+ | +1px |
+| M+ | +2px |
+
+Practical mapping used across built assets: page section headings → H5/Bold; body copy/table cells/card text → Paragraph/XSmall; running header, table headers, "key insight"-style labels, chip text → Overline/Small or Label/XSmall; big stat numbers → H4/Bold (same 28/36 size the old ExtraBold token used — just swap the weight down to Bold, don't invent a new size to compensate). **Cover headline and subtitle are a deliberate exception that sits outside this formal scale** — `Cover/Hero/Bold` (Nohemi Bold, 68/74, tight tracking `-0.01em`) and `Cover/Subtitle/Medium` (Gilroy Medium, 23/33) directly beneath it. Neither 68/74 nor 23/33 appears anywhere in `Typography.json` — this is a bespoke session convention, not a JSON-defined token, kept because it makes the cover read as a hero moment rather than just the biggest heading in the deck (deliberately larger than Display/Large's 52/56). Keep using it for covers specifically; don't extend the same "exception" logic to any other page. Both cover title and subtitle render as solid white (`#ffffff`), no text-shadow — not a gradient text-fill either; a diagonal white-to-white-alpha gradient fill was tested and rejected in favor of plain white. A blurred `text-shadow` (e.g. `0 2px 16px rgba(0,0,0,0.25)`) was also tested and rejected: some PDF renderers (e.g. macOS Preview/Quartz) rasterize Chrome print-to-pdf's text-shadow blur as a visible semi-opaque rectangle behind the glyphs instead of a soft blur — a real bug, not a one-off rendering quirk, so avoid blurred text-shadow on cover type entirely. The bottom-weighted black scrim already provides enough contrast for white text without it.
 
 ## Layout System
 
@@ -68,21 +90,21 @@ Practical mapping used across built assets: page section headings → H5/Bold/De
   - **Stars source images are portrait**, unlike the Gradient-folder photos (which are landscape). On the portrait cover canvas, `background-size:cover` still crops one axis — check each image individually and pick `background-position` (top/center/bottom) so the calmest, darkest region of that specific photo sits behind the logo and title; don't assume one position works for all 10 Stars images (some have a bright star-trail swirl or Milky Way core that needs to be cropped away from the text area).
   - **Legacy/alternative backgrounds** (use only if the brief calls for a different mood than night-sky photography): the flat Cleartax brand gradient (`linear-gradient(160deg, #1F3399 0%, #3355FF 55%, #2944CC 100%)` + dot-grid + one abstract geometric graphic + 8px bottom spectrum bar), or `Design system/Background/Gradient/{Dark,Light}/<n>.jpg` (landscape photographic gradients — orient so the darkest region lands at the top behind the logo/title, since `cover`-fit always shows the image's full vertical range on these). Same scrim principle applies either way. When testing multiple candidates for any of these, render one mockup per option plus a contact-sheet thumbnail grid so they can be compared at a glance before picking one.
 - **Interior page chrome**: logo-dark top-left (~20px tall) + uppercase running title top-right (Overline/Small, muted) + 1px divider rule beneath (y≈84) + content starting at y≈130 + a 1px footer rule + footer row (`cleartax.com` left, page number right, Label/XSmall)
-- **Section heading**: H5/Bold/Desktop in brand blue, followed by a short 38×4px brand-blue rounded rule
+- **Section heading**: H5/Bold in brand blue, followed by a short 38×4px brand-blue rounded rule
 - If the asset closes on a CTA/product-suite page, bookend it with a second gradient+dot panel matching the cover, rather than ending flat on white
 
 ## Component Library
 
 Reuse these rather than inventing new patterns per asset:
 
-- **Pull-quote** — 4px brand-blue left border + H5/Bold/Desktop text in brand-700. Always reuses a sentence already present in the source copy; never invented filler.
+- **Pull-quote** — 4px brand-blue left border + H5/Bold text in brand-700. Always reuses a sentence already present in the source copy; never invented filler.
 - **Pill-banner** — solid brand-blue rounded pill, white Nohemi Medium text, for short declarative statements.
 - **Tag-chip grid** — 2×2 (or more) neutral/dark rounded chips for short label phrases.
 - **Quote-card** — card-bg rounded box holding multiple italic quoted lines, dashed dividers between lines.
 - **Info-card** — info-subtle rounded box holding a bullet list (brand-blue bullet dot, dashed dividers).
 - **Icon-badge card** — circular badge (info-subtle fill, brand-blue stroke SVG line icon) + text, used solo in a 2×2 grid or stacked as a feature list.
 - **Comparison table** (2 or 3 col) — header row info-subtle bg with Overline-style brand-blue uppercase labels; body rows Paragraph/XSmall; alternate zebra striping via card-bg; an "emphasis" column can be bolded + card-bg tinted.
-- **Stat-strip** — 3-column grid of card-bg boxes, each with a big H4/Extrabold number and a Paragraph/XSmall label underneath.
+- **Stat-strip** — 3-column grid of card-bg boxes, each with a big H4/Bold number and a Paragraph/XSmall label underneath.
 - **Callout / key-insight box** — info-subtle bg, 4px brand-blue left border, Overline label + Paragraph/XSmall body.
 
 Use pull-quotes, stat-strips, and icon-badge cards as the go-to tools for balancing a page that reads too sparse — never by inflating font sizes past their token or inventing new marketing copy.

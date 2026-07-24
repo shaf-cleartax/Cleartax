@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5000 5000">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12, .cls-13, .cls-14, .cls-15, .cls-16, .cls-17, .cls-18, .cls-19, .cls-20, .cls-21, .cls-22, .cls-23, .cls-24, .cls-25, .cls-26, .cls-27 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke-width: 3.56px;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12, .cls-13, .cls-14, .cls-15, .cls-16, .cls-17, .cls-18, .cls-19, .cls-20, .cls-21, .cls-22, .cls-23, .cls-24, .cls-25, .cls-26, .cls-27 {
+        stroke: #000;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-3 {
+        stroke-width: 3.68px;
+      }
+
+      .cls-4 {
+        stroke-width: 3.92px;
+      }
+
+      .cls-5 {
+        stroke-width: 4.52px;
+      }
+
+      .cls-6 {
+        stroke-width: 2.24px;
+      }
+
+      .cls-7 {
+        stroke-width: 4.16px;
+      }
+
+      .cls-8 {
+        stroke-width: 4.4px;
+      }
+
+      .cls-9 {
+        stroke-width: 3.2px;
+      }
+
+      .cls-10 {
+        stroke-width: 4.88px;
+      }
+
+      .cls-11 {
+        stroke-width: 2.48px;
+      }
+
+      .cls-12 {
+        stroke-width: 5px;
+      }
+
+      .cls-13 {
+        stroke-width: 3.08px;
+      }
+
+      .cls-14 {
+        stroke-width: 3.8px;
+      }
+
+      .cls-15 {
+        stroke-width: 2.6px;
+      }
+
+      .cls-16 {
+        stroke-width: 4.04px;
+      }
+
+      .cls-17 {
+        stroke-width: 2px;
+      }
+
+      .cls-18 {
+        stroke-width: 2.96px;
+      }
+
+      .cls-19 {
+        stroke-width: 3.32px;
+      }
+
+      .cls-20 {
+        stroke-width: 2.12px;
+      }
+
+      .cls-21 {
+        stroke-width: 2.84px;
+      }
+
+      .cls-22 {
+        stroke-width: 3.44px;
+      }
+
+      .cls-23 {
+        stroke-width: 4.28px;
+      }
+
+      .cls-24 {
+        stroke-width: 2.36px;
+      }
+
+      .cls-25 {
+        stroke-width: 4.76px;
+      }
+
+      .cls-26 {
+        stroke-width: 4.64px;
+      }
+
+      .cls-27 {
+        stroke-width: 2.72px;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <rect class="cls-1" width="5000" height="5000"/>
+      <g>
+        <rect class="cls-12" x="649.19" y="643" width="3701.61" height="3714"/>
+        <rect class="cls-10" x="712.25" y="706.26" width="3575.51" height="3587.47" transform="translate(-15.21 15.3) rotate(-.35)"/>
+        <rect class="cls-25" x="775.22" y="769.45" width="3449.55" height="3461.09" transform="translate(-31.43 31.83) rotate(-.72)"/>
+        <rect class="cls-26" x="838.12" y="832.56" width="3323.76" height="3334.87" transform="translate(-48.76 49.73) rotate(-1.13)"/>
+        <rect class="cls-5" x="900.93" y="895.59" width="3198.14" height="3208.83" transform="translate(-67.3 69.16) rotate(-1.56)"/>
+        <rect class="cls-8" x="963.64" y="958.51" width="3072.73" height="3082.98" transform="translate(-87.2 90.35) rotate(-2.03)"/>
+        <rect class="cls-23" x="1026.23" y="1021.32" width="2947.54" height="2957.37" transform="translate(-108.58 113.52) rotate(-2.55)"/>
+        <rect class="cls-7" x="1088.69" y="1084" width="2822.62" height="2832.01" transform="translate(-131.63 138.96) rotate(-3.1)"/>
+        <rect class="cls-16" x="1151.01" y="1146.53" width="2697.98" height="2706.94" transform="translate(-156.53 167.01) rotate(-3.71)"/>
+        <rect class="cls-4" x="1213.16" y="1208.9" width="2573.69" height="2582.2" transform="translate(-183.49 198.07) rotate(-4.38)"/>
+        <rect class="cls-14" x="1275.11" y="1271.07" width="2449.78" height="2457.85" transform="translate(-212.76 232.64) rotate(-5.11)"/>
+        <rect class="cls-3" x="1336.84" y="1333.03" width="2326.33" height="2333.95" transform="translate(-244.63 271.32) rotate(-5.92)"/>
+        <rect class="cls-2" x="1398.3" y="1394.72" width="2203.4" height="2210.57" transform="translate(-279.42 314.86) rotate(-6.83)"/>
+        <rect class="cls-22" x="1459.45" y="1456.1" width="2081.09" height="2087.8" transform="translate(-317.49 364.17) rotate(-7.84)"/>
+        <polygon class="cls-19" points="3314.35 1375.37 3620.88 3317.08 1685.65 3624.63 1379.12 1682.92 3314.35 1375.37"/>
+        <polygon class="cls-9" points="3240.32 1427.68 3568.74 3242.8 1759.68 3572.32 1431.26 1757.2 3240.32 1427.68"/>
+        <polygon class="cls-13" points="3166.29 1479.99 3516.61 3168.52 1833.71 3520.01 1483.39 1831.48 3166.29 1479.99"/>
+        <polygon class="cls-18" points="3092.26 1532.3 3464.47 3094.24 1907.74 3467.7 1535.53 1905.76 3092.26 1532.3"/>
+        <polygon class="cls-21" points="3018.23 1584.61 3412.33 3019.96 1981.77 3415.39 1587.67 1980.04 3018.23 1584.61"/>
+        <polygon class="cls-27" points="2944.19 1636.93 3360.19 2945.68 2055.81 3363.07 1639.81 2054.32 2944.19 1636.93"/>
+        <polygon class="cls-15" points="2870.16 1689.24 3308.06 2871.4 2129.84 3310.76 1691.94 2128.6 2870.16 1689.24"/>
+        <polygon class="cls-11" points="2796.13 1741.55 3255.92 2797.12 2203.87 3258.45 1744.08 2202.88 2796.13 1741.55"/>
+        <polygon class="cls-24" points="2722.1 1793.86 3203.78 2722.84 2277.9 3206.14 1796.22 2277.16 2722.1 1793.86"/>
+        <polygon class="cls-6" points="2648.06 1846.17 3151.64 2648.56 2351.94 3153.83 1848.36 2351.44 2648.06 1846.17"/>
+        <polygon class="cls-20" points="2574.03 1898.49 3099.51 2574.28 2425.97 3101.51 1900.49 2425.72 2574.03 1898.49"/>
+        <polygon class="cls-17" points="3047.37 2500 2500 3049.2 1952.63 2500 2500 1950.8 3047.37 2500"/>
+      </g>
+    </g>
+  </g>
+</svg>

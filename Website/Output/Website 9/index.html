@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClearTax — Get Ready for 2026 UAE e-Invoicing</title>
+<meta name="description" content="ClearTax is an FTA and MoF-compliant, Peppol-ready e-invoicing platform built for the UAE's 2026 mandate. One global API, 50+ country mandates, any ERP.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+<div class="progress-rail"><div class="progress-fill" id="scrollProgress"></div></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="siteNav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo">
+      <img src="assets/img/Cleartax-logo-white.png" alt="ClearTax" class="logo-mark logo-mark--light">
+      <img src="assets/img/Cleartax-logo-black.png" alt="ClearTax" class="logo-mark logo-mark--dark">
+    </a>
+    <nav class="nav-links">
+      <a href="#mandate">About us</a>
+      <a href="#resources">Resources</a>
+      <a href="#partners">Partners</a>
+      <a href="#faq">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <button class="location-pill" type="button">
+        <span class="dot"></span> United Arab Emirates
+      </button>
+      <a href="#cta-form" class="btn btn--primary btn--sm">Book a demo</a>
+      <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <canvas id="heroCanvas"></canvas>
+    <div class="hero-vignette"></div>
+    <div class="hero-content">
+      <p class="eyebrow hero-eyebrow"><span class="reveal-line">FTA-Approved Accredited Service Provider · Peppol Network</span></p>
+      <h1 class="hero-title">
+        <span class="line"><span class="reveal-line">Get ready for</span></span>
+        <span class="line"><span class="reveal-line">2026 UAE</span></span>
+        <span class="line"><span class="reveal-line"><em>e-invoicing.</em></span></span>
+      </h1>
+      <p class="hero-sub reveal-up">Currently deployed with 6+ ERP/POS integrations across the UAE. ClearTax is FTA-approved, AI-powered, and connects your business to the Peppol network on one global e-invoicing API.</p>
+      <div class="hero-grid">
+        <form class="hero-form reveal-up" onsubmit="return false;">
+          <p class="hero-form-label">Book a demo</p>
+          <input type="text" placeholder="Name" required>
+          <input type="tel" placeholder="Phone number" required>
+          <input type="text" placeholder="Company" required>
+          <input type="email" placeholder="Official email ID" required>
+          <button type="submit" class="btn btn--primary btn--block">Book a demo</button>
+          <p class="cta-disclaimer">By submitting this form, you agree to allow representatives of ClearTax to contact you for providing a demonstration of our products.</p>
+        </form>
+        <ul class="hero-pills reveal-up">
+          <li>FTA-approved Accredited Service Provider (ASP) in the UAE</li>
+          <li>6+ connected business integrations with any ERP/POS</li>
+          <li>Single unified global e-invoicing API supporting 50+ countries</li>
+        </ul>
+      </div>
+    </div>
+    <div class="scroll-cue"><span></span>Scroll</div>
+  </section>
+
+  <!-- ============ SOCIAL PROOF ============ -->
+  <section class="proof">
+    <p class="proof-label">Trusted by 1,000+ global enterprises</p>
+    <div class="marquee">
+      <div class="marquee-track" id="proofTrack"></div>
+    </div>
+  </section>
+
+  <!-- ============ MANDATE AT A GLANCE ============ -->
+  <section class="mandate" id="mandate">
+    <div class="section-head">
+      <p class="eyebrow">UAE e-invoicing mandate at a glance</p>
+      <h2 class="reveal-up">Find how things are done <em>in the UAE.</em></h2>
+      <p class="section-copy reveal-up">The UAE's e-invoicing mandate is structured, and invoicing marks a fundamental change in how businesses generate, validate, and report invoices. What seems like a compliance update is, in reality, a move toward real-time, digital-first tax reporting. Getting ready isn't just about meeting compliance — it's about building a finance function that's faster, more accurate, and ready for what comes next.</p>
+      <a href="#cta-form" class="btn btn--dark reveal-up">Talk to an expert</a>
+    </div>
+
+    <div class="model-grid reveal-up">
+      <div class="model-card">
+        <span class="model-tag">Model</span>
+        <p>Peppol-based 5-corner, also called a decentralized continuous transaction control and exchange model (DCTCE).</p>
+      </div>
+      <div class="model-card">
+        <span class="model-tag">Scope &amp; flow</span>
+        <p>Primarily B2B and B2G invoices — B2C is currently out of scope. Supplier → supplier's ASP → buyer's ASP → buyer, with relevant data sent to the FTA.</p>
+      </div>
+      <div class="model-card">
+        <span class="model-tag">Format</span>
+        <p>Invoices must be in a structured format (XML/JSON) using the UAE PINT&nbsp;AE data dictionary — no more PDF invoices.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ UAE 2027 GUIDE — TIMELINE ============ -->
+  <section class="timeline-pin" id="timelinePin">
+    <div class="timeline-head">
+      <p class="eyebrow eyebrow--light">UAE 2027 guide</p>
+      <h3 class="reveal-up">From pilot to full enforcement</h3>
+      <p class="section-copy section-copy--light reveal-up">Deadlines and milestones every business needs to track on the road to mandatory compliance.</p>
+    </div>
+    <div class="timeline-track" id="timelineTrack">
+      <div class="timeline-line"><div class="timeline-line-fill" id="timelineFill"></div></div>
+
+      <article class="tl-card">
+        <span class="tl-date">Jul 1, 2026</span>
+        <h4>Pilot program start</h4>
+        <p>A pilot program begins for selected businesses. Other businesses can voluntarily participate from this date.</p>
+        <p class="tl-detail">The pilot begins in July 2026, with phased enforcement by business size — entities earning above AED&nbsp;50M are followed by smaller registered businesses in January and April 2027 respectively.</p>
+      </article>
+      <article class="tl-card">
+        <span class="tl-date">Jul 31, 2026</span>
+        <h4>Appoint ASP — large business</h4>
+        <p>Deadline for large businesses (revenue &gt; AED 50 million) to appoint an Accredited Service Provider (ASP).</p>
+        <p class="tl-detail">All VAT-registered businesses must appoint an ASP with the Federal Tax Authority before implementation. The ASP converts invoices to XML or JSON and sends them directly to the FTA, following Peppol standards like UBL and PINT.</p>
+      </article>
+      <article class="tl-card tl-card--accent">
+        <span class="tl-date">Jan 1, 2027</span>
+        <h4>Mandatory — large business</h4>
+        <p>All businesses with an annual revenue of more than AED 50 million must comply.</p>
+        <p class="tl-detail">ERP systems must produce structured invoice data in XML or JSON, map every field to the Ministry's data dictionary, apply a digital signature, and link each invoice for verification — unstructured invoices are no longer valid.</p>
+      </article>
+      <article class="tl-card">
+        <span class="tl-date">Mar 31, 2027</span>
+        <h4>Appoint ASP — smaller &amp; govt</h4>
+        <p>Deadline for businesses with revenue &lt; AED 50 million and government entities to appoint an ASP.</p>
+        <p class="tl-detail">From July to December 2026, businesses should test system integration with the ASP and FTA sandbox — verifying data accuracy, error handling, and team readiness ahead of full rollout.</p>
+      </article>
+      <article class="tl-card">
+        <span class="tl-date">Jul 1, 2027</span>
+        <h4>Mandatory — smaller business</h4>
+        <p>Businesses with annual revenue up to AED 50 million must comply.</p>
+        <p class="tl-detail">E-invoices and credit notes must be stored within the UAE, as required by the Tax Procedures Law — offshore hosting is prohibited. Implement secure archiving, access controls, and retrieval processes for audits.</p>
+      </article>
+      <article class="tl-card tl-card--accent">
+        <span class="tl-date">Oct 1, 2027</span>
+        <h4>Mandatory — government entities</h4>
+        <p>Government entities must comply with the mandate.</p>
+        <p class="tl-detail">Full Continuous Transaction Control enforcement across every entity type — pilot learnings, ASP integrations, and data governance built in the earlier phases carry through to steady-state compliance.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ STEPS TO TAKE ============ -->
+  <section class="steps">
+    <div class="section-head">
+      <p class="eyebrow">Steps to take</p>
+      <h2 class="reveal-up">Get e-invoicing ready in <em>5 steps.</em></h2>
+    </div>
+    <div class="steps-grid">
+      <article class="step-card reveal-up"><span class="step-num">01</span><h3>Understand the timeline and scope</h3><p>Map your entity's revenue band against the FTA's phased rollout to know exactly when you must comply.</p></article>
+      <article class="step-card reveal-up"><span class="step-num">02</span><h3>Appoint an Accredited Service Provider</h3><p>Select a pre-approved ASP, like ClearTax, to handle invoice conversion and transmission to the FTA.</p></article>
+      <article class="step-card reveal-up"><span class="step-num">03</span><h3>Upgrade ERP and accounting systems</h3><p>Structure invoice data to the UAE PINT AE data dictionary and prepare for digital signatures.</p></article>
+      <article class="step-card reveal-up"><span class="step-num">04</span><h3>Test during the pilot phase</h3><p>Run sandbox integration tests with your ASP and the FTA to verify data accuracy and error handling.</p></article>
+      <article class="step-card reveal-up"><span class="step-num">05</span><h3>Establish data governance and storage</h3><p>Keep e-invoices and credit notes archived within the UAE with secure, audit-ready access controls.</p></article>
+    </div>
+  </section>
+
+  <!-- ============ WHAT CLEARTAX DELIVERS ============ -->
+  <section class="delivers" id="delivers">
+    <div class="section-head">
+      <p class="eyebrow">How ClearTax delivers</p>
+      <h2 class="reveal-up">A pre-approved ASP, built for <em>ease of compliance.</em></h2>
+      <p class="section-copy reveal-up">ClearTax is a pre-approved FTA and MoF-compliant Accredited Service Provider (ASP) that helps your business comply with the UAE's e-invoicing requirements. ClearTax offers a Peppol-ready solution that seamlessly integrates your business system and the FTA portal, ensuring secure and compliant transmission of invoice data.</p>
+    </div>
+    <div class="bento">
+      <article class="bento-card bento-card--wide reveal-up">
+        <div class="bento-icon">📊</div>
+        <h3>Advanced dashboards &amp; reports</h3>
+        <p>Leverage AI-driven insights for a complete view of your e-invoicing processes via comprehensive MIS dashboards and customized reports.</p>
+        <div class="mini-chart" aria-hidden="true">
+          <span style="--h:38%"></span><span style="--h:62%"></span><span style="--h:45%"></span><span style="--h:80%"></span><span style="--h:58%"></span><span style="--h:93%"></span><span style="--h:70%"></span>
+        </div>
+      </article>
+      <article class="bento-card reveal-up">
+        <div class="bento-icon">⚡</div>
+        <h3>Automated error management</h3>
+        <p>Identify and resolve e-invoicing errors in real time with intuitive alerts, bulk resubmission tools, and health checks.</p>
+      </article>
+      <article class="bento-card reveal-up">
+        <div class="bento-icon">🔗</div>
+        <h3>End-to-end e-invoicing solution</h3>
+        <p>A complete solution for issuing, submitting, and receiving e-invoices — tracks the status of submitted invoices and sends email notifications.</p>
+      </article>
+      <article class="bento-card reveal-up">
+        <div class="bento-icon">🌐</div>
+        <h3>Peppol ready</h3>
+        <p>ClearTax follows Peppol specifications for e-invoice exchange, ensuring compliance with the UAE's Continuous Transaction Controls (CTC) model.</p>
+      </article>
+      <article class="bento-card reveal-up">
+        <div class="bento-icon">🎧</div>
+        <h3>Dedicated customer support</h3>
+        <p>Our dedicated support team is available 24/7 to assist with any e-invoicing or integration related queries.</p>
+      </article>
+      <article class="bento-card reveal-up">
+        <div class="bento-icon">🛡️</div>
+        <h3>Compliance assurance &amp; audit ready</h3>
+        <p>An assurance package covering reconciliation to prevent VAT gaps, incorporating future mandate changes, and reducing risk of penalties and audit issues.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ SECURITY & PRIVACY ============ -->
+  <section class="security">
+    <p class="eyebrow eyebrow--light">Security &amp; privacy</p>
+    <div class="marquee marquee--light">
+      <div class="marquee-track" id="complianceTrack"></div>
+    </div>
+  </section>
+
+  <!-- ============ RESOURCES ============ -->
+  <section class="resources" id="resources">
+    <div class="section-head">
+      <p class="eyebrow">Resources</p>
+      <h2 class="reveal-up">The UAE e-invoicing <em>resource centre.</em></h2>
+    </div>
+    <div class="res-grid">
+      <article class="res-card reveal-up">
+        <div class="res-thumb res-thumb--1"></div>
+        <span class="res-type">Whitepaper</span>
+        <h3>UAE e-invoicing readiness checklist</h3>
+        <a href="#" class="btn btn--outline btn--sm">Read more</a>
+      </article>
+      <article class="res-card reveal-up">
+        <div class="res-thumb res-thumb--2"></div>
+        <span class="res-type">Case study</span>
+        <h3>Transforming e-invoicing for UAE businesses</h3>
+        <a href="#" class="btn btn--outline btn--sm">Read more</a>
+      </article>
+      <article class="res-card reveal-up">
+        <div class="res-thumb res-thumb--3"></div>
+        <span class="res-type">Blog</span>
+        <h3>UAE e-invoicing frequently asked questions</h3>
+        <a href="#" class="btn btn--outline btn--sm">Read more</a>
+      </article>
+      <article class="res-card reveal-up">
+        <div class="res-thumb res-thumb--1"></div>
+        <span class="res-type">Blog</span>
+        <h3>UAE e-invoicing rules and latest updates</h3>
+        <a href="#" class="btn btn--outline btn--sm">Read more</a>
+      </article>
+      <article class="res-card reveal-up">
+        <div class="res-thumb res-thumb--2"></div>
+        <span class="res-type">Webinar</span>
+        <h3>The CFO's KPI guide to choosing your UAE e-invoicing technology partner</h3>
+        <a href="#" class="btn btn--outline btn--sm">Read more</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ PARTNERS ============ -->
+  <section class="partners" id="partners">
+    <div class="partners-visual reveal-up"></div>
+    <div class="partners-panel reveal-up">
+      <p class="eyebrow eyebrow--light">Partners</p>
+      <h2>Join the esteemed<br>Partner Network</h2>
+      <p>Turn referrals into revenue — earn with every customer you bring. Take your first interaction with our partnership manager for Cleartax e-invoicing.</p>
+      <div class="partner-cards">
+        <div class="partner-card">
+          <h4>Preferred Advisory Partner</h4>
+          <p>Earn tiered commissions and referral margins on go-live with us, and get recommended as the preferred go-to partner for ClearTax clients and implementation prospects.</p>
+        </div>
+        <div class="partner-card">
+          <h4>Sustainable business growth</h4>
+          <p>Unlock value from a growing partnership — earn tiered commissions and margins while accessing our Compliance Cloud for your own clients.</p>
+        </div>
+      </div>
+      <a href="#cta-form" class="btn btn--primary">Join our program</a>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="testimonials">
+    <div class="section-head">
+      <p class="eyebrow">Customer stories</p>
+      <h2 class="reveal-up">1,000+ enterprises spend less, <em>reconcile faster.</em></h2>
+    </div>
+    <div class="t-track-wrap">
+      <div class="t-track" id="testimonialTrack">
+        <article class="t-card">
+          <span class="t-name">Retail Group</span>
+          <p>"ClearTax's Peppol-ready platform cut our invoice reconciliation time dramatically while keeping every market compliant."</p>
+          <span>Head of Finance Ops, Retail</span>
+        </article>
+        <article class="t-card">
+          <span class="t-name">Tire Manufacturing Co.</span>
+          <p>"The ERP integration was seamless — we didn't touch a single existing workflow to go live across three geographies."</p>
+          <span>VP Tax &amp; Compliance, Manufacturing</span>
+        </article>
+        <article class="t-card">
+          <span class="t-name">Logistics Partners</span>
+          <p>"Error management alone paid for the platform — bulk resubmission turned a two-day fire drill into an afternoon."</p>
+          <span>Controller, Logistics</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FORM ============ -->
+  <section class="cta-band" id="cta-form">
+    <div class="cta-band-inner">
+      <div>
+        <p class="eyebrow eyebrow--light">Talk to an expert</p>
+        <h2>Have questions about your enterprise?</h2>
+        <p class="section-copy section-copy--light">Enter your work email and we'll help you schedule a demo mapped to your ERP, your timeline, and your mandate.</p>
+      </div>
+      <form class="cta-form" onsubmit="return false;">
+        <input type="email" placeholder="Enter work email" required>
+        <button type="submit" class="btn btn--primary btn--block">Schedule a demo</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq" id="faq">
+    <div class="section-head">
+      <p class="eyebrow">FAQ</p>
+      <h2 class="reveal-up">Questions, <em>answered.</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">What is e-invoicing in the UAE?<span class="faq-plus"></span></button>
+        <div class="faq-a"><p>E-invoicing refers to the electronic generation, validation, and reporting of invoices in a standardized digital format, supporting the UAE's move toward a fully digitized tax system.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What are the advantages of using ClearTax for e-invoicing in the UAE?<span class="faq-plus"></span></button>
+        <div class="faq-a"><p>ClearTax offers a Peppol-ready solution that integrates with any ERP or POS system, advanced dashboards, automated error management, and dedicated 24/7 local support — as a pre-approved FTA and MoF-compliant ASP.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">When is e-invoicing being implemented, and what are the phases?<span class="faq-plus"></span></button>
+        <div class="faq-a"><p>Implementation begins with a pilot in July 2026. 2027 legislation calls for e-invoicing and reporting to be mandated in phases, affecting large businesses first, then smaller businesses, and finally government entities by October 2027 — see the full timeline above.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What are the benefits of using e-invoicing software?<span class="faq-plus"></span></button>
+        <div class="faq-a"><p>Faster invoice processing and reduced errors. Enhanced compliance with real-time data transmission. Greater transparency and efficiency in financial operations. Cost savings by removing manual processes and paper invoices. Simplified VAT reporting and reconciliation.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What are the key features of e-invoicing software?<span class="faq-plus"></span></button>
+        <div class="faq-a"><p>Effective e-invoicing software integrates with existing systems, offers real-time compliance checks that reduce compliance risk, and provides secure data storage with automated archiving and error management.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What are the possibilities for non-compliance with e-invoicing regulations?<span class="faq-plus"></span></button>
+        <div class="faq-a"><p>Non-compliance risks result in fines by the Federal Tax Authority, affecting cash flow, and legal liability. Understand your obligations to avoid penalties and audit issues.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What is the role of accredited service providers (ASPs) in e-invoicing?<span class="faq-plus"></span></button>
+        <div class="faq-a"><p>ASPs are intermediaries approved by the Federal Tax Authority (FTA) for generating, validating, and transmitting e-invoices — securing structured invoice data as it moves between businesses through networks like Peppol.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How does ClearTax's e-invoicing software meet compliance requirements?<span class="faq-plus"></span></button>
+        <div class="faq-a"><p>ClearTax ensures VAT&#8209;compliant e-invoicing through automatic validation, secure data transmission, and full compliance with Peppol and FTA reporting mandates. Automatic updates keep the software current as new invoicing workflows or format changes come into effect.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can businesses that are not registered for VAT be considered part of B2B e-invoicing?<span class="faq-plus"></span></button>
+        <div class="faq-a"><p>No, VAT-registered businesses are the primary scope of B2B e-invoicing — non-VAT-registered businesses are not currently required to be part of the mandate.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can ClearTax handle both B2B and B2C invoicing?<span class="faq-plus"></span></button>
+        <div class="faq-a"><p>ClearTax's platform is built for B2B and B2G invoicing, which is the primary scope of the UAE mandate — B2C is currently out of scope of the phased rollout.</p></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-top">
+    <a href="#top" class="footer-logo"><img src="assets/img/Cleartax-logo-white.png" alt="ClearTax"></a>
+    <div class="footer-cols">
+      <div>
+        <h4>Company</h4>
+        <a href="#">About us</a><a href="#">Contact us</a><a href="#">Partners</a><a href="#">Media &amp; press</a><a href="#">Testimonials</a><a href="#">Why ClearTax for UAE</a>
+      </div>
+      <div>
+        <h4>Products &amp; solutions</h4>
+        <a href="#">E-invoicing software — Belgium</a><a href="#">E-invoicing software — France</a><a href="#">E-invoicing software — Germany</a><a href="#">E-invoicing software — Malaysia</a><a href="#">E-invoicing software — India</a><a href="#">E-invoicing software — Singapore</a><a href="#">E-invoicing software — Saudi Arabia</a>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <a href="#">E-invoicing resources</a><a href="#">Case studies</a><a href="#">Blog</a><a href="#">Whitepapers</a>
+      </div>
+      <div>
+        <h4>موارد</h4>
+        <a href="#" dir="rtl">موارد الفوترة الإلكترونية</a><a href="#" dir="rtl">دراسات الحالة</a><a href="#" dir="rtl">المدونة</a><a href="#" dir="rtl">الأوراق البيضاء</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="#">Privacy policy</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>Plot No: JLT-PH2-W3, Al Sammak Lakes Towers, Dubai, United Arab Emirates</p>
+    <div class="footer-badges">
+      <span>ISO 27001</span><span>SOC 2</span><span>SSL Secured</span>
+    </div>
+  </div>
+  <div class="footer-note">
+    <p>Data security and privacy matters most to us.</p>
+  </div>
+</footer>
+
+<script src="assets/js/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

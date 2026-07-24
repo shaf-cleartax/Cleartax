@@ -37,17 +37,6 @@
       }
     },
     "Weight": {
-      "Regular": {
-        "$type": "string",
-        "$value": "Regular",
-        "$extensions": {
-          "com.figma.variableId": "VariableID:9668:6328",
-          "com.figma.scopes": [
-            "FONT_STYLE"
-          ],
-          "com.figma.type": "string"
-        }
-      },
       "Medium": {
         "$type": "string",
         "$value": "Medium",
@@ -75,28 +64,6 @@
         "$value": "Bold",
         "$extensions": {
           "com.figma.variableId": "VariableID:9668:6330",
-          "com.figma.scopes": [
-            "FONT_STYLE"
-          ],
-          "com.figma.type": "string"
-        }
-      },
-      "Extra Bold": {
-        "$type": "string",
-        "$value": "Extra Bold",
-        "$extensions": {
-          "com.figma.variableId": "VariableID:9668:6310",
-          "com.figma.scopes": [
-            "FONT_STYLE"
-          ],
-          "com.figma.type": "string"
-        }
-      },
-      "Regular Italic": {
-        "$type": "string",
-        "$value": "Regular Italic",
-        "$extensions": {
-          "com.figma.variableId": "VariableID:9668:6327",
           "com.figma.scopes": [
             "FONT_STYLE"
           ],

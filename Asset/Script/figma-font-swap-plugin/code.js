@@ -1,9 +1,9 @@
 // Cleartax Font Swap — run this from Figma's desktop app (Plugins > Development)
-// with the target file open. Swaps placeholder Poppins/Inter text (used as
-// Nohemi/Gilroy stand-ins because the real fonts aren't loadable through the
-// remote use_figma MCP session) back to the real Nohemi/Gilroy fonts, which
-// ARE loadable here because this plugin runs in your local Figma desktop
-// session where the fonts are installed and synced.
+// with the target file open. Swaps placeholder Poppins or Space Grotesk (heading)
+// and Inter (body) text — used as Nohemi/Gilroy stand-ins because the real fonts
+// aren't loadable through the remote use_figma MCP session — back to the real
+// Nohemi/Gilroy fonts, which ARE loadable here because this plugin runs in your
+// local Figma desktop session where the fonts are installed and synced.
 
 // Nohemi's non-Regular/Bold weight files each use their own legacy family name
 // (e.g. "Nohemi SemBd") instead of family="Nohemi" + style="SemiBold" — this
@@ -35,6 +35,10 @@ const MAPPING = [
   [['Poppins', 'Medium'], ['Nohemi', 'Medium']],
   [['Poppins', 'Regular'], ['Nohemi', 'Regular']],
   [['Poppins', 'ExtraBold'], ['Nohemi', 'ExtraBold']],
+  [['Space Grotesk', 'Bold'], ['Nohemi', 'Bold']],
+  [['Space Grotesk', 'Medium'], ['Nohemi', 'Medium']],
+  [['Space Grotesk', 'Regular'], ['Nohemi', 'Regular']],
+  [['Space Grotesk', 'Light'], ['Nohemi', 'Light']],
   [['Inter', 'Regular'], ['Gilroy', 'Regular']],
   [['Inter', 'Medium'], ['Gilroy', 'Medium']],
   [['Inter', 'Semi Bold'], ['Gilroy', 'SemiBold']],
