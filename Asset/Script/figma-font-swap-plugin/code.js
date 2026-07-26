@@ -44,6 +44,7 @@ const MAPPING = [
   [['Inter', 'Semi Bold'], ['Gilroy', 'SemiBold']],
   [['Inter', 'Bold'], ['Gilroy', 'Bold']],
   [['Inter', 'Extra Bold'], ['Gilroy', 'ExtraBold']],
+  [['Inter', 'Medium Italic'], ['Gilroy', 'Medium Italic']],
 ];
 
 function findMapping(family, style) {
