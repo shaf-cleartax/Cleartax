@@ -1,28 +1,17 @@
 // Cleartax Font Swap — run this from Figma's desktop app (Plugins > Development)
-// with the target file open. Swaps placeholder Poppins or Space Grotesk (heading)
-// and Inter (body) text — used as Nohemi/Gilroy stand-ins because the real fonts
-// aren't loadable through the remote use_figma MCP session — back to the real
-// Nohemi/Gilroy fonts, which ARE loadable here because this plugin runs in your
-// local Figma desktop session where the fonts are installed and synced.
-
-// Nohemi's non-Regular/Bold weight files each use their own legacy family name
-// (e.g. "Nohemi SemBd") instead of family="Nohemi" + style="SemiBold" — this
-// map is exact, taken directly from each file's name table.
-const NOHEMI_LEGACY_FAMILY = {
-  Thin: 'Nohemi Thin',
-  ExtraLight: 'Nohemi ExtLt',
-  Light: 'Nohemi Light',
-  Regular: 'Nohemi',
-  Medium: 'Nohemi Med',
-  SemiBold: 'Nohemi SemBd',
-  Bold: 'Nohemi',
-  ExtraBold: 'Nohemi ExtBd',
-  Black: 'Nohemi Black',
-};
-const NOHEMI_LEGACY_STYLE = {
-  Thin: 'Regular', ExtraLight: 'Regular', Light: 'Regular', Regular: 'Regular',
-  Medium: 'Regular', SemiBold: 'Regular', Bold: 'Bold', ExtraBold: 'Regular', Black: 'Regular',
-};
+// with the target file open. Swaps placeholder Poppins/Space Grotesk (heading)
+// and Inter (body) text — used as stand-ins because the real fonts aren't
+// loadable through the remote use_figma MCP session — to the real PP Neue
+// Montreal Variable / PP Neue Montreal Text Variable fonts, which ARE loadable
+// here because this plugin runs in your local Figma desktop session where the
+// fonts are installed and synced.
+//
+// Both are variable fonts with named fvar instances (Regular, Medium, Semibold,
+// Bold, etc., plus " Italic" variants) — Figma exposes each named instance as
+// its own font-style, so no legacy per-weight family split is needed (unlike
+// the old Nohemi files, which used one-off family names per weight).
+const HEADING_FAMILY = 'PP Neue Montreal Variable';
+const BODY_FAMILY = 'PP Neue Montreal Text Variable';
 
 function norm(s) {
   return s.toLowerCase().replace(/[\s-]/g, '');
@@ -30,21 +19,21 @@ function norm(s) {
 
 // Placeholder (family, style) -> target (family, weightKeyword)
 const MAPPING = [
-  [['Poppins', 'Bold'], ['Nohemi', 'Bold']],
-  [['Poppins', 'SemiBold'], ['Nohemi', 'SemiBold']],
-  [['Poppins', 'Medium'], ['Nohemi', 'Medium']],
-  [['Poppins', 'Regular'], ['Nohemi', 'Regular']],
-  [['Poppins', 'ExtraBold'], ['Nohemi', 'ExtraBold']],
-  [['Space Grotesk', 'Bold'], ['Nohemi', 'Bold']],
-  [['Space Grotesk', 'Medium'], ['Nohemi', 'Medium']],
-  [['Space Grotesk', 'Regular'], ['Nohemi', 'Regular']],
-  [['Space Grotesk', 'Light'], ['Nohemi', 'Light']],
-  [['Inter', 'Regular'], ['Gilroy', 'Regular']],
-  [['Inter', 'Medium'], ['Gilroy', 'Medium']],
-  [['Inter', 'Semi Bold'], ['Gilroy', 'SemiBold']],
-  [['Inter', 'Bold'], ['Gilroy', 'Bold']],
-  [['Inter', 'Extra Bold'], ['Gilroy', 'ExtraBold']],
-  [['Inter', 'Medium Italic'], ['Gilroy', 'Medium Italic']],
+  [['Poppins', 'Bold'], [HEADING_FAMILY, 'Bold']],
+  [['Poppins', 'SemiBold'], [HEADING_FAMILY, 'Semibold']],
+  [['Poppins', 'Medium'], [HEADING_FAMILY, 'Medium']],
+  [['Poppins', 'Regular'], [HEADING_FAMILY, 'Regular']],
+  [['Poppins', 'ExtraBold'], [HEADING_FAMILY, 'Extrabold']],
+  [['Space Grotesk', 'Bold'], [HEADING_FAMILY, 'Bold']],
+  [['Space Grotesk', 'Medium'], [HEADING_FAMILY, 'Medium']],
+  [['Space Grotesk', 'Regular'], [HEADING_FAMILY, 'Regular']],
+  [['Space Grotesk', 'Light'], [HEADING_FAMILY, 'Light']],
+  [['Inter', 'Regular'], [BODY_FAMILY, 'Regular']],
+  [['Inter', 'Medium'], [BODY_FAMILY, 'Medium']],
+  [['Inter', 'Semi Bold'], [BODY_FAMILY, 'Semibold']],
+  [['Inter', 'Bold'], [BODY_FAMILY, 'Bold']],
+  [['Inter', 'Extra Bold'], [BODY_FAMILY, 'Extrabold']],
+  [['Inter', 'Medium Italic'], [BODY_FAMILY, 'Medium Italic']],
 ];
 
 function findMapping(family, style) {
@@ -52,15 +41,6 @@ function findMapping(family, style) {
 }
 
 function findRealFont(fonts, targetFamily, weightKeyword) {
-  if (targetFamily === 'Nohemi') {
-    const fam = NOHEMI_LEGACY_FAMILY[weightKeyword];
-    const style = NOHEMI_LEGACY_STYLE[weightKeyword];
-    if (fam) {
-      const hit = fonts.find(f => f.fontName.family === fam && f.fontName.style === style);
-      if (hit) return hit.fontName;
-    }
-  }
-  // Generic path (covers Gilroy, and Nohemi as a fallback if the map above misses)
   const want = norm(weightKeyword);
   const exact = fonts.find(f => norm(f.fontName.family) === norm(targetFamily) && norm(f.fontName.style) === want);
   if (exact) return exact.fontName;
