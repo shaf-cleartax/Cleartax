@@ -48,4 +48,13 @@ Pending (uncommitted on this branch)
 - New content: EU Vida.pdf, Zomato Case Study (anonymised + non-anonymised), vendor discovery.pdf, "Global e-invoicing - 4 assets down edits.md"
 - New output folders: Asset/Output/EU Vida/, Asset/Output/vendor discovery/
 - New Design system/Bugs/ and Design system/Icons/ folders
-- Rebrand.pdf and Cleartax Design System.html — new rebrand design-system artifact (midnight blue/lime/indigo palette)
+- Rebrand.pdf and Cleartax Design System.html — built a full interactive design-system website from Rebrand.pdf and the Typography Style Guide (midnight blue/lime/indigo palette):
+  - Restructured from one long scrolling page into a true multi-page site: persistent sticky nav, a cover "hub" page linking to each section, and GSAP-powered crossfade transitions between pages (with a setTimeout-driven fallback so the page swap never depends on the animation callback firing)
+  - Real Cleartax logo (Logo.svg / Logo-dark.svg) in the nav and cover, replacing the typed "cleartax" wordmark; added a dedicated Logo page (light-card/dark-card pair) with a download button
+  - Typography page embeds the complete Display/Heading/Paragraph/Label size ramp matching Typography Style Guide.pdf exactly, plus a download button bundling both font files and the PDF
+  - Iconography page rebuilt to show the real 74 icons from Design system/Icons/ (previously a placeholder set cropped from the PDF), with a download-all button
+  - Applications page: Decks/Social/Assets/Merchandise are clickable cards that open a lightbox slideshow of the real cropped visuals, re-cropped at 2x resolution (440dpi) after the originals looked blurry at lightbox display size
+  - Color usage chart redrawn as nested rounded rectangles (was nested circles), matching the reference in Design system/Bugs/
+  - Downloads use the claude.ai artifact's `window.claude.downloads` capability, falling back to a hand-written ZIP bundler (incl. a UTF-8-filename fix for non-ASCII icon names) when the page is opened standalone
+  - Shapes, Components, and Illustration pages are built but currently hidden from nav/routing
+  - Published as a Claude artifact and also hosted publicly at https://shaf-cleartax.github.io/cleartax-design-system-website/ (separate `cleartax-design-system-website` GitHub repo, not part of this repo)
