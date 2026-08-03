@@ -53,8 +53,8 @@ Pending (uncommitted on this branch)
   - Real Cleartax logo (Logo.svg / Logo-dark.svg) in the nav and cover, replacing the typed "cleartax" wordmark; added a dedicated Logo page (light-card/dark-card pair) with a download button
   - Typography page embeds the complete Display/Heading/Paragraph/Label size ramp matching Typography Style Guide.pdf exactly, plus a download button bundling both font files and the PDF
   - Iconography page rebuilt to show the real 74 icons from Design system/Icons/ (previously a placeholder set cropped from the PDF), with a download-all button
-  - Applications page: Decks/Social/Assets/Merchandise are clickable cards that open a lightbox slideshow of the real cropped visuals, re-cropped at 2x resolution (440dpi) after the originals looked blurry at lightbox display size
-  - Color usage chart redrawn as nested rounded rectangles (was nested circles), matching the reference in Design system/Bugs/
+  - Applications page: Decks/Social/Assets/Merchandise are clickable cards that open a lightbox slideshow of the real cropped visuals, re-cropped at 2x resolution (440dpi) after the originals looked blurry at lightbox display size, plus a download-all button that zips all four sets into applications/Decks, applications/Social,print and web, applications/Sales asset, applications/Merchandise (reuses the lightbox's already-embedded image data instead of duplicating it, keeping file size flat)
+  - Color usage chart redrawn as nested rounded rectangles (was nested circles), matching the reference in Design system/Bugs/, with its 50% box legend adjusted for spacing
   - Downloads use the claude.ai artifact's `window.claude.downloads` capability, falling back to a hand-written ZIP bundler (incl. a UTF-8-filename fix for non-ASCII icon names) when the page is opened standalone
   - Shapes, Components, and Illustration pages are built but currently hidden from nav/routing
   - Published as a Claude artifact and also hosted publicly at https://shaf-cleartax.github.io/cleartax-design-system-website/ (separate `cleartax-design-system-website` GitHub repo, not part of this repo)
