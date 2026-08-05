@@ -58,3 +58,13 @@ Pending (uncommitted on this branch)
   - Downloads use the claude.ai artifact's `window.claude.downloads` capability, falling back to a hand-written ZIP bundler (incl. a UTF-8-filename fix for non-ASCII icon names) when the page is opened standalone
   - Shapes, Components, and Illustration pages are built but currently hidden from nav/routing
   - Published as a Claude artifact and also hosted publicly at https://shaf-cleartax.github.io/cleartax-design-system-website/ (separate `cleartax-design-system-website` GitHub repo, not part of this repo)
+
+V4.1 — 2026-08-04
+- Swapped the Iconography icon set again: moved the ~75 tax-deduction-category icons (80D Medical Insurance, Capital Gains, business income, various deductions, etc.) into Design system/Icons/SVG - Deprecated/, replaced with a new 66-icon expense/transaction-category set under Design system/Icons/SVG/
+- Split the figma-font-swap-plugin into two selectable variants — pp-neue-montreal/ and nohemi-gilroy/ — each with its own code.js + manifest.json
+- Modified Design system/Cleartax Design System.html
+- Added new content docs: PIL+PACOIL Case Study, and a Philippines BIR e-invoicing consumer/lifestyle-retail asset
+- Added Consumer/Personal Loan.svg
+- Added report-skill.md documenting the Figma-native report build workflow
+- Added Report reference material: UAE Report.pdf, July 2026 Oman e-Invoicing Survey Report content, Report-typography-system.md, deck reference images, and QA bug screenshots
+- Added the "Cleartax 2026 Design System V1.3 (Showcase Deck).pptx" plus supporting Deck bug screenshots
