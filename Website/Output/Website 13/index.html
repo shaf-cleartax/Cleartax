@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design System v1.4 – ClearTax</title>
+<meta name="description" content="ClearTax Design System v1.4 — logo, colour, typography, icons, and applications.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#content">Skip to content</a>
+
+<button class="sidebar-toggle" id="sidebarToggle" aria-label="Menu">
+  <span></span><span></span><span></span>
+</button>
+
+<!-- ============ SIDEBAR ============ -->
+<aside class="sidebar" id="sidebar">
+  <a href="#logo" class="sidebar-logo" data-nav="logo" aria-label="ClearTax Design System">
+    <img src="assets/img/Logo-dark.svg" alt="ClearTax">
+    <span>Design System v1.4</span>
+  </a>
+  <nav class="sidebar-nav">
+    <a href="#logo" data-nav="logo">Logo</a>
+    <a href="#color" data-nav="color">Color</a>
+    <a href="#typography" data-nav="typography">Typography</a>
+    <a href="#icons" data-nav="icons">Icons</a>
+    <a href="#applications" data-nav="applications">Applications</a>
+  </nav>
+</aside>
+
+<main id="content">
+
+  <!-- ============ LOGO ============ -->
+  <section class="ds-section" id="logo">
+    <p class="ds-eyebrow reveal-up">01 — Logo</p>
+    <h1 class="reveal-up">Logo</h1>
+    <p class="lead reveal-up">Our wordmark is the clearest signal of who we are. Keep it clean, keep it legible, and give it room to breathe.</p>
+    <div class="download-row reveal-up">
+    <a class="btn btn--download" href="assets/downloads/cleartax-logo.zip" download>Download logo files<span class="dl-icon">↓</span></a>
+    </div>
+
+    <div class="logo-grid reveal-up">
+      <div class="logo-card logo-card--dark">
+        <img src="assets/img/Logo.svg" alt="ClearTax logo, white">
+        <span>On navy</span>
+      </div>
+      <div class="logo-card logo-card--light">
+        <img src="assets/img/Logo-dark.svg" alt="ClearTax logo, navy">
+        <span>On off-white</span>
+      </div>
+    </div>
+
+    <div class="guide-grid reveal-up">
+      <div class="guide-card">
+        <h3>Clear space</h3>
+        <p>Keep a minimum clear space equal to the height of the wordmark on all sides. Never let other elements crowd the logo.</p>
+      </div>
+      <div class="guide-card">
+        <h3>Minimum size</h3>
+        <p>Never scale the wordmark below 80px wide on screen, or 20mm wide in print — legibility comes first.</p>
+      </div>
+    </div>
+
+    <div class="dos-donts reveal-up">
+      <div class="dos-donts-col dos-donts-col--do">
+        <h3>Do</h3>
+        <ul>
+          <li>Use the white mark on navy or dark photography</li>
+          <li>Use the navy mark on off-white or light backgrounds</li>
+          <li>Scale the logo proportionally</li>
+        </ul>
+      </div>
+      <div class="dos-donts-col dos-donts-col--dont">
+        <h3>Don't</h3>
+        <ul>
+          <li>Stretch, skew, or rotate the wordmark</li>
+          <li>Recolour it outside navy or white</li>
+          <li>Place it on a busy or low-contrast background</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COLOR ============ -->
+  <section class="ds-section" id="color">
+    <p class="ds-eyebrow reveal-up">02 — Color</p>
+    <h1 class="reveal-up">We're navy &amp; off-white with a dash of <em>colour</em>.</h1>
+    <p class="lead reveal-up">Generally speaking, our brand is navy and off-white. Simple and fundamental. Our accent colours are predominantly utilised to highlight information, draw attention to something, or provide an interruption. As a rule of thumb, if your layout starts looking like a rainbow, you've probably gone too far.</p>
+
+    <div class="sub">
+      <h2 class="reveal-up">Primary colour</h2>
+      <div class="swatch-grid swatch-grid--1 reveal-up">
+        <article class="swatch">
+          <div class="swatch-block" style="background:#05022A"></div>
+          <h3>Navy</h3>
+          <dl>
+            <div><dt>Hex</dt><dd>#05022A</dd></div>
+            <div><dt>RGB</dt><dd>5 / 2 / 42</dd></div>
+            <div><dt>CMYK</dt><dd>88 / 95 / 0 / 84</dd></div>
+          </dl>
+        </article>
+      </div>
+      <p class="section-note reveal-up">Navy is our <strong>primary colour</strong> — the dominant, foundational tone that carries our brand voice across every touchpoint.</p>
+    </div>
+    <div class="sub">
+      <h2 class="reveal-up">Background colour</h2>
+      <div class="swatch-grid swatch-grid--1 reveal-up">
+        <article class="swatch">
+          <div class="swatch-block swatch-block--outline" style="background:#F2F1F0"></div>
+          <h3>Off-white</h3>
+          <dl>
+            <div><dt>Hex</dt><dd>#F2F1F0</dd></div>
+            <div><dt>RGB</dt><dd>242 / 241 / 240</dd></div>
+            <div><dt>CMYK</dt><dd>0 / 0 / 1 / 5</dd></div>
+          </dl>
+        </article>
+      </div>
+      <p class="section-note reveal-up">Off-white is used across empty space and large surface areas, keeping communications light and airy rather than heavy and dark.</p>
+    </div>
+    <div class="sub">
+      <h2 class="reveal-up">Accent colour</h2>
+      <div class="swatch-grid swatch-grid--1 reveal-up">
+        <article class="swatch">
+          <div class="swatch-block" style="background:#C8F006"></div>
+          <h3>Lime</h3>
+          <dl>
+            <div><dt>Hex</dt><dd>#C8F006</dd></div>
+            <div><dt>RGB</dt><dd>200 / 240 / 6</dd></div>
+            <div><dt>CMYK</dt><dd>17 / 0 / 98 / 6</dd></div>
+          </dl>
+        </article>
+      </div>
+      <p class="section-note reveal-up">Lime is used to highlight information, draw attention to something, or provide an interruption — sparingly, so it keeps its impact.</p>
+    </div>
+    <div class="sub">
+      <h2 class="reveal-up">CTA colour</h2>
+      <div class="swatch-grid swatch-grid--1 reveal-up">
+        <article class="swatch">
+          <div class="swatch-block" style="background:#5446FF"></div>
+          <h3>Violet</h3>
+          <dl>
+            <div><dt>Hex</dt><dd>#5446FF</dd></div>
+            <div><dt>RGB</dt><dd>84 / 70 / 255</dd></div>
+            <div><dt>CMYK</dt><dd>67 / 73 / 0 / 0</dd></div>
+          </dl>
+        </article>
+      </div>
+      <p class="section-note reveal-up">Violet is reserved exclusively for <strong>calls to action</strong>. Every button, link, and interactive prompt uses this colour so people always know where to click.</p>
+    </div>
+
+    <div class="sub">
+      <h2 class="reveal-up">Colour ratios</h2>
+      <div class="ratio-bar reveal-up" aria-hidden="true">
+        <span style="--w:50%;--c:#F2F1F0;--bd:1px solid #E2E2E2"></span>
+        <span style="--w:35%;--c:#05022A"></span>
+        <span style="--w:10%;--c:#5446FF"></span>
+        <span style="--w:5%;--c:#C8F006"></span>
+      </div>
+      <div class="ratio-key reveal-up">
+        <span><i style="background:#F2F1F0;border:1px solid #E2E2E2"></i>Off-white 50%</span>
+        <span><i style="background:#05022A"></i>Navy 35%</span>
+        <span><i style="background:#5446FF"></i>Violet 10%</span>
+        <span><i style="background:#C8F006"></i>Lime 5%</span>
+      </div>
+      <p class="section-note reveal-up">Off-white covers the majority of any layout as empty space, navy carries the primary brand voice, violet appears on calls to action, and lime is the sparing accent that highlights key elements.</p>
+    </div>
+
+    <div class="sub">
+      <h2 class="reveal-up">Colour combinations</h2>
+      <p class="section-note reveal-up" style="margin-top:0;margin-bottom:28px;">These are the approved combinations. Don't put colour on colour — on a coloured background, always use navy or off-white text, whichever gives the greatest contrast.</p>
+      <div class="combo-grid reveal-up">
+        <div class="combo" style="background:#05022A;color:#F2F1F0;">Navy bg<br>Off-white text</div>
+        <div class="combo" style="background:#F2F1F0;color:#05022A;border:1px solid #E2E2E2">Off-white bg<br>Navy text</div>
+        <div class="combo" style="background:#05022A;color:#C8F006;">Navy bg<br>Lime text</div>
+        <div class="combo" style="background:#C8F006;color:#05022A;">Lime bg<br>Navy text</div>
+        <div class="combo" style="background:#5446FF;color:#F2F1F0;">Violet bg<br>Off-white text</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TYPOGRAPHY ============ -->
+  <section class="ds-section" id="typography">
+    <p class="ds-eyebrow reveal-up">03 — Typography</p>
+    <h1 class="reveal-up">Typography</h1>
+    <p class="lead reveal-up">Inter Tight carries our display and heading moments. Google Sans Flex handles paragraph, overline, and label copy. Together they keep our voice confident but easy to read.</p>
+    <div class="download-row reveal-up">
+    <a class="btn btn--download" href="assets/downloads/cleartax-typography.zip" download>Download typography files<span class="dl-icon">↓</span></a>
+    </div>
+
+    <div class="type-family-grid reveal-up">
+      <div class="type-family-card">
+        <span class="type-family-name" style="font-family:'Inter Tight'">Aa</span>
+        <h3>Inter Tight</h3>
+        <p>Display, H1–H6</p>
+      </div>
+      <div class="type-family-card">
+        <span class="type-family-name" style="font-family:'Google Sans Flex'">Aa</span>
+        <h3>Google Sans Flex</h3>
+        <p>Paragraph, Overline, Label</p>
+      </div>
+    </div>
+
+    <div class="type-scale reveal-up">
+    <div class="type-group">
+      <div class="type-group-head"><h3>Display</h3><span>Inter Tight · 6 styles</span></div>
+      <div class="type-row">
+        <span class="type-row-label">Display / Medium / Large<small>Inter Tight Medium</small><small>52 / 56</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:500;font-size:52px;line-height:56px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Display / Medium / Small<small>Inter Tight Medium</small><small>44 / 48</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:500;font-size:44px;line-height:48px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Display / Semibold / Large<small>Inter Tight Semibold</small><small>52 / 56</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:600;font-size:52px;line-height:56px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Display / Semibold / Small<small>Inter Tight Semibold</small><small>44 / 48</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:600;font-size:44px;line-height:48px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Display / Bold / Large<small>Inter Tight Bold</small><small>52 / 56</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:700;font-size:52px;line-height:56px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Display / Bold / Small<small>Inter Tight Bold</small><small>44 / 48</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:700;font-size:44px;line-height:48px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+    </div>
+    <div class="type-group">
+      <div class="type-group-head"><h3>Heading</h3><span>Inter Tight · 36 styles</span></div>
+      <div class="type-row">
+        <span class="type-row-label">H1 / Medium / Desktop<small>Inter Tight Medium</small><small>40 / 48</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:500;font-size:40px;line-height:48px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">H1 / Medium / Mobile<small>Inter Tight Medium</small><small>36 / 44</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:500;font-size:36px;line-height:44px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">H1 / Semibold / Desktop<small>Inter Tight Semibold</small><small>40 / 48</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:600;font-size:40px;line-height:48px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">H1 / Semibold / Mobile<small>Inter Tight Semibold</small><small>36 / 44</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:600;font-size:36px;line-height:44px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">H1 / Bold / Desktop<small>Inter Tight Bold</small><small>40 / 48</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:700;font-size:40px;line-height:48px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">H1 / Bold / Mobile<small>Inter Tight Bold</small><small>36 / 44</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:700;font-size:36px;line-height:44px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">H2 / Medium / Desktop<small>Inter Tight Medium</small><small>36 / 44</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:500;font-size:36px;line-height:44px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">H2 / Medium / Mobile<small>Inter Tight Medium</small><small>32 / 40</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:500;font-size:32px;line-height:40px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">H2 / Semibold / Desktop<small>Inter Tight Semibold</small><small>36 / 44</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:600;font-size:36px;line-height:44px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">H2 / Semibold / Mobile<small>Inter Tight Semibold</small><small>32 / 40</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:600;font-size:32px;line-height:40px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">H2 / Bold / Desktop<small>Inter Tight Bold</small><small>36 / 44</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:700;font-size:36px;line-height:44px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">H2 / Bold / Mobile<small>Inter Tight Bold</small><small>32 / 40</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:700;font-size:32px;line-height:40px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">H3 / Medium / Desktop<small>Inter Tight Medium</small><small>32 / 40</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:500;font-size:32px;line-height:40px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">H3 / Medium / Mobile<small>Inter Tight Medium</small><small>28 / 36</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:500;font-size:28px;line-height:36px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">H3 / Semibold / Desktop<small>Inter Tight Semibold</small><small>32 / 40</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:600;font-size:32px;line-height:40px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">H3 / Semibold / Mobile<small>Inter Tight Semibold</small><small>28 / 36</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:600;font-size:28px;line-height:36px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">H3 / Bold / Desktop<small>Inter Tight Bold</small><small>32 / 40</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:700;font-size:32px;line-height:40px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">H3 / Bold / Mobile<small>Inter Tight Bold</small><small>28 / 36</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:700;font-size:28px;line-height:36px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">H4 / Medium / Desktop<small>Inter Tight Medium</small><small>28 / 36</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:500;font-size:28px;line-height:36px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">H4 / Medium / Mobile<small>Inter Tight Medium</small><small>24 / 32</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:500;font-size:24px;line-height:32px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">H4 / Semibold / Desktop<small>Inter Tight Semibold</small><small>28 / 36</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:600;font-size:28px;line-height:36px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">H4 / Semibold / Mobile<small>Inter Tight Semibold</small><small>24 / 32</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:600;font-size:24px;line-height:32px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">H4 / Bold / Desktop<small>Inter Tight Bold</small><small>28 / 36</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:700;font-size:28px;line-height:36px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">H4 / Bold / Mobile<small>Inter Tight Bold</small><small>24 / 32</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:700;font-size:24px;line-height:32px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">H5 / Medium / Desktop<small>Inter Tight Medium</small><small>24 / 32</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:500;font-size:24px;line-height:32px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">H5 / Medium / Mobile<small>Inter Tight Medium</small><small>20 / 28</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:500;font-size:20px;line-height:28px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">H5 / Semibold / Desktop<small>Inter Tight Semibold</small><small>24 / 32</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:600;font-size:24px;line-height:32px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">H5 / Semibold / Mobile<small>Inter Tight Semibold</small><small>20 / 28</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:600;font-size:20px;line-height:28px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">H5 / Bold / Desktop<small>Inter Tight Bold</small><small>24 / 32</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:700;font-size:24px;line-height:32px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">H5 / Bold / Mobile<small>Inter Tight Bold</small><small>20 / 28</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:700;font-size:20px;line-height:28px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">H6 / Medium / Desktop<small>Inter Tight Medium</small><small>20 / 28</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:500;font-size:20px;line-height:28px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">H6 / Medium / Mobile<small>Inter Tight Medium</small><small>18 / 24</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:500;font-size:18px;line-height:24px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">H6 / Semibold / Desktop<small>Inter Tight Semibold</small><small>20 / 28</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:600;font-size:20px;line-height:28px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">H6 / Semibold / Mobile<small>Inter Tight Semibold</small><small>18 / 24</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:600;font-size:18px;line-height:24px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">H6 / Bold / Desktop<small>Inter Tight Bold</small><small>20 / 28</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:700;font-size:20px;line-height:28px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">H6 / Bold / Mobile<small>Inter Tight Bold</small><small>18 / 24</small></span>
+        <span class="type-sample" style="font-family:'Inter Tight';font-weight:700;font-size:18px;line-height:24px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+    </div>
+    <div class="type-group">
+      <div class="type-group-head"><h3>Paragraph</h3><span>Google Sans Flex · 20 styles</span></div>
+      <div class="type-row">
+        <span class="type-row-label">Paragraph / Large / Medium<small>Google Sans Flex Medium</small><small>18 / 28</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:500;font-size:18px;line-height:28px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Paragraph / Large / Semibold<small>Google Sans Flex Semibold</small><small>18 / 28</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:600;font-size:18px;line-height:28px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Paragraph / Large / Special / Underline<small>Google Sans Flex Medium</small><small>18 / 28</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:500;font-size:18px;line-height:28px;text-decoration:underline;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Paragraph / Large / Special / Strikethrough<small>Google Sans Flex Medium</small><small>18 / 28</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:500;font-size:18px;line-height:28px;text-decoration:line-through;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Paragraph / Large / Special / Italic<small>Google Sans Flex Medium Italic</small><small>18 / 28</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:500;font-size:18px;line-height:28px;font-style:italic;">"The quick brown fox jumps over the lazy dog."</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Paragraph / Medium / Medium<small>Google Sans Flex Medium</small><small>16 / 24</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:500;font-size:16px;line-height:24px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Paragraph / Medium / Semibold<small>Google Sans Flex Semibold</small><small>16 / 24</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:600;font-size:16px;line-height:24px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Paragraph / Medium / Special / Underline<small>Google Sans Flex Medium</small><small>16 / 24</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:500;font-size:16px;line-height:24px;text-decoration:underline;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Paragraph / Medium / Special / Strikethrough<small>Google Sans Flex Medium</small><small>16 / 24</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:500;font-size:16px;line-height:24px;text-decoration:line-through;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Paragraph / Medium / Special / Italic<small>Google Sans Flex Medium Italic</small><small>16 / 24</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:500;font-size:16px;line-height:24px;font-style:italic;">"The quick brown fox jumps over the lazy dog."</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Paragraph / Small / Medium<small>Google Sans Flex Medium</small><small>14 / 20</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:500;font-size:14px;line-height:20px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Paragraph / Small / Semibold<small>Google Sans Flex Semibold</small><small>14 / 20</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:600;font-size:14px;line-height:20px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Paragraph / Small / Special / Underline<small>Google Sans Flex Medium</small><small>14 / 20</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:500;font-size:14px;line-height:20px;text-decoration:underline;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Paragraph / Small / Special / Strikethrough<small>Google Sans Flex Medium</small><small>14 / 20</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:500;font-size:14px;line-height:20px;text-decoration:line-through;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Paragraph / Small / Special / Italic<small>Google Sans Flex Medium Italic</small><small>14 / 20</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:500;font-size:14px;line-height:20px;font-style:italic;">"The quick brown fox jumps over the lazy dog."</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Paragraph / X Small / Medium<small>Google Sans Flex Medium</small><small>12 / 20</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:500;font-size:12px;line-height:20px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Paragraph / X Small / Semibold<small>Google Sans Flex Semibold</small><small>12 / 20</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:600;font-size:12px;line-height:20px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Paragraph / X Small / Special / Underline<small>Google Sans Flex Medium</small><small>12 / 20</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:500;font-size:12px;line-height:20px;text-decoration:underline;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Paragraph / X Small / Special / Strikethrough<small>Google Sans Flex Medium</small><small>12 / 20</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:500;font-size:12px;line-height:20px;text-decoration:line-through;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Paragraph / X Small / Special / Italic<small>Google Sans Flex Medium Italic</small><small>12 / 20</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:500;font-size:12px;line-height:20px;font-style:italic;">"The quick brown fox jumps over the lazy dog."</span>
+      </div>
+    </div>
+    <div class="type-group">
+      <div class="type-group-head"><h3>Overline</h3><span>Google Sans Flex · 2 styles</span></div>
+      <div class="type-row">
+        <span class="type-row-label">Overline / Large<small>Google Sans Flex Semibold</small><small>14 / 20</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:600;font-size:14px;line-height:20px;text-transform:uppercase;letter-spacing:1px;">THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Overline / Small<small>Google Sans Flex Semibold</small><small>12 / 20</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:600;font-size:12px;line-height:20px;text-transform:uppercase;letter-spacing:1px;">THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.</span>
+      </div>
+    </div>
+    <div class="type-group">
+      <div class="type-group-head"><h3>Label</h3><span>Google Sans Flex · 20 styles</span></div>
+      <div class="type-row">
+        <span class="type-row-label">Label / Large / Medium<small>Google Sans Flex Medium</small><small>16 / 18</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:500;font-size:16px;line-height:18px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Label / Large / Semibold<small>Google Sans Flex Semibold</small><small>16 / 18</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:600;font-size:16px;line-height:18px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Label / Large / Special / Underline<small>Google Sans Flex Medium</small><small>16 / 18</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:500;font-size:16px;line-height:18px;text-decoration:underline;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Label / Large / Special / Strikethrough<small>Google Sans Flex Medium</small><small>16 / 18</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:500;font-size:16px;line-height:18px;text-decoration:line-through;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Label / Large / Special / Italic<small>Google Sans Flex Medium Italic</small><small>16 / 20</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:500;font-size:16px;line-height:20px;font-style:italic;">"The quick brown fox jumps over the lazy dog."</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Label / Medium / Medium<small>Google Sans Flex Medium</small><small>14 / 16</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:500;font-size:14px;line-height:16px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Label / Medium / Semibold<small>Google Sans Flex Semibold</small><small>14 / 16</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:600;font-size:14px;line-height:16px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Label / Medium / Special / Underline<small>Google Sans Flex Medium</small><small>14 / 16</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:500;font-size:14px;line-height:16px;text-decoration:underline;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Label / Medium / Special / Strikethrough<small>Google Sans Flex Medium</small><small>14 / 16</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:500;font-size:14px;line-height:16px;text-decoration:line-through;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Label / Medium / Special / Italic<small>Google Sans Flex Medium Italic</small><small>14 / 20</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:500;font-size:14px;line-height:20px;font-style:italic;">"The quick brown fox jumps over the lazy dog."</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Label / Small / Medium<small>Google Sans Flex Medium</small><small>12 / 14</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:500;font-size:12px;line-height:14px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Label / Small / Semibold<small>Google Sans Flex Semibold</small><small>12 / 14</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:600;font-size:12px;line-height:14px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Label / Small / Special / Underline<small>Google Sans Flex Medium</small><small>12 / 14</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:500;font-size:12px;line-height:14px;text-decoration:underline;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Label / Small / Special / Strikethrough<small>Google Sans Flex Medium</small><small>12 / 14</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:500;font-size:12px;line-height:14px;text-decoration:line-through;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Label / Small / Special / Italic<small>Google Sans Flex Medium Italic</small><small>12 / 14</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:500;font-size:12px;line-height:14px;font-style:italic;">"The quick brown fox jumps over the lazy dog."</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Label / X Small / Medium<small>Google Sans Flex Medium</small><small>10 / 14</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:500;font-size:10px;line-height:14px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Label / X Small / Semibold<small>Google Sans Flex Semibold</small><small>10 / 14</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:600;font-size:10px;line-height:14px;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Label / X Small / Special / Underline<small>Google Sans Flex Medium</small><small>10 / 14</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:500;font-size:10px;line-height:14px;text-decoration:underline;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Label / X Small / Special / Strikethrough<small>Google Sans Flex Medium</small><small>10 / 14</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:500;font-size:10px;line-height:14px;text-decoration:line-through;">The quick brown fox jumps over the lazy dog.</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row-label">Label / X Small / Special / Italic<small>Google Sans Flex Medium Italic</small><small>10 / 14</small></span>
+        <span class="type-sample" style="font-family:'Google Sans Flex';font-weight:500;font-size:10px;line-height:14px;font-style:italic;">"The quick brown fox jumps over the lazy dog."</span>
+      </div>
+    </div>
+    </div>
+    <p class="section-note reveal-up">Named styles carry no letter-spacing by default — the only exception is uppercase overline micro-copy, which is deliberately tracked out. Weights map Medium = 500, Semibold = 600, Bold = 700.</p>
+  </section>
+
+  <!-- ============ ICONS ============ -->
+  <section class="ds-section" id="icons">
+    <p class="ds-eyebrow reveal-up">04 — Icons</p>
+    <h1 class="reveal-up">Icons</h1>
+    <p class="lead reveal-up">Our icon set uses a consistent line weight and a single accent colour on a soft grey chip, so it reads cleanly at any size — from a category list to a dense dashboard.</p>
+    <div class="download-row reveal-up">
+    <a class="btn btn--download" href="assets/downloads/cleartax-icons.zip" download>Download icon set<span class="dl-icon">↓</span></a>
+    </div>
+
+    <div class="icon-grid reveal-up">
+      <div class="icon-tile"><img src="assets/icons/bank.svg" alt=""><span>Bank</span></div>
+      <div class="icon-tile"><img src="assets/icons/salary.svg" alt=""><span>Salary</span></div>
+      <div class="icon-tile"><img src="assets/icons/investment.svg" alt=""><span>Investment</span></div>
+      <div class="icon-tile"><img src="assets/icons/Insurance.svg" alt=""><span>Insurance</span></div>
+      <div class="icon-tile"><img src="assets/icons/home loan.svg" alt=""><span>Home loan</span></div>
+      <div class="icon-tile"><img src="assets/icons/gold.svg" alt=""><span>Gold</span></div>
+      <div class="icon-tile"><img src="assets/icons/Grocery.svg" alt=""><span>Grocery</span></div>
+      <div class="icon-tile"><img src="assets/icons/travel.svg" alt=""><span>Travel</span></div>
+      <div class="icon-tile"><img src="assets/icons/medical.svg" alt=""><span>Medical</span></div>
+      <div class="icon-tile"><img src="assets/icons/Education.svg" alt=""><span>Education</span></div>
+      <div class="icon-tile"><img src="assets/icons/credit card.svg" alt=""><span>Credit card</span></div>
+      <div class="icon-tile"><img src="assets/icons/loan.svg" alt=""><span>Loan</span></div>
+      <div class="icon-tile"><img src="assets/icons/real estate.svg" alt=""><span>Real estate</span></div>
+      <div class="icon-tile"><img src="assets/icons/refund.svg" alt=""><span>Refund</span></div>
+      <div class="icon-tile"><img src="assets/icons/tax.svg" alt=""><span>Tax</span></div>
+      <div class="icon-tile"><img src="assets/icons/Pension.svg" alt=""><span>Pension</span></div>
+      <div class="icon-tile"><img src="assets/icons/Shopping.svg" alt=""><span>Shopping</span></div>
+      <div class="icon-tile"><img src="assets/icons/Subscriptions.svg" alt=""><span>Subscriptions</span></div>
+      <div class="icon-tile"><img src="assets/icons/petrol.svg" alt=""><span>Petrol</span></div>
+      <div class="icon-tile"><img src="assets/icons/Provident fund.svg" alt=""><span>Provident fund</span></div>
+      <div class="icon-tile"><img src="assets/icons/rent.svg" alt=""><span>Rent</span></div>
+      <div class="icon-tile"><img src="assets/icons/vehicle.svg" alt=""><span>Vehicle</span></div>
+      <div class="icon-tile"><img src="assets/icons/wallets.svg" alt=""><span>Wallets</span></div>
+      <div class="icon-tile"><img src="assets/icons/donation.svg" alt=""><span>Donation</span></div>
+    </div>
+    <p class="section-note reveal-up">Icons sit on a light grey chip with a single-colour violet line — never introduce a second colour inside one icon, and never place an icon directly on a coloured background.</p>
+  </section>
+
+  <!-- ============ APPLICATIONS ============ -->
+  <section class="ds-section" id="applications">
+    <p class="ds-eyebrow reveal-up">05 — Applications</p>
+    <h1 class="reveal-up">Where the system shows up</h1>
+    <p class="lead reveal-up">A sample of how colour, type, and iconography come together across real ClearTax output. Click a card to page through the full set.</p>
+    <div class="download-row reveal-up">
+    <a class="btn btn--download" href="assets/downloads/cleartax-applications.zip" download>Download all applications<span class="dl-icon">↓</span></a>
+    </div>
+
+    <div class="app-grid reveal-up">
+      <button class="app-card" onclick="openGallery('decks')" aria-haspopup="dialog">
+        <div class="app-card-media">
+          <img src="assets/applications/decks-01.jpg" alt="Preview of Decks" loading="lazy">
+          <span class="app-card-badge">9 slides</span>
+        </div>
+        <div class="figure-cap"><span class="cap-title">Decks</span><span class="cap-note">Data-forward slide layouts — indigo blocks, lime highlights, generous white space.</span></div>
+      </button>
+      <button class="app-card" onclick="openGallery('social')" aria-haspopup="dialog">
+        <div class="app-card-media">
+          <img src="assets/applications/social-01.jpg" alt="Preview of Social, print &amp; web" loading="lazy">
+          <span class="app-card-badge">13 visuals</span>
+        </div>
+        <div class="figure-cap"><span class="cap-title">Social, print &amp; web</span><span class="cap-note">Bold headline treatments with lime-highlighted keywords over photography and gradients.</span></div>
+      </button>
+      <button class="app-card" onclick="openGallery('assets')" aria-haspopup="dialog">
+        <div class="app-card-media">
+          <img src="assets/applications/assets-01.jpg" alt="Preview of Sales assets" loading="lazy">
+          <span class="app-card-badge">10 covers</span>
+        </div>
+        <div class="figure-cap"><span class="cap-title">Sales assets</span><span class="cap-note">Playbooks, case studies, and opinion notes — editorial covers, dense reference pages.</span></div>
+      </button>
+      <button class="app-card" onclick="openGallery('merch')" aria-haspopup="dialog">
+        <div class="app-card-media">
+          <img src="assets/applications/merch-01.jpg" alt="Preview of Merchandise" loading="lazy">
+          <span class="app-card-badge">10 items</span>
+        </div>
+        <div class="figure-cap"><span class="cap-title">Merchandise</span><span class="cap-note">Apparel, drinkware, packaging, and event collateral carrying the dot-grid motif.</span></div>
+      </button>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="lightbox-frame">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+    <button class="lightbox-nav prev" id="lightboxPrev" aria-label="Previous">&#8249;</button>
+    <img class="lightbox-img" id="lightboxImg" alt="">
+    <button class="lightbox-nav next" id="lightboxNext" aria-label="Next">&#8250;</button>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+  </div>
+</div>
+
+<script>
+/* assigned onto window so js/main.js can read it — a bare `const` here
+   would live in script scope only and never appear on window. */
+window.GALLERIES = {
+  "decks": [
+    "assets/applications/decks-01.jpg",
+    "assets/applications/decks-02.jpg",
+    "assets/applications/decks-03.jpg",
+    "assets/applications/decks-04.jpg",
+    "assets/applications/decks-05.jpg",
+    "assets/applications/decks-06.jpg",
+    "assets/applications/decks-07.jpg",
+    "assets/applications/decks-08.jpg",
+    "assets/applications/decks-09.jpg"
+  ],
+  "social": [
+    "assets/applications/social-01.jpg",
+    "assets/applications/social-02.jpg",
+    "assets/applications/social-03.jpg",
+    "assets/applications/social-04.jpg",
+    "assets/applications/social-05.jpg",
+    "assets/applications/social-06.jpg",
+    "assets/applications/social-07.jpg",
+    "assets/applications/social-08.jpg",
+    "assets/applications/social-09.jpg",
+    "assets/applications/social-10.jpg",
+    "assets/applications/social-11.jpg",
+    "assets/applications/social-12.jpg",
+    "assets/applications/social-13.jpg"
+  ],
+  "assets": [
+    "assets/applications/assets-01.jpg",
+    "assets/applications/assets-02.jpg",
+    "assets/applications/assets-03.jpg",
+    "assets/applications/assets-04.jpg",
+    "assets/applications/assets-05.jpg",
+    "assets/applications/assets-06.jpg",
+    "assets/applications/assets-07.jpg",
+    "assets/applications/assets-08.jpg",
+    "assets/applications/assets-09.jpg",
+    "assets/applications/assets-10.jpg"
+  ],
+  "merch": [
+    "assets/applications/merch-01.jpg",
+    "assets/applications/merch-02.jpg",
+    "assets/applications/merch-03.jpg",
+    "assets/applications/merch-04.jpg",
+    "assets/applications/merch-05.jpg",
+    "assets/applications/merch-06.jpg",
+    "assets/applications/merch-07.jpg",
+    "assets/applications/merch-08.jpg",
+    "assets/applications/merch-09.jpg",
+    "assets/applications/merch-10.jpg"
+  ]
+};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 <!doctype html>
 <html><head><meta charset="utf-8">
-<title>Cleartax Design System — V1.3</title>
+<title>Cleartax Design System — V1.4</title>
 <style>
 
 @font-face {
@@ -438,6 +438,166 @@ footer.colophon p{
 @media (prefers-reduced-motion: reduce){
   .btn, .app-card{ transition:none;}
 }
+
+/* ---- foundations ---- */
+.fnd-block{ margin-bottom:64px; }
+.fnd-block:last-child{ margin-bottom:0; }
+.fnd-block h3{ font-family:var(--disp); font-weight:700; font-size:22px; margin:0 0 8px; color:var(--ink);}
+.fnd-note{ font-family:var(--text); font-size:14px; line-height:21px; color:var(--ink-soft); margin:0 0 24px; max-width:62ch;}
+.bp-row{ display:flex; align-items:center; gap:16px; margin-bottom:12px;}
+.bp-name{ font-family:var(--text); font-weight:600; font-size:13px; color:var(--ink); width:150px; flex:none;}
+.bp-bar{ height:32px; background:var(--indigo-soft); border-radius:8px; display:flex; align-items:center; padding:0 14px;}
+.bp-bar span{ font-family:var(--mono); font-size:11.5px; font-weight:700; color:var(--indigo-soft-ink); white-space:nowrap;}
+.space-row{ display:flex; align-items:center; gap:16px; margin-bottom:9px;}
+.space-name{ font-family:var(--mono); font-size:11.5px; color:var(--ink-soft); width:44px; flex:none;}
+.space-bar{ height:13px; background:var(--indigo); border-radius:4px;}
+.space-val{ font-family:var(--mono); font-size:11.5px; color:var(--ink); width:36px; flex:none;}
+.radius-grid{ display:grid; grid-template-columns:repeat(6,1fr); gap:18px;}
+.radius-item{ display:flex; flex-direction:column; align-items:center; gap:10px;}
+.radius-shape{ width:100%; aspect-ratio:1; background:var(--indigo-soft); border:1.5px solid var(--indigo);}
+.radius-label{ font-family:var(--mono); font-size:11.5px; color:var(--ink-soft); text-align:center;}
+.bw-grid{ display:flex; gap:36px; flex-wrap:wrap;}
+.bw-item{ display:flex; flex-direction:column; align-items:center; gap:10px;}
+.bw-line{ width:84px; height:0; border-top-style:solid; border-top-color:var(--ink);}
+.bw-label{ font-family:var(--mono); font-size:11.5px; color:var(--ink-soft);}
+.elev-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+.elev-card{
+  background:var(--card); border-radius:16px; padding:20px; height:88px;
+  display:flex; align-items:flex-end;
+}
+.elev-card span{ font-family:var(--mono); font-size:12px; color:var(--ink-soft);}
+@media (max-width: 900px){
+  .radius-grid{ grid-template-columns:repeat(3,1fr);}
+  .elev-grid{ grid-template-columns:1fr;}
+}
+
+/* ---- components: forms ---- */
+.form-grid{ display:grid; grid-template-columns:1fr 1fr; gap:20px 32px; max-width:640px;}
+.field{ display:flex; flex-direction:column; gap:6px;}
+.field label{ font-family:var(--text); font-weight:600; font-size:13px; color:var(--ink);}
+.field input[type="text"], .field select{
+  font-family:var(--text); font-size:14px; padding:11px 14px; border-radius:10px;
+  border:1.5px solid var(--card-border); background:var(--card); color:var(--ink);
+  outline:none; transition:border-color .12s ease, box-shadow .12s ease; appearance:none;
+}
+.field input[type="text"]:focus, .field select:focus{
+  border-color:var(--indigo); box-shadow:0 0 0 3px rgba(84,70,255,0.15);
+}
+.field .field-msg{ font-family:var(--text); font-size:12px; color:var(--ink-soft);}
+.field.error input{ border-color:#E50000;}
+.field.error .field-msg{ color:#E50000; font-weight:600;}
+.field.disabled input{ background:var(--paper-1); color:var(--ink-soft); cursor:not-allowed;}
+.check-col{ display:flex; flex-direction:column; gap:14px;}
+.check-row{ display:flex; align-items:center; gap:10px; font-family:var(--text); font-size:14px; color:var(--ink);}
+.check-row input[type="checkbox"], .check-row input[type="radio"]{ accent-color:var(--indigo); width:18px; height:18px; flex:none;}
+.toggle-row{ display:flex; align-items:center; gap:12px;}
+.toggle{ position:relative; width:40px; height:22px; border-radius:999px; background:var(--card-border); flex:none; cursor:pointer; transition:background .15s ease; border:none;}
+.toggle::after{ content:''; position:absolute; top:2px; left:2px; width:18px; height:18px; border-radius:50%; background:#fff; transition:transform .15s ease;}
+.toggle.on{ background:var(--indigo);}
+.toggle.on::after{ transform:translateX(18px);}
+
+/* ---- components: tags / alerts ---- */
+.tag-row{ display:flex; gap:10px; flex-wrap:wrap;}
+.tag{ font-family:var(--text); font-size:12.5px; font-weight:600; padding:6px 14px; border-radius:999px; display:inline-flex; align-items:center;}
+.tag-neutral{ background:var(--paper-1); color:var(--ink);}
+.tag-brand{ background:var(--indigo-soft); color:var(--indigo-soft-ink);}
+.tag-positive{ background:#CCEBD6; color:#007A29;}
+.tag-negative{ background:#FACCCC; color:#B70000;}
+.tag-notice{ background:#FFE6CC; color:#994D00;}
+.alert-stack{ display:flex; flex-direction:column; gap:14px; max-width:640px;}
+.alert{ display:flex; gap:12px; align-items:flex-start; padding:14px 18px; border-radius:12px; border:1px solid transparent;}
+.alert svg{ width:18px; height:18px; flex:none; margin-top:1px;}
+.alert p{ margin:0; font-size:13.5px; line-height:20px;}
+.alert b{ font-weight:700;}
+.alert-info{ background:#D6DDFF; border-color:#3355FF; color:var(--ink);}
+.alert-notice{ background:#FFE6CC; border-color:#FF8000; color:var(--ink);}
+.alert-negative{ background:#FACCCC; border-color:#E50000; color:var(--ink);}
+.alert-positive{ background:#CCEBD6; border-color:#009933; color:var(--ink);}
+
+/* ---- components: cards / tabs / pagination / tooltip ---- */
+.card-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+.demo-card{ background:var(--card); border:1px solid var(--card-border); border-radius:16px; padding:22px; box-shadow:var(--shadow);}
+.demo-card h4{ margin:0 0 8px; font-family:var(--disp); font-weight:700; font-size:17px; color:var(--ink);}
+.demo-card p{ margin:0; font-size:13.5px; color:var(--ink-soft); line-height:20px;}
+.tabs{ display:flex; gap:0; border-bottom:1px solid var(--card-border); margin-bottom:22px;}
+.tab{
+  font-family:var(--text); font-weight:600; font-size:14px; padding:10px 4px; margin-right:26px;
+  color:var(--ink-soft); border-bottom:2px solid transparent; background:none; border-top:none;
+  border-left:none; border-right:none; cursor:pointer;
+}
+.tab.active{ color:var(--ink); border-bottom-color:var(--indigo);}
+.pagination{ display:flex; align-items:center; gap:6px;}
+.page-btn{
+  width:34px; height:34px; border-radius:8px; border:1px solid var(--card-border); background:var(--card);
+  font-family:var(--mono); font-size:13px; color:var(--ink-soft); display:flex; align-items:center;
+  justify-content:center; cursor:pointer;
+}
+.page-btn.active{ background:var(--indigo); color:#fff; border-color:var(--indigo);}
+.tooltip-demo{ position:relative; display:inline-flex; margin-top:36px;}
+.tooltip-bubble{
+  position:absolute; bottom:calc(100% + 10px); left:50%; transform:translateX(-50%);
+  background:var(--ink); color:#fff; font-size:12px; font-family:var(--text); font-weight:600;
+  padding:8px 12px; border-radius:8px; white-space:nowrap;
+}
+.tooltip-bubble::after{
+  content:''; position:absolute; top:100%; left:50%; transform:translateX(-50%);
+  border:5px solid transparent; border-top-color:var(--ink);
+}
+@media (max-width: 900px){
+  .form-grid{ grid-template-columns:1fr;}
+  .card-grid{ grid-template-columns:1fr;}
+}
+
+/* ---- motion ---- */
+.motion-bar-row{ display:flex; align-items:center; gap:14px; margin-bottom:16px;}
+.motion-bar-label{ font-family:var(--mono); font-size:12px; color:var(--ink-soft); width:170px; flex:none;}
+.motion-bar{ height:16px; border-radius:4px; background:var(--indigo);}
+.motion-bar-val{ font-family:var(--mono); font-size:12px; color:var(--ink); flex:none;}
+.ease-grid{ display:flex; gap:20px; flex-wrap:wrap; margin-top:8px;}
+.ease-card{ flex:1 1 220px; background:var(--card); border:1px solid var(--card-border); border-radius:14px; padding:20px; box-shadow:var(--shadow);}
+.ease-card svg{ width:100%; height:56px; display:block; margin-bottom:10px;}
+.ease-name{ font-family:var(--mono); font-weight:700; font-size:13px; color:var(--ink); margin-bottom:4px;}
+.ease-use{ font-family:var(--text); font-size:12.5px; color:var(--ink-soft); line-height:18px;}
+
+/* ---- accessibility ---- */
+.contrast-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:20px;}
+.contrast-card{ border-radius:16px; padding:26px; display:flex; flex-direction:column; gap:16px; border:1px solid var(--card-border);}
+.contrast-sample{ font-family:var(--disp); font-weight:700; font-size:22px;}
+.contrast-meta{ display:flex; justify-content:space-between; align-items:center; font-family:var(--mono); font-size:12px;}
+.contrast-badge{ font-weight:700; padding:3px 10px; border-radius:20px;}
+.contrast-pass{ background:rgba(0,153,51,0.15); color:#007A29;}
+.contrast-fail{ background:rgba(229,0,0,0.12); color:#B70000;}
+@media (max-width: 900px){ .contrast-grid{ grid-template-columns:1fr;} }
+
+/* ---- tokens ---- */
+.token-table{ width:100%; border-collapse:collapse; font-family:var(--text); font-size:13.5px;}
+.token-table th{
+  text-align:left; font-family:var(--text); font-weight:700; font-size:11px; letter-spacing:0.06em;
+  text-transform:uppercase; color:var(--ink-soft); padding:10px 12px; border-bottom:1px solid var(--card-border);
+}
+.token-table td{ padding:12px; border-bottom:1px solid var(--card-border); color:var(--ink); vertical-align:middle;}
+.token-swatch{ width:20px; height:20px; border-radius:6px; display:inline-block; vertical-align:middle; margin-right:8px; border:1px solid var(--card-border);}
+.token-name{ font-family:var(--mono); font-size:12.5px; color:var(--indigo-soft-ink);}
+.token-table-wrap{ overflow-x:auto; }
+
+/* ---- templates ---- */
+.tpl-frame{ border:1px solid var(--card-border); border-radius:20px; overflow:hidden; box-shadow:var(--shadow); background:#fff;}
+.tpl-hero{ background:var(--ink); color:#fff; padding:72px 40px; text-align:center;}
+.tpl-hero h3{ font-family:var(--disp); font-weight:700; font-size:34px; margin:0 0 14px;}
+.tpl-hero p{ font-family:var(--text); font-size:15px; opacity:0.82; max-width:46ch; margin:0 auto 26px;}
+.tpl-features{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--card-border);}
+.tpl-feature{ background:#fff; padding:32px;}
+.tpl-feature h4{ font-family:var(--disp); font-weight:700; font-size:17px; margin:0 0 8px; color:var(--ink);}
+.tpl-feature p{ font-family:var(--text); font-size:13px; color:var(--ink-soft); margin:0; line-height:19px;}
+.tpl-cta{ background:var(--lime); padding:52px 40px; text-align:center;}
+.tpl-cta h3{ font-family:var(--disp); font-weight:700; font-size:26px; color:var(--ink); margin:0 0 22px;}
+.tpl-footer{
+  background:#fff; padding:26px 40px; display:flex; justify-content:space-between; align-items:center;
+  font-family:var(--text); font-size:12.5px; color:var(--ink-soft); border-top:1px solid var(--card-border); flex-wrap:wrap; gap:10px;
+}
+@media (max-width: 900px){
+  .tpl-features{ grid-template-columns:1fr;}
+}
 </style>
 </head>
 <body>
@@ -479,8 +639,15 @@ footer.colophon p{
       <a href="#logo">Logo</a>
       <a href="#color">Color</a>
       <a href="#type">Typography</a>
+      <a href="#foundations">Foundations</a>
       <a href="#icons">Icons</a>
+      <a href="#components">Components</a>
+      <a href="#motion">Motion</a>
+      <a href="#accessibility">Accessibility</a>
+      <a href="#voice">Voice</a>
+      <a href="#tokens">Tokens</a>
       <a href="#applications">Applications</a>
+      <a href="#templates">Templates</a>
     </div>
   </div>
 </nav>
@@ -522,14 +689,21 @@ footer.colophon p{
     <h1>Brand &amp; Design System</h1>
     <div class="cover-meta">
       <span class="cover-tag">2026 Design System</span>
-      <span class="badge">V1.3</span>
+      <span class="badge">V1.4</span>
     </div>
     <nav class="cover-index" aria-label="Sections">
       <a href="#logo"><span>Logo</span><span class="idx-arrow">&#8594;</span></a>
       <a href="#color"><span>Color</span><span class="idx-arrow">&#8594;</span></a>
       <a href="#type"><span>Typography</span><span class="idx-arrow">&#8594;</span></a>
+      <a href="#foundations"><span>Foundations</span><span class="idx-arrow">&#8594;</span></a>
       <a href="#icons"><span>Icons</span><span class="idx-arrow">&#8594;</span></a>
+      <a href="#components"><span>Components</span><span class="idx-arrow">&#8594;</span></a>
+      <a href="#motion"><span>Motion</span><span class="idx-arrow">&#8594;</span></a>
+      <a href="#accessibility"><span>Accessibility</span><span class="idx-arrow">&#8594;</span></a>
+      <a href="#voice"><span>Voice &amp; content</span><span class="idx-arrow">&#8594;</span></a>
+      <a href="#tokens"><span>Tokens</span><span class="idx-arrow">&#8594;</span></a>
       <a href="#applications"><span>Applications</span><span class="idx-arrow">&#8594;</span></a>
+      <a href="#templates"><span>Templates</span><span class="idx-arrow">&#8594;</span></a>
     </nav>
   </div>
 </section>
@@ -580,6 +754,23 @@ footer.colophon p{
 <path d="M193.029 48.537H188.761C187.641 48.537 187.321 47.4063 187.828 46.6147L197.484 31.5758L187.828 16.7348C187.267 15.8584 187.641 14.8125 188.761 14.8125H193.216C194.843 14.8125 195.67 15.1517 196.364 16.339L202.446 26.3178L208.475 16.339C209.168 15.2083 209.968 14.8125 211.622 14.8125H215.89C217.011 14.8125 217.331 15.9432 216.824 16.7348L207.167 31.802L216.824 46.643C217.384 47.5193 217.011 48.5653 215.89 48.5653H211.436C209.808 48.5653 208.981 48.1695 208.288 47.0388L202.206 37.0317L196.23 46.8974C195.484 48.0847 194.683 48.537 193.029 48.537Z" fill="white"/>
 </svg></div>
       <div class="logo-card-cap"><span class="cap-title">On dark</span><span class="cap-note">Logo.svg</span></div>
+    </div>
+  </div>
+
+  <div class="fnd-block" style="margin-top:56px;">
+    <h3>Clear space &amp; minimum size</h3>
+    <p class="fnd-note">Keep clear space around the mark equal to the height of the wordmark on every side — no text, icon, or edge of frame may enter it. Never scale the logo below 24px tall in digital contexts or 12mm in print; below that the letterforms lose definition.</p>
+  </div>
+
+  <div class="fnd-block">
+    <h3>Misuse</h3>
+    <div class="dont-grid">
+      <div class="dont-item"><span class="dont-mark">&#10005;</span><p>Don't recolor the mark outside the on-light / on-dark pair.</p></div>
+      <div class="dont-item"><span class="dont-mark">&#10005;</span><p>Don't stretch, skew, or rotate the logo.</p></div>
+      <div class="dont-item"><span class="dont-mark">&#10005;</span><p>Don't add drop shadows, outlines, or gradients.</p></div>
+      <div class="dont-item"><span class="dont-mark">&#10005;</span><p>Don't place it on a busy photo or low-contrast background.</p></div>
+      <div class="dont-item"><span class="dont-mark">&#10005;</span><p>Don't crowd it — respect the clear-space rule above.</p></div>
+      <div class="dont-item"><span class="dont-mark">&#10005;</span><p>Don't rebuild the wordmark in a different typeface.</p></div>
     </div>
   </div>
 </section>
@@ -1278,6 +1469,72 @@ footer.colophon p{
   </div>
 </section>
 
+<section class="page" id="page-foundations" tabindex="-1">
+  <p class="kicker">Foundations</p>
+  <h2>Grid, spacing &amp; structural tokens</h2>
+  <p class="section-desc">The layer beneath color and type — layout width, breakpoints, spacing, radius, and elevation. These values come directly from <code style="font-family:var(--mono); font-size:0.92em;">Design system/Variables/{Layout,Spacing,Border}.json</code>, the same tokens engineering consumes.</p>
+
+  <div class="fnd-block">
+    <h3>Breakpoints &amp; max-width</h3>
+    <p class="fnd-note">Four breakpoints cover phone through desktop. Content is centered in a 1280px max-width container above the XL breakpoint.</p>
+    <div class="bp-row"><span class="bp-name">S — phone</span><div class="bp-bar" style="width:27%;"><span>393px</span></div></div>
+    <div class="bp-row"><span class="bp-name">M — tablet</span><div class="bp-bar" style="width:53%;"><span>768px</span></div></div>
+    <div class="bp-row"><span class="bp-name">L — laptop</span><div class="bp-bar" style="width:71%;"><span>1024px</span></div></div>
+    <div class="bp-row"><span class="bp-name">XL — desktop</span><div class="bp-bar" style="width:100%;"><span>1440px</span></div></div>
+    <div class="bp-row"><span class="bp-name">Content max-width</span><div class="bp-bar" style="width:89%; background:var(--indigo); "><span style="color:#fff;">1280px</span></div></div>
+  </div>
+
+  <div class="fnd-block">
+    <h3>Spacing scale</h3>
+    <p class="fnd-note">A 4px-driven scale used for every gap, padding, and margin — never an off-scale value like 10px or 18px.</p>
+    <div class="space-row"><span class="space-name">XXS</span><div class="space-bar" style="width:2px;"></div><span class="space-val">2px</span></div>
+    <div class="space-row"><span class="space-name">XS</span><div class="space-bar" style="width:4px;"></div><span class="space-val">4px</span></div>
+    <div class="space-row"><span class="space-name">S</span><div class="space-bar" style="width:8px;"></div><span class="space-val">8px</span></div>
+    <div class="space-row"><span class="space-name">M</span><div class="space-bar" style="width:12px;"></div><span class="space-val">12px</span></div>
+    <div class="space-row"><span class="space-name">L</span><div class="space-bar" style="width:16px;"></div><span class="space-val">16px</span></div>
+    <div class="space-row"><span class="space-name">XL</span><div class="space-bar" style="width:24px;"></div><span class="space-val">24px</span></div>
+    <div class="space-row"><span class="space-name">2XL</span><div class="space-bar" style="width:32px;"></div><span class="space-val">32px</span></div>
+    <div class="space-row"><span class="space-name">3XL</span><div class="space-bar" style="width:40px;"></div><span class="space-val">40px</span></div>
+    <div class="space-row"><span class="space-name">4XL</span><div class="space-bar" style="width:48px;"></div><span class="space-val">48px</span></div>
+    <div class="space-row"><span class="space-name">5XL</span><div class="space-bar" style="width:56px;"></div><span class="space-val">56px</span></div>
+    <div class="space-row"><span class="space-name">6XL</span><div class="space-bar" style="width:64px;"></div><span class="space-val">64px</span></div>
+  </div>
+
+  <div class="fnd-block">
+    <h3>Corner radius</h3>
+    <p class="fnd-note">Six radius tokens, from sharp UI chrome to a fully round pill or circle.</p>
+    <div class="radius-grid">
+      <div class="radius-item"><div class="radius-shape" style="border-radius:4px;"></div><span class="radius-label">XS · 4px</span></div>
+      <div class="radius-item"><div class="radius-shape" style="border-radius:8px;"></div><span class="radius-label">S · 8px</span></div>
+      <div class="radius-item"><div class="radius-shape" style="border-radius:12px;"></div><span class="radius-label">M · 12px</span></div>
+      <div class="radius-item"><div class="radius-shape" style="border-radius:16px;"></div><span class="radius-label">L · 16px</span></div>
+      <div class="radius-item"><div class="radius-shape" style="border-radius:999px;"></div><span class="radius-label">Pill · 999px</span></div>
+      <div class="radius-item"><div class="radius-shape" style="border-radius:50%;"></div><span class="radius-label">Circle · 50%</span></div>
+    </div>
+  </div>
+
+  <div class="fnd-block">
+    <h3>Border width</h3>
+    <div class="bw-grid">
+      <div class="bw-item"><div class="bw-line" style="border-top-width:1px;"></div><span class="bw-label">XS · 1px</span></div>
+      <div class="bw-item"><div class="bw-line" style="border-top-width:1.5px;"></div><span class="bw-label">S · 1.5px</span></div>
+      <div class="bw-item"><div class="bw-line" style="border-top-width:2px;"></div><span class="bw-label">M · 2px</span></div>
+      <div class="bw-item"><div class="bw-line" style="border-top-width:4px;"></div><span class="bw-label">L · 4px</span></div>
+      <div class="bw-item"><div class="bw-line" style="border-top-width:8px;"></div><span class="bw-label">XL · 8px</span></div>
+    </div>
+  </div>
+
+  <div class="fnd-block">
+    <h3>Elevation</h3>
+    <p class="fnd-note">Not yet in the token export — proposed here as three levels derived from the shadow already used on cards, so overlays and popovers have somewhere to sit above content.</p>
+    <div class="elev-grid">
+      <div class="elev-card" style="box-shadow:0 1px 2px rgba(5,2,42,0.05), 0 2px 6px -2px rgba(5,2,42,0.08);"><span>Level 1 — resting cards</span></div>
+      <div class="elev-card" style="box-shadow:0 1px 2px rgba(5,2,42,0.04), 0 8px 24px -12px rgba(5,2,42,0.12);"><span>Level 2 — hover / dropdown</span></div>
+      <div class="elev-card" style="box-shadow:0 8px 16px -4px rgba(5,2,42,0.12), 0 24px 48px -16px rgba(5,2,42,0.22);"><span>Level 3 — modal / lightbox</span></div>
+    </div>
+  </div>
+</section>
+
 <section class="page" id="page-shapes" tabindex="-1">
   <p class="kicker">Shape language</p>
   <h2>Geometric shapes</h2>
@@ -1380,33 +1637,155 @@ footer.colophon p{
 <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiNGMkYyRjIiLz4KPHBhdGggZD0iTTcuODkwNjIgMTIuOTQ4Mkw4LjkxMzczIDEzLjQ5NzIiIHN0cm9rZT0iIzA1MDIyQSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0xOS41MDk1IDE5Ljk0MjRINy41NTg1OUw3LjU2MDMzIDE1LjYwMDlDNy41NjA0MyAxNS4zNTEgNy42NTQxIDE1LjExMDEgNy44MjI5IDE0LjkyNThMOC43ODQ0IDEzLjg3NjFDOC44NTYyMyAxMy43OTc2IDguOTE1MSAxMy43MDgyIDguOTU4NzcgMTMuNjExM0wxMC42MDM3IDkuOTU4NTVDMTAuNzY1MyA5LjU5OTg0IDExLjEyMjEgOS4zNjkxOCAxMS41MTU1IDkuMzY5MThMMTkuMjM5NiA5LjM2OTE0QzE5LjY0NTUgOS4zNjkxNCAyMC4wMTExIDkuNjE0NDkgMjAuMTY1IDkuOTkwMUwyMS4xOTA4IDEyLjQ5NDQiIHN0cm9rZT0iIzA1MDIyQSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik04LjkyMDc1IDE1Ljk2NTNMNy43MTg3NSAxNS4yMjk1IiBzdHJva2U9IiMwNTAyMkEiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNOS4xMDE1NiAxMy41NzgxSDE5LjA3ODMiIHN0cm9rZT0iIzA1MDIyQSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0xOS4xNTI4IDE3LjMwNjZIMTIuNjU2N0MxMi4yODkyIDE3LjMwNjYgMTEuOTUxMyAxNy41MDgyIDExLjc3NjcgMTcuODMxNkwxMC43ODEyIDE5LjY3NTUiIHN0cm9rZT0iIzA1MDIyQSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik03LjU2MjUgMTguMDExN1YyMC42MjU3QzcuNTYyNSAyMS4zMzY4IDguMTM4OTEgMjEuOTEzMiA4Ljg0OTk0IDIxLjkxMzJDOS4zMjU4MSAyMS45MTMyIDkuNzYyODcgMjEuNjUwNyA5Ljk4NjQ0IDIxLjIzMDZMMTAuNjM1MiAyMC4wMTE2IiBzdHJva2U9IiMwNTAyMkEiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8Y2lyY2xlIGN4PSIyMi4xNTgzIiBjeT0iMTUuMTU4MyIgcj0iMS4xODU2NiIgc3Ryb2tlPSIjNTQ0NkZGIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTIxLjI0OTYgMjIuNDkxQzIwLjUzODUgMjIuNDkxIDE5Ljk0MDUgMjEuOTU3NCAxOS44NTk5IDIxLjI1MDlMMTkuMzk3OSAxNy4yMDM1QzE5LjI4OTkgMTYuMjU3NyAyMC4wMjk2IDE1LjQyODcgMjAuOTgxNiAxNS40Mjg3TTIzLjAxNTMgMjIuNDkxQzIzLjc1NiAyMi40OTEgMjQuMzc4OCAyMS45MzUyIDI0LjQ2MjggMjEuMTk5M0wyNC45MTkxIDE3LjIwMkMyNS4wMjcgMTYuMjU3IDI0LjI4NzkgMTUuNDI4NyAyMy4zMzY3IDE1LjQyODciIHN0cm9rZT0iIzU0NDZGRiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0yMy4wMTcgMjMuMjc1MVYyMS4yNEMyMy4wMTcgMjAuNzY3MSAyMi42MzM3IDIwLjM4MzggMjIuMTYwOSAyMC4zODM4QzIxLjY4OCAyMC4zODM4IDIxLjMwNDcgMjAuNzY3MSAyMS4zMDQ3IDIxLjI0VjIzLjI3NTFDMjEuMzA0NyAyMy43NDggMjEuNjg4IDI0LjEzMTMgMjIuMTYwOSAyNC4xMzEzQzIyLjYzMzcgMjQuMTMxMyAyMy4wMTcgMjMuNzQ4IDIzLjAxNyAyMy4yNzUxWiIgc3Ryb2tlPSIjNTQ0NkZGIiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIi8+CjxwYXRoIGQ9Ik0xOC44OTA2IDEzLjU3NTJIMTkuNzMxNEwyMS4wMTAxIDE0LjQ0OSIgc3Ryb2tlPSIjNTQ0NkZGIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTI1LjQzMzYgMTMuNTc1MkgyNC41OTI4TDIzLjMxNDEgMTQuNDQ5IiBzdHJva2U9IiM1NDQ2RkYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K" alt="vehicle" loading="lazy"/>
 <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiNGMkYyRjIiLz4KPHBhdGggZD0iTTEwLjc3MzQgMTMuMzQwOEwxOC4xMDE4IDguNjg0TDIxLjA1NDcgMTMuMzMwOSIgc3Ryb2tlPSIjNTQ0NkZGIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTIxLjg4MTQgMTMuNDFWMTEuMDgxMUMyMS44ODE0IDEwLjUyODggMjEuNDMzNyAxMC4wODExIDIwLjg4MTQgMTAuMDgxMUwxOS4yNjQ0IDEwLjA4MTFNOC44MzAzNSAxMS42MjgxVjIxLjQzMjdDOC44MzAzNSAyMS45ODQ5IDkuMjc4MDcgMjIuNDMyNyA5LjgzMDM1IDIyLjQzMjdIMjIuODIwNEMyMy4zNzI3IDIyLjQzMjcgMjMuODIwNCAyMS45ODQ5IDIzLjgyMDQgMjEuNDMyN1YxMy45ODcxQzIzLjgyMDQgMTMuNjY4NCAyMy41NjIgMTMuNDEgMjMuMjQzMyAxMy40MUgxMC40ODA5QzkuNTYxNjIgMTMuNDEgOC44MTY0MSAxMi42NjQ4IDguODE2NDEgMTEuNzQ1NUM4LjgxNjQxIDEwLjgyNjMgOS41NjE2MiAxMC4wODExIDEwLjQ4MDkgMTAuMDgxMUgxNS41MTM4IiBzdHJva2U9IiMwNTAyMkEiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMjMuNDU3IDE4LjE1ODJMMjEuNDQ1MyAxOC4xNTgyIiBzdHJva2U9IiMwNTAyMkEiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTMuOTE2MiAxMC43NDg4TDE2LjExOTEgOS4zNTEyNUMxNi4xNjg1IDkuMzE5ODkgMTYuMjM0MiA5LjMzNzUxIDE2LjI2MTMgOS4zODk0MUwxNi42Mjk0IDEwLjA5NDVDMTYuNjUzNCAxMC4xNDA1IDE2LjYzODMgMTAuMTk3MiAxNi41OTQ1IDEwLjIyNTFMMTQuNDc5NSAxMS41NzM0QzE0LjQzNDIgMTEuNjAyMiAxNC4zNzQyIDExLjU5MDIgMTQuMzQzNiAxMS41NDYxTDEzLjg4NzcgMTAuODkwM0MxMy44NTUyIDEwLjg0MzYgMTMuODY4MiAxMC43NzkzIDEzLjkxNjIgMTAuNzQ4OFoiIGZpbGw9IiM1NDQ2RkYiLz4KPHBhdGggZD0iTTE5LjAzNjEgOS4yMzEzM0wyMC40MjczIDExLjQzODJDMjAuNDU4NSAxMS40ODc4IDIwLjQ0MDcgMTEuNTUzNCAyMC4zODg3IDExLjU4MDNMMTkuNjgyNiAxMS45NDY0QzE5LjYzNjUgMTEuOTcwMyAxOS41Nzk4IDExLjk1NSAxOS41NTIxIDExLjkxMTJMMTguMjA5OSA5Ljc5MjE5QzE4LjE4MTIgOS43NDY4NSAxOC4xOTM0IDkuNjg2OTIgMTguMjM3NiA5LjY1NjQxTDE4Ljg5NDcgOS4yMDIzOEMxOC45NDE1IDkuMTcwMDUgMTkuMDA1OCA5LjE4MzIxIDE5LjAzNjEgOS4yMzEzM1oiIGZpbGw9IiM1NDQ2RkYiLz4KPC9zdmc+Cg==" alt="wallets" loading="lazy"/>
   </div>
+
+  <div class="fnd-block" style="margin-top:56px;">
+    <h3>Sizing &amp; clear space</h3>
+    <p class="fnd-note">Icons are drawn on a 24×24px grid and used at 20px, 24px, or 32px — never at odd intermediate sizes. Keep at least 4px of clear space inside the chip around the artwork, and always place them on the soft indigo chip shown above (or a plain background at 1:1 scale when no chip is needed).</p>
+  </div>
+
+  <div class="fnd-block">
+    <h3>Misuse</h3>
+    <div class="dont-grid">
+      <div class="dont-item"><span class="dont-mark">&#10005;</span><p>Don't recolor strokes outside indigo (default) or lime (highlight only).</p></div>
+      <div class="dont-item"><span class="dont-mark">&#10005;</span><p>Don't mix filled and outlined icon styles in the same view.</p></div>
+      <div class="dont-item"><span class="dont-mark">&#10005;</span><p>Don't stretch an icon to a non-square aspect ratio.</p></div>
+      <div class="dont-item"><span class="dont-mark">&#10005;</span><p>Don't use two different icons for the same meaning across a product.</p></div>
+      <div class="dont-item"><span class="dont-mark">&#10005;</span><p>Don't scale below 16px — strokes start clipping at small sizes.</p></div>
+      <div class="dont-item"><span class="dont-mark">&#10005;</span><p>Don't add a second accent color inside one icon.</p></div>
+    </div>
+  </div>
 </section>
 
-<section class="page" id="page-buttons" tabindex="-1">
+<section class="page" id="page-components" tabindex="-1">
   <p class="kicker">Interactive elements</p>
-  <h2>Buttons</h2>
-  <p class="section-desc">Consistent, intuitive, and accessible interactive elements for a seamless experience across touchpoints.</p>
-  <div class="btn-cols">
-    <div class="btn-col">
-      <h3>Primary</h3>
-      <div class="btn-row"><span class="btn-size-label">Small</span><button class="btn btn-primary btn-sm">Explore global e-invoicing</button></div>
-      <div class="btn-row"><span class="btn-size-label">Medium</span><button class="btn btn-primary btn-md">Explore global e-invoicing</button></div>
-      <div class="btn-row"><span class="btn-size-label">Large</span><button class="btn btn-primary btn-lg">Explore global e-invoicing</button></div>
-      <div class="btn-usage">
-        <p><b>Usage:</b> primary CTAs such as "Book a demo" and "Schedule a demo."</p>
-        <p><b>Style:</b> rounded corners (10px radius), white text, medium or bold weight, sentence case.</p>
+  <h2>Components</h2>
+  <p class="section-desc">Consistent, intuitive, and accessible building blocks for a seamless experience across touchpoints. Buttons, form fields, tags, alerts, and layout primitives — all sharing the same tokens as the rest of the system.</p>
+
+  <div class="type-block" style="margin-top:0;">
+    <div class="type-block-head"><h3>Buttons</h3></div>
+    <div class="btn-cols">
+      <div class="btn-col">
+        <h3>Primary</h3>
+        <div class="btn-row"><span class="btn-size-label">Small</span><button class="btn btn-primary btn-sm">Explore global e-invoicing</button></div>
+        <div class="btn-row"><span class="btn-size-label">Medium</span><button class="btn btn-primary btn-md">Explore global e-invoicing</button></div>
+        <div class="btn-row"><span class="btn-size-label">Large</span><button class="btn btn-primary btn-lg">Explore global e-invoicing</button></div>
+        <div class="btn-usage">
+          <p><b>Usage:</b> primary CTAs such as "Book a demo" and "Schedule a demo."</p>
+          <p><b>Style:</b> rounded corners (10px radius), white text, medium or bold weight, sentence case.</p>
+        </div>
+      </div>
+      <div class="btn-col">
+        <h3>Secondary</h3>
+        <div class="btn-row"><span class="btn-size-label">Small</span><button class="btn btn-secondary btn-sm">Explore global e-invoicing</button></div>
+        <div class="btn-row"><span class="btn-size-label">Medium</span><button class="btn btn-secondary btn-md">Explore global e-invoicing</button></div>
+        <div class="btn-row"><span class="btn-size-label">Large</span><button class="btn btn-secondary btn-lg">Explore global e-invoicing</button></div>
+        <div class="btn-usage">
+          <p><b>Usage:</b> secondary links such as "Talk to an expert" and "Learn more."</p>
+          <p><b>Style:</b> plain outline, no fill background, sentence case.</p>
+        </div>
       </div>
     </div>
-    <div class="btn-col">
-      <h3>Secondary</h3>
-      <div class="btn-row"><span class="btn-size-label">Small</span><button class="btn btn-secondary btn-sm">Explore global e-invoicing</button></div>
-      <div class="btn-row"><span class="btn-size-label">Medium</span><button class="btn btn-secondary btn-md">Explore global e-invoicing</button></div>
-      <div class="btn-row"><span class="btn-size-label">Large</span><button class="btn btn-secondary btn-lg">Explore global e-invoicing</button></div>
-      <div class="btn-usage">
-        <p><b>Usage:</b> secondary links such as "Talk to an expert" and "Learn more."</p>
-        <p><b>Style:</b> plain outline, no fill background, sentence case.</p>
+    <div class="btn-row" style="margin-top:32px; gap:24px;">
+      <span class="btn-size-label" style="width:auto;">States</span>
+      <button class="btn btn-primary btn-md">Default</button>
+      <button class="btn btn-primary btn-md" style="background:#4436e6;">Hover</button>
+      <button class="btn btn-primary btn-md" style="box-shadow:0 0 0 2px #fff, 0 0 0 4px var(--indigo);">Focus</button>
+      <button class="btn btn-primary btn-md" disabled>Disabled</button>
+    </div>
+  </div>
+
+  <div class="type-block">
+    <div class="type-block-head"><h3>Form fields</h3></div>
+    <div class="form-grid">
+      <div class="field">
+        <label for="cx-name">Full name</label>
+        <input id="cx-name" type="text" placeholder="Jane Doe" />
+        <span class="field-msg">Default state.</span>
+      </div>
+      <div class="field">
+        <label for="cx-focus">Work email</label>
+        <input id="cx-focus" type="text" placeholder="jane@company.com" style="border-color:var(--indigo); box-shadow:0 0 0 3px rgba(84,70,255,0.15);" />
+        <span class="field-msg">Focused state.</span>
+      </div>
+      <div class="field error">
+        <label for="cx-err">GSTIN</label>
+        <input id="cx-err" type="text" value="22AAAAA000A" />
+        <span class="field-msg">Enter a valid 15-character GSTIN.</span>
+      </div>
+      <div class="field disabled">
+        <label for="cx-dis">Plan</label>
+        <input id="cx-dis" type="text" value="Enterprise (locked)" disabled />
+        <span class="field-msg">Disabled state.</span>
+      </div>
+      <div class="field">
+        <label for="cx-select">Country</label>
+        <select id="cx-select"><option>India</option><option>UAE</option><option>Oman</option></select>
+      </div>
+      <div class="field">
+        <label>Checkbox, radio &amp; toggle</label>
+        <div class="check-col" style="margin-top:4px;">
+          <label class="check-row"><input type="checkbox" checked/> Send me product updates</label>
+          <label class="check-row"><input type="radio" name="cx-r" checked/> Monthly billing</label>
+          <label class="check-row"><input type="radio" name="cx-r"/> Annual billing</label>
+          <span class="toggle-row"><button class="toggle on" type="button" aria-label="Enabled toggle"></button> Two-factor auth</span>
+        </div>
       </div>
     </div>
+  </div>
+
+  <div class="type-block">
+    <div class="type-block-head"><h3>Tags &amp; badges</h3></div>
+    <div class="tag-row">
+      <span class="tag tag-neutral">Draft</span>
+      <span class="tag tag-brand">New</span>
+      <span class="tag tag-positive">Filed</span>
+      <span class="tag tag-negative">Overdue</span>
+      <span class="tag tag-notice">Action needed</span>
+    </div>
+  </div>
+
+  <div class="type-block">
+    <div class="type-block-head"><h3>Alerts &amp; inline notices</h3></div>
+    <div class="alert-stack">
+      <div class="alert alert-info"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg><p><b>Heads up.</b> Your GSTR-1 filing window opens on the 1st.</p></div>
+      <div class="alert alert-notice"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.3 3.9 2.7 18a2 2 0 0 0 1.7 3h15.2a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg><p><b>Action needed.</b> Two invoices are missing an e-way bill number.</p></div>
+      <div class="alert alert-negative"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="m15 9-6 6M9 9l6 6"/></svg><p><b>Filing failed.</b> The portal rejected this return — check the error log.</p></div>
+      <div class="alert alert-positive"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg><p><b>Reconciled.</b> All March invoices now match your books.</p></div>
+    </div>
+  </div>
+
+  <div class="type-block">
+    <div class="type-block-head"><h3>Cards</h3></div>
+    <div class="card-grid">
+      <div class="demo-card"><h4>Automated filing</h4><p>Returns are prepared and validated before every deadline, with no manual re-entry.</p></div>
+      <div class="demo-card"><h4>Real-time reconciliation</h4><p>Match purchase records against GSTR-2B the moment vendors file.</p></div>
+      <div class="demo-card"><h4>Audit-ready trail</h4><p>Every change is logged and exportable for finance and compliance review.</p></div>
+    </div>
+  </div>
+
+  <div class="type-block">
+    <div class="type-block-head"><h3>Tabs &amp; pagination</h3></div>
+    <div class="tabs">
+      <button class="tab active">Overview</button>
+      <button class="tab">Invoices</button>
+      <button class="tab">Returns</button>
+      <button class="tab">Settings</button>
+    </div>
+    <div class="pagination">
+      <button class="page-btn">&#8249;</button>
+      <button class="page-btn active">1</button>
+      <button class="page-btn">2</button>
+      <button class="page-btn">3</button>
+      <button class="page-btn">&#8250;</button>
+    </div>
+  </div>
+
+  <div class="type-block">
+    <div class="type-block-head"><h3>Tooltip</h3></div>
+    <span class="tooltip-demo">
+      <button class="btn btn-secondary btn-sm">Hover target</button>
+      <span class="tooltip-bubble">Additional context on hover</span>
+    </span>
   </div>
 </section>
 
@@ -1475,10 +1854,183 @@ footer.colophon p{
   </div>
 </section>
 
+<section class="page" id="page-motion" tabindex="-1">
+  <p class="kicker">Motion</p>
+  <h2>Purposeful, brief transitions</h2>
+  <p class="section-desc">Motion confirms an action happened and orients the eye during a change of state — it never exists for its own sake. These are the exact durations and easings this site's own page transitions run on.</p>
+
+  <div class="fnd-block">
+    <h3>Duration tokens</h3>
+    <div class="motion-bar-row"><span class="motion-bar-label">Micro-interaction</span><div class="motion-bar" style="width:36%; background:var(--indigo-soft-ink);"></div><span class="motion-bar-val">120ms</span></div>
+    <div class="motion-bar-row"><span class="motion-bar-label">Page exit</span><div class="motion-bar" style="width:55%;"></div><span class="motion-bar-val">220ms</span></div>
+    <div class="motion-bar-row"><span class="motion-bar-label">Page entrance</span><div class="motion-bar" style="width:100%;"></div><span class="motion-bar-val">400ms</span></div>
+    <div class="motion-bar-row"><span class="motion-bar-label">Stagger per child</span><div class="motion-bar" style="width:9%; background:var(--lime); "></div><span class="motion-bar-val">35ms</span></div>
+    <p class="fnd-note" style="margin-top:18px;">Under 150ms reads as instant feedback (hover, press). 200–450ms suits a full view change. Anything past ~500ms starts to feel sluggish for a two-dimensional UI transition — reserve longer sequences for hero moments only.</p>
+  </div>
+
+  <div class="fnd-block">
+    <h3>Easing</h3>
+    <div class="ease-grid">
+      <div class="ease-card">
+        <svg viewBox="0 0 100 50" fill="none"><path d="M4 46 C 40 46, 60 4, 96 4" stroke="var(--indigo)" stroke-width="3" stroke-linecap="round"/></svg>
+        <div class="ease-name">power1.in</div>
+        <div class="ease-use">Used on page exit — starts slow, accelerates away. Signals "leaving."</div>
+      </div>
+      <div class="ease-card">
+        <svg viewBox="0 0 100 50" fill="none"><path d="M4 46 C 22 4, 60 4, 96 4" stroke="var(--indigo)" stroke-width="3" stroke-linecap="round"/></svg>
+        <div class="ease-name">power2.out</div>
+        <div class="ease-use">Used on page entrance and card hovers — fast start, gentle settle. Signals "arriving."</div>
+      </div>
+      <div class="ease-card">
+        <svg viewBox="0 0 100 50" fill="none"><path d="M4 46 L96 4" stroke="var(--indigo)" stroke-width="3" stroke-linecap="round"/></svg>
+        <div class="ease-name">linear</div>
+        <div class="ease-use">Used for the per-child stagger offset only — constant pacing across a list.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fnd-block">
+    <h3>When to animate</h3>
+    <div class="dont-grid">
+      <div class="dont-item"><span class="dont-mark" style="background:#009933;">&#10003;</span><p>Confirm a state change (page nav, tab switch, toast appearing).</p></div>
+      <div class="dont-item"><span class="dont-mark" style="background:#009933;">&#10003;</span><p>Direct attention to what changed (a new row, an error message).</p></div>
+      <div class="dont-item"><span class="dont-mark" style="background:#009933;">&#10003;</span><p>Soften an abrupt layout shift (modal open/close, lightbox).</p></div>
+      <div class="dont-item"><span class="dont-mark">&#10005;</span><p>Don't animate on every hover — reserve it for clickable elements.</p></div>
+      <div class="dont-item"><span class="dont-mark">&#10005;</span><p>Don't chain more than two motions in sequence for one action.</p></div>
+      <div class="dont-item"><span class="dont-mark">&#10005;</span><p>Don't animate content the user is actively reading or typing into.</p></div>
+    </div>
+    <p class="fnd-note" style="margin-top:20px;">All transitions respect <code style="font-family:var(--mono); font-size:0.92em;">prefers-reduced-motion</code> — hover/press easing is removed for users who request it, and page navigation still works via an instant swap.</p>
+  </div>
+</section>
+
+<section class="page" id="page-accessibility" tabindex="-1">
+  <p class="kicker">Accessibility</p>
+  <h2>Built to be legible for everyone</h2>
+  <p class="section-desc">Contrast ratios below are computed from the real brand colors (WCAG 2.1 relative-luminance formula), not estimated.</p>
+
+  <div class="fnd-block">
+    <h3>Text contrast</h3>
+    <div class="contrast-grid">
+      <div class="contrast-card" style="background:#fff;">
+        <span class="contrast-sample" style="color:#05022A;">Deep Midnight Blue on White</span>
+        <div class="contrast-meta"><span>20.03 : 1</span><span class="contrast-badge contrast-pass">AA &amp; AAA pass</span></div>
+      </div>
+      <div class="contrast-card" style="background:#05022A;">
+        <span class="contrast-sample" style="color:#fff;">White on Deep Midnight Blue</span>
+        <div class="contrast-meta" style="color:#cfd0e6;"><span>20.03 : 1</span><span class="contrast-badge contrast-pass">AA &amp; AAA pass</span></div>
+      </div>
+      <div class="contrast-card" style="background:#fff;">
+        <span class="contrast-sample" style="color:#5446FF;">Blueish Indigo on White</span>
+        <div class="contrast-meta"><span>5.68 : 1</span><span class="contrast-badge contrast-pass">AA pass · AAA fail</span></div>
+      </div>
+      <div class="contrast-card" style="background:#C8F006;">
+        <span class="contrast-sample" style="color:#05022A;">Ink on Electric Lime</span>
+        <div class="contrast-meta"><span>15.19 : 1</span><span class="contrast-badge contrast-pass">AA &amp; AAA pass</span></div>
+      </div>
+    </div>
+    <p class="fnd-note" style="margin-top:20px;"><b>Indigo on white passes AA for normal and large text but not AAA</b> — use it for headlines, links, and icons freely; for dense small body copy, use Ink or Ink-soft instead. Never set body text in Lime on White or Indigo on Lime — neither pair has been validated.</p>
+  </div>
+
+  <div class="fnd-block">
+    <h3>Focus &amp; interaction</h3>
+    <p class="fnd-note">Every interactive element (links, buttons, cards, form fields) shows a visible focus state on keyboard navigation — a 2px Indigo outline with 2–3px offset via <code style="font-family:var(--mono); font-size:0.92em;">:focus-visible</code>, never suppressed. Color is never the only signal: errors pair red with an icon and message text; required fields are labeled, not just colored.</p>
+  </div>
+
+  <div class="fnd-block">
+    <h3>Alt text</h3>
+    <p class="fnd-note">Every icon and illustration on this site carries a descriptive <code style="font-family:var(--mono); font-size:0.92em;">alt</code> — except icons whose source filename starts with "Group" (Figma export artifacts with no semantic meaning), which get an empty <code style="font-family:var(--mono); font-size:0.92em;">alt=""</code> so screen readers skip them instead of reading a meaningless label.</p>
+  </div>
+</section>
+
+<section class="page" id="page-voice" tabindex="-1">
+  <p class="kicker">Voice &amp; content</p>
+  <h2>Direct, confident, never jargon</h2>
+  <p class="section-desc">The same voice across every surface — marketing page, product UI, error message. Say what happens, who it affects, and what to do next.</p>
+
+  <div class="fnd-block">
+    <h3>Principles</h3>
+    <div class="dont-grid">
+      <div class="dont-item"><span class="dont-mark" style="background:#009933;">&#10003;</span><p>Lead with the outcome, not the mechanism ("File in minutes," not "Our platform uses automation to...").</p></div>
+      <div class="dont-item"><span class="dont-mark" style="background:#009933;">&#10003;</span><p>Use active voice and second person — "You'll get a reminder," not "A reminder will be sent."</p></div>
+      <div class="dont-item"><span class="dont-mark" style="background:#009933;">&#10003;</span><p>Name the specific next step in every CTA — "Book a demo," never just "Submit."</p></div>
+      <div class="dont-item"><span class="dont-mark">&#10005;</span><p>Don't use exclamation marks to manufacture urgency.</p></div>
+      <div class="dont-item"><span class="dont-mark">&#10005;</span><p>Don't stack qualifiers ("seamlessly," "effortlessly," "revolutionary").</p></div>
+      <div class="dont-item"><span class="dont-mark">&#10005;</span><p>Don't explain a failure without saying what to do about it.</p></div>
+    </div>
+  </div>
+
+  <div class="fnd-block">
+    <h3>In practice</h3>
+    <div class="card-grid">
+      <div class="demo-card"><h4 style="color:#B70000;">Avoid</h4><p>"Oops! Something went wrong. Please try again later."</p></div>
+      <div class="demo-card"><h4 style="color:#007A29;">Prefer</h4><p>"The portal didn't accept this return. Retry now, or save it as a draft and file before the 20th."</p></div>
+      <div class="demo-card"><h4 style="color:#B70000;">Avoid</h4><p>"Click here to learn more!!"</p></div>
+      <div class="demo-card"><h4 style="color:#007A29;">Prefer</h4><p>"Talk to an expert" / "Explore global e-invoicing" — the button copy already used on this page.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="page" id="page-tokens" tabindex="-1">
+  <p class="kicker">Developer handoff</p>
+  <h2>Design tokens</h2>
+  <p class="section-desc">Every CSS custom property this system ships with, in one table — the direct handoff from this page to a codebase.</p>
+
+  <div class="token-table-wrap">
+    <table class="token-table">
+      <thead><tr><th>Token</th><th>Value</th><th>Used for</th></tr></thead>
+      <tbody>
+        <tr><td><span class="token-swatch" style="background:#05022A;"></span><span class="token-name">--ink</span></td><td>#05022A</td><td>Primary text, on-light surfaces</td></tr>
+        <tr><td><span class="token-swatch" style="background:#403d5c;"></span><span class="token-name">--ink-soft</span></td><td>#403D5C</td><td>Secondary / muted text</td></tr>
+        <tr><td><span class="token-swatch" style="background:#ffffff; border:1px solid #ccc;"></span><span class="token-name">--paper-0</span></td><td>#FFFFFF</td><td>Page background</td></tr>
+        <tr><td><span class="token-swatch" style="background:#F0F0F0;"></span><span class="token-name">--paper-1</span></td><td>#F0F0F0</td><td>Section / chart background</td></tr>
+        <tr><td><span class="token-swatch" style="background:#e4e2ee;"></span><span class="token-name">--card-border</span></td><td>#E4E2EE</td><td>Card &amp; input borders</td></tr>
+        <tr><td><span class="token-swatch" style="background:#C8F006;"></span><span class="token-name">--lime</span></td><td>#C8F006</td><td>Accent highlight, 10% usage</td></tr>
+        <tr><td><span class="token-swatch" style="background:#5446FF;"></span><span class="token-name">--indigo</span></td><td>#5446FF</td><td>Primary interactive / brand accent</td></tr>
+        <tr><td><span class="token-swatch" style="background:#EEF0FF;"></span><span class="token-name">--indigo-soft</span></td><td>#EEF0FF</td><td>Chips, tag backgrounds, kicker</td></tr>
+        <tr><td><span class="token-swatch" style="background:#F2665C;"></span><span class="token-name">--coral</span></td><td>#F2665C</td><td>Legacy "don't" markers</td></tr>
+        <tr><td>—</td><td class="token-name">--disp</td><td>PPNeueMontreal — Display / Heading</td></tr>
+        <tr><td>—</td><td class="token-name">--text</td><td>PPNeueMontrealText — Paragraph / Label</td></tr>
+        <tr><td>—</td><td class="token-name">--mono</td><td>ui-monospace stack — code, specs, captions</td></tr>
+        <tr><td>—</td><td class="token-name">--shadow</td><td>Level-1 card elevation (see Foundations)</td></tr>
+        <tr><td>—</td><td class="token-name">Spacing scale</td><td>2 / 4 / 8 / 12 / 16 / 24 / 32 / 40 / 48 / 56 / 64px — see Foundations</td></tr>
+        <tr><td>—</td><td class="token-name">Radius scale</td><td>4 / 8 / 12 / 16 / 999 / 50% — see Foundations</td></tr>
+        <tr><td>—</td><td class="token-name">Breakpoints</td><td>393 / 768 / 1024 / 1440px, 1280px max-width — see Foundations</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="page" id="page-templates" tabindex="-1">
+  <p class="kicker">Assembled</p>
+  <h2>A page built from these tokens</h2>
+  <p class="section-desc">Nothing new here — the same color, type, spacing, radius, and button styles from the rest of this system, composed into a hero, feature grid, CTA band, and footer.</p>
+
+  <div class="tpl-frame">
+    <div class="tpl-hero">
+      <h3>File every return. Miss nothing.</h3>
+      <p>Cleartax automates GST, e-invoicing, and reconciliation so your team files on time, every time.</p>
+      <button class="btn btn-primary btn-md" style="margin:0 auto;">Book a demo</button>
+    </div>
+    <div class="tpl-features">
+      <div class="tpl-feature"><h4>Automated filing</h4><p>Returns prepared and validated before every deadline.</p></div>
+      <div class="tpl-feature"><h4>Real-time reconciliation</h4><p>Match records against GSTR-2B the moment vendors file.</p></div>
+      <div class="tpl-feature"><h4>Audit-ready trail</h4><p>Every change logged and exportable for review.</p></div>
+    </div>
+    <div class="tpl-cta">
+      <h3>Ready to see it on your own data?</h3>
+      <button class="btn btn-secondary btn-md" style="margin:0 auto; background:#05022A; color:#fff; border-color:#05022A;">Talk to an expert</button>
+    </div>
+    <div class="tpl-footer">
+      <span>CLEARTAX</span>
+      <span>&copy; Cleartax. Compiled from Design system/Rebrand.pdf.</span>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <footer class="colophon">
-  <p>Cleartax Design System — V1.3</p>
+  <p>Cleartax Design System — V1.4</p>
   <p>Compiled from Design system/Rebrand.pdf</p>
 </footer>
 
@@ -1560,7 +2112,7 @@ document.addEventListener('keydown', function(e){
 });
 
 /* ---- page router ---- */
-const PAGES = ['cover','logo','color','type','icons','applications'];
+const PAGES = ['cover','logo','color','type','foundations','icons','components','motion','accessibility','voice','tokens','applications','templates'];
 const pageEls = {};
 PAGES.forEach(function(id){ pageEls[id] = document.getElementById('page-' + id); });
 const routeLinks = Array.from(document.querySelectorAll('.navlinks a, .cover-index a, .logo-link'));
