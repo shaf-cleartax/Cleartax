@@ -4,13 +4,21 @@
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ===================================================================
-   THREE.JS — hero "global e-invoicing network" scene
+   THREE.JS — hero "ring sphere"
+
+   A sphere described only by its latitude rings: N hairline circles whose
+   radius follows sin(phi) and whose height follows cos(phi), so the stack
+   reads as a globe without any surface or longitude lines. Each ring gets
+   its own dash pattern and a slightly different drift speed, which gives
+   the woven, hand-hatched shimmer. Scrolling drives an "unwind" that pulls
+   the rings apart along the tilted axis, so the sphere stretches into a
+   spiral as the hero leaves the viewport.
 =================================================================== */
 function initHero() {
   const canvas = document.getElementById('heroCanvas');
-  if (!canvas) return;
-
   const heroEl = document.getElementById('hero');
+  if (!canvas || !heroEl) return;
+
   let renderer;
   try {
     renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
@@ -21,120 +29,144 @@ function initHero() {
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
   const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
-  camera.position.set(0, 0, 9);
+  const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 100);
+  camera.position.set(0, 0, 10);
 
   const group = new THREE.Group();
   scene.add(group);
 
-  const RADIUS = 3.1;
-  const NODE_COUNT = 140;
-  const nodePositions = [];
+  const RING_COUNT = 30;
+  const RADIUS = 2.2;
+  const SEGMENTS = 220;
 
-  const nodeGeo = new THREE.BufferGeometry();
-  const positions = new Float32Array(NODE_COUNT * 3);
-  const goldenAngle = Math.PI * (3 - Math.sqrt(5));
-  for (let i = 0; i < NODE_COUNT; i++) {
-    const y = 1 - (i / (NODE_COUNT - 1)) * 2;
-    const r = Math.sqrt(1 - y * y);
-    const theta = goldenAngle * i;
-    const x = Math.cos(theta) * r;
-    const z = Math.sin(theta) * r;
-    const v = new THREE.Vector3(x, y, z).multiplyScalar(RADIUS);
-    positions[i * 3] = v.x;
-    positions[i * 3 + 1] = v.y;
-    positions[i * 3 + 2] = v.z;
-    nodePositions.push(v);
-  }
-  nodeGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+  // one shared unit circle in the XZ plane; rings differ by scale + height,
+  // so dash lengths scale with the ring and larger rings read looser
+  const ringGeo = (() => {
+    const pts = [];
+    for (let i = 0; i <= SEGMENTS; i++) {
+      const a = (i / SEGMENTS) * Math.PI * 2;
+      pts.push(new THREE.Vector3(Math.cos(a), 0, Math.sin(a)));
+    }
+    return new THREE.BufferGeometry().setFromPoints(pts);
+  })();
 
-  const nodeMat = new THREE.PointsMaterial({
-    color: 0xc084ff, size: 0.055, transparent: true, opacity: 0.85, sizeAttenuation: true,
-  });
-  const nodePoints = new THREE.Points(nodeGeo, nodeMat);
-  group.add(nodePoints);
+  // palette pulled from the page's own tokens
+  const INK = 0xE9E1FF;
+  const ACCENT = 0xBB33FF;
+  const DEEP = 0xC9ADFF;
 
-  const shellGeo = new THREE.IcosahedronGeometry(RADIUS, 3);
-  const shellMat = new THREE.MeshBasicMaterial({ color: 0x7733ff, wireframe: true, transparent: true, opacity: 0.06 });
-  group.add(new THREE.Mesh(shellGeo, shellMat));
+  const rings = [];
+  for (let i = 0; i < RING_COUNT; i++) {
+    const t = (i + 0.5) / RING_COUNT;
+    const phi = t * Math.PI;
+    const r = Math.sin(phi) * RADIUS;
+    const y = Math.cos(phi) * RADIUS;
 
-  const ARC_COUNT = 26;
-  const arcLines = [];
-  function makeArc() {
-    const a = nodePositions[Math.floor(Math.random() * NODE_COUNT)];
-    const b = nodePositions[Math.floor(Math.random() * NODE_COUNT)];
-    const mid = a.clone().add(b).multiplyScalar(0.5);
-    mid.setLength(RADIUS * 1.55);
-    const curve = new THREE.QuadraticBezierCurve3(a, mid, b);
-    const pts = curve.getPoints(40);
-    const geo = new THREE.BufferGeometry().setFromPoints(pts);
-    const mat = new THREE.LineBasicMaterial({ color: 0xbb33ff, transparent: true, opacity: 0 });
-    const line = new THREE.Line(geo, mat);
-    line.userData = { life: 0, speed: 0.006 + Math.random() * 0.006, delay: Math.random() * 200 };
-    return line;
-  }
-  for (let i = 0; i < ARC_COUNT; i++) {
-    const line = makeArc();
+    // a few rings pick up the violet accent, the rest stay near-white
+    const isAccent = i % 7 === 3;
+    const color = isAccent ? ACCENT : (i % 3 === 0 ? DEEP : INK);
+
+    const mat = new THREE.LineDashedMaterial({
+      color,
+      transparent: true,
+      opacity: isAccent ? 0.55 : 0.13 + Math.sin(phi) * 0.22,
+      dashSize: 0.04 + (i % 5) * 0.03,
+      gapSize: 0.02 + (i % 4) * 0.035,
+      linewidth: 1,
+    });
+
+    const line = new THREE.Line(ringGeo, mat);
+    line.computeLineDistances();
+    line.scale.set(r, 1, r);
+    line.position.y = y;
+    // each ring drifts at its own rate — this is what makes the surface shimmer
+    line.userData = {
+      baseY: y,
+      baseR: r,
+      spin: (i % 2 ? 1 : -1) * (0.05 + (i % 6) * 0.012),
+      phase: i * 0.37,
+      baseOpacity: mat.opacity,
+    };
     group.add(line);
-    arcLines.push(line);
+    rings.push(line);
   }
 
-  const ambient = new THREE.AmbientLight(0xffffff, 0.6);
-  scene.add(ambient);
+  // slanted axis, so it reads as a tilted globe rather than a flat stack
+  group.rotation.z = -0.42;
+  group.rotation.x = 0.16;
 
   let mouseX = 0, mouseY = 0;
   window.addEventListener('mousemove', (e) => {
-    mouseX = (e.clientX / window.innerWidth - 0.5);
-    mouseY = (e.clientY / window.innerHeight - 0.5);
-  });
+    mouseX = e.clientX / window.innerWidth - 0.5;
+    mouseY = e.clientY / window.innerHeight - 0.5;
+  }, { passive: true });
+
+  // dimmed when the sphere has to sit behind the copy instead of beside it
+  let dim = 1;
 
   function resize() {
     const w = heroEl.clientWidth;
     const h = heroEl.clientHeight;
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
+    camera.position.z = w < 760 ? 13.5 : 10;
     camera.updateProjectionMatrix();
+
+    // keep it out of the headline: parked in the right half when there's room,
+    // centred behind the copy (and much fainter) when there isn't
+    if (w >= 1180) { group.position.x = 3.0; dim = 1; }
+    else if (w >= 900) { group.position.x = 2.3; dim = 0.9; }
+    else if (w >= 760) { group.position.x = 1.6; dim = 0.7; }
+    else { group.position.x = 0; dim = 0.4; }
   }
   resize();
   window.addEventListener('resize', resize);
 
+  // scroll drives the unwind: 0 = tight sphere, 1 = stretched spiral
+  let unwind = 0;
   let scrollFade = 1;
   window.addEventListener('scroll', () => {
-    const p = Math.min(window.scrollY / window.innerHeight, 1);
-    scrollFade = 1 - p * 0.6;
-    group.position.y = -p * 1.2;
+    const p = Math.min(window.scrollY / Math.max(window.innerHeight, 1), 1);
+    unwind = p;
+    scrollFade = 1 - p * 0.75;
   }, { passive: true });
 
   const clock = new THREE.Clock();
   function animate() {
     requestAnimationFrame(animate);
-    const dt = clock.getDelta();
+    const dt = Math.min(clock.getDelta(), 0.05);
+    const time = clock.elapsedTime;
 
-    group.rotation.y += dt * 0.06;
-    group.rotation.x = THREE.MathUtils.lerp(group.rotation.x, mouseY * 0.25, 0.04);
-    group.rotation.y += mouseX * 0.0006;
+    group.rotation.y += dt * 0.13;
+    group.rotation.x = THREE.MathUtils.lerp(group.rotation.x, 0.16 + mouseY * 0.22, 0.04);
+    group.rotation.z = THREE.MathUtils.lerp(group.rotation.z, -0.42 + mouseX * 0.16, 0.04);
 
-    arcLines.forEach((line) => {
-      const ud = line.userData;
-      if (ud.delay > 0) { ud.delay -= 1; return; }
-      ud.life += ud.speed;
-      if (ud.life > 1.6) {
-        const fresh = makeArc();
-        line.geometry.dispose();
-        line.geometry = fresh.geometry;
-        ud.life = 0;
-        ud.speed = fresh.userData.speed;
-      }
-      const t = ud.life;
-      line.material.opacity = Math.max(0, Math.sin(Math.min(t, 1) * Math.PI)) * 0.55 * scrollFade;
+    const mid = (RING_COUNT - 1) / 2;
+    rings.forEach((line, i) => {
+      const d = line.userData;
+      line.rotation.y += dt * d.spin;
+
+      // pull rings apart along the axis and even out their radii, so the
+      // silhouette travels from sphere towards tube as you scroll
+      const spread = (i - mid) * 0.30 * unwind;
+      line.position.y = d.baseY + spread;
+      const rr = THREE.MathUtils.lerp(d.baseR, RADIUS * 0.72, unwind * 0.85);
+      line.scale.set(rr, 1, rr);
+
+      // gentle breathing so it never looks frozen
+      const breathe = 1 + Math.sin(time * 0.6 + d.phase) * 0.06;
+      line.material.opacity = d.baseOpacity * breathe * scrollFade * dim;
     });
-
-    nodeMat.opacity = 0.85 * scrollFade;
-    shellMat.opacity = 0.06 * scrollFade;
 
     renderer.render(scene, camera);
   }
-  if (!reduceMotion) animate(); else { resize(); renderer.render(scene, camera); }
+
+  if (!reduceMotion) {
+    animate();
+  } else {
+    resize();
+    renderer.render(scene, camera);
+  }
 }
 
 /* ===================================================================

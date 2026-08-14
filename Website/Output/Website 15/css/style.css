@@ -1,8 +1,9 @@
 /* ==================== FONTS ====================
-   Headings: Inter Tight. Body: Google Sans Flex. Variable fonts from
-   Design system/Fonts/Inter_Tight and Design system/Fonts/Google_Sans_Flex. */
+   Headings: Inter Tight. Body: Google Sans. Variable fonts from
+   Design system/Fonts/Inter_Tight and Design system/Fonts/Google_Sans. */
 @font-face { font-family:'Inter Tight'; src:url('../assets/fonts/inter-tight/InterTight-VariableFont_wght.ttf') format('truetype'); font-weight:100 900; font-display:swap; }
-@font-face { font-family:'Google Sans Flex'; src:url('../assets/fonts/google-sans-flex/GoogleSansFlex-VariableFont.ttf') format('truetype'); font-weight:100 900; font-display:swap; }
+@font-face { font-family:'Google Sans'; src:url('../assets/fonts/google-sans/GoogleSans-VariableFont.ttf') format('truetype'); font-weight:100 900; font-style:normal; font-display:swap; }
+@font-face { font-family:'Google Sans'; src:url('../assets/fonts/google-sans/GoogleSans-Italic-VariableFont.ttf') format('truetype'); font-weight:100 900; font-style:italic; font-display:swap; }
 
 /* ==================== TOKENS ====================
    Primary #05022A · Background #F2F1F0 · Accent #C8F006 · CTA #5446FF
@@ -16,7 +17,7 @@
   --muted-strong:#3D3A4E;
 
   --font-display:'Inter Tight', sans-serif;
-  --font-body:'Google Sans Flex', sans-serif;
+  --font-body:'Google Sans', sans-serif;
 
   --sidebar-w:264px;
   --toc-w:210px;
@@ -202,9 +203,9 @@ main{margin-left:var(--sidebar-w);margin-right:var(--toc-w);padding:64px 56px 14
 .ratio-key b{color:var(--navy);font-weight:600;}
 .ratio-key i{width:11px;height:11px;border-radius:3px;flex:0 0 auto;}
 
-.combo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:720px;}
-/* bento: navy and violet run wide, off-white and lime sit square */
-.combo:nth-child(1),.combo:nth-child(4){grid-column:span 2;}
+.combo-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;max-width:720px;}
+/* 6-col track, every card spanning 3 — a plain 2-up grid of equal cards */
+.combo{grid-column:span 3;}                /* all four equal — 2 per row */
 .combo{min-height:168px;border-radius:12px;display:flex;flex-direction:column;
   align-items:center;justify-content:center;gap:2px;text-align:center;
   font-family:var(--font-display);font-size:12.5px;font-weight:600;padding:12px;}
@@ -228,6 +229,25 @@ main{margin-left:var(--sidebar-w);margin-right:var(--toc-w);padding:64px 56px 14
 .type-row-label{font-size:12px;font-weight:600;color:var(--navy);line-height:1.45;}
 .type-row-label small{display:block;font-weight:400;color:var(--muted);font-size:11px;}
 .type-sample{overflow-wrap:anywhere;}
+
+/* ==================== TYPE RATIONALE (essay) ====================
+   Editorial block echoing the printed brand-book spread. Stacked by
+   default: with the sidebar (264) + TOC (210) + padding (112) gone from
+   the viewport, a 380px headline column only leaves a readable body
+   measure above ~1500px, so the two-column form is opt-in at that width
+   rather than the default. */
+.essay{display:grid;grid-template-columns:1fr;gap:26px;align-items:start;max-width:1180px;}
+.doc-block .essay-head{font-family:var(--font-display);font-size:44px;line-height:48px;
+  font-weight:700;letter-spacing:-.02em;color:var(--navy);margin:0;}
+.essay-body{display:flex;flex-direction:column;gap:24px;max-width:720px;}
+.essay-body p{font-size:17px;line-height:28px;color:var(--navy);margin:0;}
+.essay-body b{font-weight:700;}
+.essay-kicker{font-weight:700;}
+@media (min-width:1500px){
+  .essay{grid-template-columns:380px minmax(420px,1fr);gap:56px;}
+  .doc-block .essay-head{font-size:56px;line-height:60px;}
+  .essay-body p{font-size:19px;line-height:31px;}
+}
 
 /* ==================== TYPOGRAPHY DON'TS ====================
    Ported from Figma node 9979:110848 ("Typograpghy Do's and Don'ts"). Each
@@ -708,7 +728,11 @@ main{margin-left:var(--sidebar-w);margin-right:var(--toc-w);padding:64px 56px 14
 .motion-val{font-family:'SF Mono','Menlo',monospace;font-size:12px;color:var(--navy);flex:0 0 auto;}
 .ease-grid{display:flex;gap:16px;flex-wrap:wrap;margin-top:8px;}
 .ease-card{flex:1 1 200px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px;}
-.ease-card svg{width:100%;height:50px;display:block;margin-bottom:9px;}
+.ease-card svg{width:100%;height:66px;display:block;margin-bottom:9px;overflow:visible;}
+.ease-track{stroke:var(--line);}
+.ease-runner{fill:var(--navy);opacity:.85;}
+.ease-dot{fill:var(--violet);}
+@media (prefers-reduced-motion:reduce){ .ease-dot,.ease-runner{display:none;} }
 .ease-name{font-family:'SF Mono','Menlo',monospace;font-weight:600;font-size:12.5px;color:var(--navy);margin-bottom:4px;}
 .ease-use{font-size:12.5px;color:var(--muted);line-height:1.55;}
 
@@ -763,7 +787,9 @@ main{margin-left:var(--sidebar-w);margin-right:var(--toc-w);padding:64px 56px 14
   .nav-toggle{display:flex;}
   main{margin-left:0;padding:64px 22px 100px;}
   .pair-grid,.topic-grid,.app-grid{grid-template-columns:1fr;}
-  .combo-grid{grid-template-columns:1fr 1fr;}
+  .combo-grid{grid-template-columns:1fr;}
+  .combo:nth-child(1),.combo:nth-child(2),
+  .combo:nth-child(3),.combo:nth-child(4){grid-column:span 1;}
   .type-row{grid-template-columns:1fr;gap:8px;}
   .doc-head h1{font-size:30px;}
   .tok-row,.tok-row--num,.tok-row--head{grid-template-columns:1fr auto;gap:6px 10px;

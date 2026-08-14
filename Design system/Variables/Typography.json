@@ -26,7 +26,7 @@
       },
       "Secondary": {
         "$type": "string",
-        "$value": "Google Sans Flex",
+        "$value": "Google Sans",
         "$extensions": {
           "com.figma.variableId": "VariableID:9668:6308",
           "com.figma.scopes": [
@@ -83,7 +83,7 @@
       },
       "Extra Bold": {
         "$type": "string",
-        "$value": "Extra Bold",
+        "$value": "Bold",
         "$extensions": {
           "com.figma.variableId": "VariableID:9668:6310",
           "com.figma.scopes": [

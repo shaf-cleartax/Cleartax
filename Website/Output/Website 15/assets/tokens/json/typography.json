@@ -10,8 +10,8 @@
     "name": "--ct-font-family-secondary",
     "label": "Font / Family / Secondary",
     "type": "string",
-    "value": "Google Sans Flex",
-    "source": "Google Sans Flex"
+    "value": "Google Sans",
+    "source": "Google Sans"
   },
   {
     "name": "--ct-font-weight-regular",
@@ -45,8 +45,8 @@
     "name": "--ct-font-weight-extra-bold",
     "label": "Font / Weight / Extra Bold",
     "type": "string",
-    "value": "Extra Bold",
-    "source": "Extra Bold"
+    "value": "Bold",
+    "source": "Bold"
   },
   {
     "name": "--ct-font-weight-regular-italic",

@@ -5,10 +5,10 @@
 
 const ROUTES = [
   'overview', 'logo', 'color', 'typography', 'spacing', 'shadows', 'icons', 'components',
-  'motion', 'accessibility', 'voice',
+  'motion', 'accessibility',
   'tokens', 'tokens-primitives', 'tokens-semantics', 'tokens-typography',
-  'tokens-spacing', 'tokens-border', 'tokens-layout', 'tokens-components',
-  'applications', 'usage',
+  'tokens-spacing', 'tokens-border', 'tokens-layout',
+  'usage',
 ];
 
 const HAS_GSAP = () => typeof window.gsap !== 'undefined';
@@ -47,6 +47,7 @@ function showView(slug) {
     const on = document.querySelector('.seg-btn.is-on');
     applyDevice(on ? on.dataset.device : 'desktop');
   }
+  if (slug === 'motion') safe(initEaseDemos, 'initEaseDemos');
 }
 
 function currentRoute() {
@@ -576,6 +577,62 @@ function initLogoDownload() {
     document.body.removeChild(a);
     setTimeout(() => URL.revokeObjectURL(url), 1000);
     flashToast(`Downloaded ${file}`);
+  });
+}
+
+/* ===================================================================
+   Easing demos (Motion page). Each card's curve IS the easing graph:
+   the violet dot walks it with x driven by LINEAR time, so its height
+   at any moment is the eased progress. The navy runner underneath
+   travels with that same GSAP ease, so you see the mapping and feel
+   the result side by side. Core GSAP only — MotionPathPlugin isn't in
+   this build, so points come off the path with getPointAtLength and a
+   short binary search on x.
+=================================================================== */
+function initEaseDemos() {
+  if (REDUCED || !HAS_GSAP()) return;
+  const cards = document.querySelectorAll('.ease-card');
+  if (!cards.length) return;
+
+  cards.forEach((card) => {
+    const path = card.querySelector('.ease-path');
+    const dot = card.querySelector('.ease-dot');
+    const runner = card.querySelector('.ease-runner');
+    const name = card.querySelector('.ease-name');
+    if (!path || !dot || !runner || !name) return;
+    if (card.dataset.easeReady) return;          // build once, on first view
+    card.dataset.easeReady = '1';
+
+    const ease = name.textContent.trim();          // e.g. "power2.out"
+    const len = path.getTotalLength();
+    const X0 = 4, X1 = 96;                          // track start/end in viewBox units
+
+    // y on the curve for a given x — the curves are monotonic in x
+    function pointAtX(x) {
+      let lo = 0, hi = len;
+      for (let i = 0; i < 18; i++) {
+        const mid = (lo + hi) / 2;
+        if (path.getPointAtLength(mid).x < x) lo = mid; else hi = mid;
+      }
+      return path.getPointAtLength((lo + hi) / 2);
+    }
+
+    path.style.strokeDasharray = len;
+    const state = { t: 0 };
+
+    function render() {
+      const t = state.t;
+      const p = pointAtX(X0 + (X1 - X0) * t);       // x is linear time
+      dot.setAttribute('cx', p.x);
+      dot.setAttribute('cy', p.y);
+      path.style.strokeDashoffset = len * (1 - t);  // curve draws in behind it
+    }
+    render();
+
+    gsap.timeline({ repeat: -1, repeatDelay: 0.9 })
+      .fromTo(state, { t: 0 }, { t: 1, duration: 1.5, ease: 'none', onUpdate: render }, 0)
+      .fromTo(runner, { attr: { cx: X0 } },
+        { attr: { cx: X1 }, duration: 1.5, ease: ease }, 0);
   });
 }
 
