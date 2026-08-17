@@ -10,15 +10,15 @@
     "name": "--ct-color-content-secondary",
     "label": "Content / Secondary",
     "type": "color",
-    "value": "#677890",
-    "source": "#677890"
+    "value": "#6B7280",
+    "source": "#6B7280"
   },
   {
     "name": "--ct-color-content-tertiary",
     "label": "Content / Tertiary",
     "type": "color",
-    "value": "#1F2937",
-    "source": "#1F2937"
+    "value": "#9CA3AF",
+    "source": "#9CA3AF"
   },
   {
     "name": "--ct-color-content-primary-inverse",
@@ -371,6 +371,13 @@
     "source": "#CCEBD6"
   },
   {
+    "name": "--ct-color-background-page-highlighter",
+    "label": "Background / Page / Highlighter",
+    "type": "color",
+    "value": "#F2F1F0",
+    "source": "#F2F1F0"
+  },
+  {
     "name": "--ct-color-background-button-primary-default",
     "label": "Background / Button / Primary / Default",
     "type": "color",
@@ -388,8 +395,8 @@
     "name": "--ct-color-background-button-primary-hover",
     "label": "Background / Button / Primary / Hover",
     "type": "color",
-    "value": "#DDE1FF",
-    "source": "#DDE1FF"
+    "value": "#FFFFFF",
+    "source": "#FFFFFF"
   },
   {
     "name": "--ct-color-background-button-primary-hover-inverse",

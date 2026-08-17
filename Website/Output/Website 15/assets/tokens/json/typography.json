@@ -28,7 +28,7 @@
     "source": "Medium"
   },
   {
-    "name": "--ct-font-weight-semi-bold",
+    "name": "--ct-font-weight-semibold",
     "label": "Font / Weight / SemiBold",
     "type": "string",
     "value": "SemiBold",
@@ -168,6 +168,76 @@
     "source": 56
   },
   {
+    "name": "--ct-font-size-10xl",
+    "label": "Font / Size / 10xl",
+    "type": "number",
+    "value": "60px",
+    "source": 60
+  },
+  {
+    "name": "--ct-font-size-11xl",
+    "label": "Font / Size / 11xl",
+    "type": "number",
+    "value": "64px",
+    "source": 64
+  },
+  {
+    "name": "--ct-font-size-12xl",
+    "label": "Font / Size / 12xl",
+    "type": "number",
+    "value": "68px",
+    "source": 68
+  },
+  {
+    "name": "--ct-font-size-13xl",
+    "label": "Font / Size / 13xl",
+    "type": "number",
+    "value": "72px",
+    "source": 72
+  },
+  {
+    "name": "--ct-font-size-14xl",
+    "label": "Font / Size / 14xl",
+    "type": "number",
+    "value": "76px",
+    "source": 76
+  },
+  {
+    "name": "--ct-font-size-15xl",
+    "label": "Font / Size / 15xl",
+    "type": "number",
+    "value": "80px",
+    "source": 80
+  },
+  {
+    "name": "--ct-font-size-16xl",
+    "label": "Font / Size / 16xl",
+    "type": "number",
+    "value": "84px",
+    "source": 84
+  },
+  {
+    "name": "--ct-font-size-17xl",
+    "label": "Font / Size / 17xl",
+    "type": "number",
+    "value": "88px",
+    "source": 88
+  },
+  {
+    "name": "--ct-font-size-18xl",
+    "label": "Font / Size / 18xl",
+    "type": "number",
+    "value": "92px",
+    "source": 92
+  },
+  {
+    "name": "--ct-font-size-19xl",
+    "label": "Font / Size / 19xl",
+    "type": "number",
+    "value": "96px",
+    "source": 96
+  },
+  {
     "name": "--ct-font-line-height-4xs",
     "label": "Font / Line-height / 4xs",
     "type": "number",
@@ -266,7 +336,84 @@
     "source": 64
   },
   {
-    "name": "--ct-font-letter-spacing-2-xs",
+    "name": "--ct-font-line-height-8xl",
+    "label": "Font / Line-height / 8xl",
+    "type": "number",
+    "value": "72px",
+    "source": 72
+  },
+  {
+    "name": "--ct-font-line-height-9xl",
+    "label": "Font / Line-height / 9xl",
+    "type": "number",
+    "value": "80px",
+    "source": 80
+  },
+  {
+    "name": "--ct-font-line-height-10xl",
+    "label": "Font / Line-height / 10xl",
+    "type": "number",
+    "value": "88px",
+    "source": 88
+  },
+  {
+    "name": "--ct-font-line-height-11xl",
+    "label": "Font / Line-height / 11xl",
+    "type": "number",
+    "value": "96px",
+    "source": 96
+  },
+  {
+    "name": "--ct-font-line-height-12xl",
+    "label": "Font / Line-height / 12xl",
+    "type": "number",
+    "value": "104px",
+    "source": 104
+  },
+  {
+    "name": "--ct-font-line-height-13xl",
+    "label": "Font / Line-height / 13xl",
+    "type": "number",
+    "value": "112px",
+    "source": 112
+  },
+  {
+    "name": "--ct-font-line-height-14xl",
+    "label": "Font / Line-height / 14xl",
+    "type": "number",
+    "value": "120px",
+    "source": 120
+  },
+  {
+    "name": "--ct-font-line-height-15xl",
+    "label": "Font / Line-height / 15xl",
+    "type": "number",
+    "value": "128px",
+    "source": 128
+  },
+  {
+    "name": "--ct-font-line-height-16xl",
+    "label": "Font / Line-height / 16xl",
+    "type": "number",
+    "value": "136px",
+    "source": 136
+  },
+  {
+    "name": "--ct-font-line-height-17xl",
+    "label": "Font / Line-height / 17xl",
+    "type": "number",
+    "value": "144px",
+    "source": 144
+  },
+  {
+    "name": "--ct-font-line-height-18xl",
+    "label": "Font / Line-height / 18xl",
+    "type": "number",
+    "value": "152px",
+    "source": 152
+  },
+  {
+    "name": "--ct-font-letter-spacing-2xs",
     "label": "Font / Letter-spacing / 2XS",
     "type": "number",
     "value": "-2px",

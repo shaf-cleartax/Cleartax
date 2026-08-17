@@ -4,11 +4,11 @@
    lightbox are all hand-rolled so the page works from a plain file:// open. */
 
 const ROUTES = [
-  'overview', 'logo', 'color', 'typography', 'spacing', 'shadows', 'icons', 'components',
+  'overview', 'logo', 'color', 'typography', 'spacing', 'shadows', 'layout', 'icons', 'components',
   'motion', 'accessibility',
   'tokens', 'tokens-primitives', 'tokens-semantics', 'tokens-typography',
   'tokens-spacing', 'tokens-border', 'tokens-layout',
-  'usage',
+  'applications', 'usage',
 ];
 
 const HAS_GSAP = () => typeof window.gsap !== 'undefined';
@@ -475,7 +475,7 @@ function initIconDownload() {
 const MAGNET = [
   '.icon-tile', '.shade', 'button.swatch-block', '.seg-btn', '.sidebar-nav a',
   '.nav-group', '.btn', '.topic-card', '.toc a', '.app-card', '.logo-dl',
-  '.tok-chip', '.combo',
+  '.tok-chip', '.combo', '.ramp-chip',
 ].join(',');
 const SOFT = 'a,button,[data-copy],[data-icon],summary,[role="tab"]';
 const MAGNET_MAX = 340;   // don't swallow wide rows
@@ -654,4 +654,24 @@ document.addEventListener('DOMContentLoaded', () => {
   safe(initIconDownload, 'initIconDownload');
   safe(initCursor, 'initCursor');
   safe(initLogoDownload, 'initLogoDownload');
+});
+
+/* Headings desktop/mobile tabs */
+document.addEventListener('click', (e) => {
+  const tab = e.target.closest('.type-tab');
+  if (!tab) return;
+  const tabs = tab.parentElement.querySelectorAll('.type-tab');
+  tabs.forEach(t => { t.classList.toggle('is-active', t === tab); t.setAttribute('aria-selected', t === tab ? 'true' : 'false'); });
+  const section = tab.closest('.doc-block');
+  section.querySelectorAll('.type-tabpane').forEach(p => { p.hidden = p.id !== tab.dataset.tab; });
+});
+
+/* Layout grid lines toggle */
+document.addEventListener('click', (e) => {
+  const t = e.target.closest('.lg-toggle');
+  if (!t) return;
+  const sec = t.closest('#grid-breakpoints');
+  const on = sec.classList.toggle('grids-on');
+  t.setAttribute('aria-pressed', on ? 'true' : 'false');
+  t.classList.toggle('is-active', on);
 });
